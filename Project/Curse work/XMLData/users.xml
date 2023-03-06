@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<users>
+  <user>
+    <login>ivan</login>
+    <password>qwerty123</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>petr</login>
+    <password>newPassword</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>admin</login>
+    <password>admin</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>alex</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>alex</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+</users>

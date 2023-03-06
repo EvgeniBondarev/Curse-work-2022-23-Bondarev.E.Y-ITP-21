@@ -1,0 +1,21 @@
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\bin\Debug\net6.0-windows\Curse work.exe
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\bin\Debug\net6.0-windows\Curse work.deps.json
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\bin\Debug\net6.0-windows\Curse work.runtimeconfig.json
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\bin\Debug\net6.0-windows\Curse work.dll
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\bin\Debug\net6.0-windows\Curse work.pdb
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.csproj.AssemblyReference.cache
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work_MarkupCompile.cache
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work_MarkupCompile.lref
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.g.resources
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.AssemblyInfoInputs.cache
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.AssemblyInfo.cs
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.csproj.CoreCompileInputs.cache
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.dll
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\refint\Curse work.dll
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.pdb
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\Curse work.genruntimeconfig.cache
+C:\Users\Evgeni\Desktop\Course Work\Project\Curse work\obj\Debug\net6.0-windows\ref\Curse work.dll
