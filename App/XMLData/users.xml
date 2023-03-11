@@ -7,13 +7,18 @@
   </user>
   <user>
     <login>petr</login>
-    <password>newPassword</password>
+    <password>newPasswordыцйуав</password>
     <role>admin</role>
   </user>
   <user>
     <login>admin</login>
     <password>admin</password>
     <role>admin</role>
+  </user>
+  <user>
+    <login>alex</login>
+    <password>12345</password>
+    <role>registered</role>
   </user>
   <user>
     <login>alex</login>

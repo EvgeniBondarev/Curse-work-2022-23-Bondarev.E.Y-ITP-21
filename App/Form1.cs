@@ -19,32 +19,21 @@ namespace App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
+            
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
             var userManager = new UserManager(xmlFilePath);
             var allUsers = userManager.GetAll();
 
             // Добавляем нового пользователя
-            var newUser = new User { Login = "alex", Password = "12345", Role = "registered" };
-            userManager.Add(newUser);
-
-            
+            var newUser = new User { Login = "asdasd", Password = "12345", Role = "registered" };
+ 
             // Обновляем информацию о пользователе
-            var userToUpdate = allUsers.FirstOrDefault(u => u.Login == "petr");
-            if (userToUpdate != null)
-            {
-                userToUpdate.Password = "newPassword";
-                userToUpdate.Role = "admin";
-                userManager.Update(userToUpdate);
-            }
+            userManager.Update(new User { Login = "asdasd", Password = "12345", Role = "registered" });
 
             // Удаляем пользователя
-            var userToDelete = allUsers.FirstOrDefault(u => u.Login == "guest");
-            if (userToDelete != null)
-            {
-                userManager.Delete(userToDelete);
-            }
-            */
+            userManager.Delete(new User { Login = "asdasd", Password = "12345", Role = "registered" });
+
+            
 
             // Создаем экземпляр менеджера документа
             var xmlManager = new SpectacleManager("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml");

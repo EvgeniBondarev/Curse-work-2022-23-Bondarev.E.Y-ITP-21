@@ -3,20 +3,20 @@ using System.Linq;
 using System.Xml.Linq;
 using System;
 
-public class SpectacleManager : XmlDocumentManager<Spectacle>
+public class SpectacleManager : IXmlDocumentManager<Spectacle>
 {
     private readonly string _xmlFilePath;
+    private readonly XDocument _xmlDoc;
 
-
-    public SpectacleManager(string xmlFilePath) : base(xmlFilePath)
+    public SpectacleManager(string xmlFilePath)
     {
         _xmlFilePath = xmlFilePath;
+        _xmlDoc = XDocument.Load(_xmlFilePath);
     }
 
-
-    public override IEnumerable<Spectacle> GetAll()
+    public IEnumerable<Spectacle> GetAll()
     {
-        return XmlDoc.Root.Elements("spectacle").Select(x => new Spectacle
+        return _xmlDoc.Root.Elements("spectacle").Select(x => new Spectacle
         {
             Title = x.Element("title").Value,
             Author = x.Element("author").Value,
@@ -26,7 +26,7 @@ public class SpectacleManager : XmlDocumentManager<Spectacle>
         });
     }
 
-    public override void Add(Spectacle item)
+    public void Add(Spectacle item)
     {
         var newSpectacle = new XElement("spectacle",
             new XElement("title", item.Title),
@@ -41,13 +41,13 @@ public class SpectacleManager : XmlDocumentManager<Spectacle>
                 new XAttribute("name", category.Key)));
         }
 
-        XmlDoc.Root.Add(newSpectacle);
-        XmlDoc.Save(_xmlFilePath);
+        _xmlDoc.Root.Add(newSpectacle);
+        _xmlDoc.Save(_xmlFilePath);
     }
 
-    public override void Update(Spectacle item)
+    public void Update(Spectacle item)
     {
-        var spectacleToUpdate = XmlDoc.Root.Elements("spectacle").FirstOrDefault(x => x.Element("title").Value == item.Title);
+        var spectacleToUpdate = _xmlDoc.Root.Elements("spectacle").FirstOrDefault(x => x.Element("title").Value == item.Title);
 
         if (spectacleToUpdate != null)
         {
@@ -65,18 +65,18 @@ public class SpectacleManager : XmlDocumentManager<Spectacle>
                 }
             }
 
-            XmlDoc.Save(_xmlFilePath);
+            _xmlDoc.Save(_xmlFilePath);
         }
     }
 
-    public override void Delete(Spectacle item)
+    public void Delete(Spectacle item)
     {
-        var spectacleToDelete = XmlDoc.Root.Elements("spectacle").FirstOrDefault(x => x.Element("title").Value == item.Title);
+        var spectacleToDelete = _xmlDoc.Root.Elements("spectacle").FirstOrDefault(x => x.Element("title").Value == item.Title);
 
         if (spectacleToDelete != null)
         {
             spectacleToDelete.Remove();
-            XmlDoc.Save(_xmlFilePath);
+            _xmlDoc.Save(_xmlFilePath);
         }
     }
 }
