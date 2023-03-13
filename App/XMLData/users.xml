@@ -30,4 +30,39 @@
     <password>12345</password>
     <role>registered</role>
   </user>
+  <user>
+    <login>asdasd12345</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasd12345</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasd111</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasd1фыфыв</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasd21345654321</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasd5654321</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
+  <user>
+    <login>asdasdцу3245654321</login>
+    <password>12345</password>
+    <role>registered</role>
+  </user>
 </users>

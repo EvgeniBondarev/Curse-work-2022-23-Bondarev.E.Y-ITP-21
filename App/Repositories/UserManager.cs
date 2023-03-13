@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Schema;
 
 public class UserManager :  IXmlDocumentManager<User>
 {
     private readonly string _xmlFilePath;
     private readonly XDocument _xmlDoc;
-    public UserManager(string xmlFilePath)
+    private readonly XmlSchemaSet _schemas;
+
+    public UserManager(string xmlFilePath, string xsdFilePath)
     {
         _xmlFilePath = xmlFilePath;
         _xmlDoc = XDocument.Load(_xmlFilePath);
+        _schemas = new XmlSchemaSet();
+        _schemas.Add(null, xsdFilePath);
     }
 
     public  IEnumerable<User> GetAll()
@@ -26,9 +33,13 @@ public class UserManager :  IXmlDocumentManager<User>
 
     public void Add(User user)
     {
+        if (!DataValidate(user))
+        {
+            throw new ArgumentException("Двнные не валидны.");
+        }
         if (UserValid(user))
         {
-            throw new ArgumentException("Пользователь с таким логином уже существует.");
+            throw new ArgumentException("Пользователь с таким логином уже существует или данные не валидны.");
         }
 
         _xmlDoc.Root.Add(new XElement("user",
@@ -41,6 +52,10 @@ public class UserManager :  IXmlDocumentManager<User>
 
     public  void Update(User user)
     {
+        if (!DataValidate(user))
+        {
+            throw new ArgumentException("Двнные не валидны.");
+        }
         if (!UserValid(user))
         {
             throw new ArgumentException("Пользователя с таким логином не существует.");
@@ -97,4 +112,23 @@ public class UserManager :  IXmlDocumentManager<User>
         else return false;
     }
 
+    public bool DataValidate(User user)
+    {
+        bool isValid = true;
+
+        var tmpSpectacle = new XElement("users",
+            new XElement("user",
+            new XElement("login", user.Login),
+            new XElement("password", user.Password),
+            new XElement("role", user.Role)
+            ));
+
+     
+        var xdoc = new XDocument(tmpSpectacle);
+        xdoc.Validate(_schemas, (o, e) =>
+        {
+            isValid = false;
+        });
+        return isValid;
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Schema;
 
 public interface IXmlDocumentManager<T>
 {
@@ -6,4 +7,5 @@ public interface IXmlDocumentManager<T>
     void Add(T item);
     void Update(T item);
     void Delete(T item);
+    bool DataValidate(T items);
 }

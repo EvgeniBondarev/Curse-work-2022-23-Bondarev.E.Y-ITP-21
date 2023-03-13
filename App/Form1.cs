@@ -21,11 +21,14 @@ namespace App
         {
             
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
-            var userManager = new UserManager(xmlFilePath);
+            var xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
+
+            var userManager = new UserManager(xmlFilePath, xsdFilePath);
             var allUsers = userManager.GetAll();
 
             // Добавляем нового пользователя
-            var newUser = new User { Login = "asdasd", Password = "12345", Role = "registered" };
+            userManager.Add(new User { Login = "asdasd", Password = "123451gvdvfbhsd", Role = "registered" });
+
  
             // Обновляем информацию о пользователе
             userManager.Update(new User { Login = "asdasd", Password = "12345", Role = "registered" });
@@ -34,9 +37,10 @@ namespace App
             userManager.Delete(new User { Login = "asdasd", Password = "12345", Role = "registered" });
 
             
-
+            /*
             // Создаем экземпляр менеджера документа
-            var xmlManager = new SpectacleManager("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml");
+            var xmlManager = new SpectacleManager("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
+                                                  "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
 
             // Получаем список всех спектаклей из документа
             var spectacles = xmlManager.GetAll();
@@ -64,7 +68,7 @@ namespace App
                 Title = "Горе от ума",
                 Author = "А.С. Грибоедов",
                 Genre = "комедия",
-                Date = DateTime.Parse("2022-02-15 19:00:00"),
+                Date = new DateTime(2015, 4, 20, 18, 30, 25),
                 Categories = new Dictionary<string, int>
             {
                 {"VIP", 20},
@@ -81,7 +85,7 @@ namespace App
                 Title = "Гамлет",
                 Author = "Уильям Шекспир",
                 Genre = "трагедия",
-                Date = DateTime.Parse("2021-09-01 19:30:00"),
+                Date = new DateTime(2015, 7, 20, 18, 30, 25),
                 Categories = new Dictionary<string, int>
             {
                 {"VIP", 10},
@@ -107,7 +111,9 @@ namespace App
             }
                     };
 
-            xmlManager.Delete(spectacleToDelete);
+            //xmlManager.Delete(spectacleToDelete);
+            */
+            
         }
     }
 }

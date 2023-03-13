@@ -4,7 +4,7 @@
     <title>Гамлет</title>
     <author>Уильям Шекспир</author>
     <genre>трагедия</genre>
-    <date>2021-09-01T19:30:00</date>
+    <date>2015-07-20T18:30:25</date>
     <category name="VIP">10</category>
     <category name="Стандарт">100</category>
     <category name="Бюджет">200</category>
@@ -131,6 +131,24 @@
     <author>А.С. Грибоедов</author>
     <genre>комедия</genre>
     <date>2022-02-15T19:00:00</date>
+    <category name="VIP">20</category>
+    <category name="Стандарт">200</category>
+    <category name="Бюджет">400</category>
+  </spectacle>
+  <spectacle>
+    <title>Горе от ума</title>
+    <author>А.С. Грибоедов</author>
+    <genre>комедия</genre>
+    <date>2015-07-20T18:30:25</date>
+    <category name="VIP">20</category>
+    <category name="Стандарт">200</category>
+    <category name="Бюджет">400</category>
+  </spectacle>
+  <spectacle>
+    <title>Горе от ума</title>
+    <author>А.С. Грибоедов</author>
+    <genre>комедия</genre>
+    <date>2015-04-20T18:30:25</date>
     <category name="VIP">20</category>
     <category name="Стандарт">200</category>
     <category name="Бюджет">400</category>
