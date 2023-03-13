@@ -59,6 +59,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\SpectacleManager.cs" />
     <Compile Include="Repositories\UserManager.cs" />
+    <Compile Include="Services\IUserServices.cs" />
+    <Compile Include="Services\SpectacleServices.cs" />
+    <Compile Include="Services\ISpectacleServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,8 +92,6 @@
     <Content Include="XMLData\spectacle.xml" />
     <Content Include="XMLData\users.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

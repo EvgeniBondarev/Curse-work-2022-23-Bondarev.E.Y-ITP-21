@@ -153,4 +153,13 @@
     <category name="Стандарт">200</category>
     <category name="Бюджет">400</category>
   </spectacle>
+  <spectacle>
+    <title>Горе от ума</title>
+    <author>А.С. Грибоедов</author>
+    <genre>комедия</genre>
+    <date>2015-12-20T18:30:25</date>
+    <category name="VIP">20</category>
+    <category name="Стандарт">200</category>
+    <category name="Бюджет">400</category>
+  </spectacle>
 </spectacles>

@@ -121,7 +121,6 @@ public class SpectacleManager : IXmlDocumentManager<Spectacle>
         var xdoc = new XDocument(tmpSpectacle);
         xdoc.Validate(_schemas, (o, e) =>
         {
-            throw new ArgumentException(e.Message);
             isValid = false;
         });
         return isValid;

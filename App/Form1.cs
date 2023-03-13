@@ -19,7 +19,7 @@ namespace App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            /*
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
             var xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
 
@@ -35,9 +35,9 @@ namespace App
 
             // Удаляем пользователя
             userManager.Delete(new User { Login = "asdasd", Password = "12345", Role = "registered" });
-
+            */
             
-            /*
+            
             // Создаем экземпляр менеджера документа
             var xmlManager = new SpectacleManager("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
                                                   "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
@@ -68,7 +68,7 @@ namespace App
                 Title = "Горе от ума",
                 Author = "А.С. Грибоедов",
                 Genre = "комедия",
-                Date = new DateTime(2015, 4, 20, 18, 30, 25),
+                Date = new DateTime(2015, 12, 20, 18, 30, 25),
                 Categories = new Dictionary<string, int>
             {
                 {"VIP", 20},
@@ -112,7 +112,7 @@ namespace App
                     };
 
             //xmlManager.Delete(spectacleToDelete);
-            */
+            
             
         }
     }
