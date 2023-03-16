@@ -7,19 +7,21 @@ namespace App.Services
     internal interface ISpectacleServices
     {
         // Вывод всех спектаклей
-        IEnumerable<Spectacle> ShowAllSpectacles();
+        IEnumerable<SpectacleModel> ShowAllSpectacles();
+        SpectacleModel ShowSpectacle(DateTime dateTime);
+        SpectacleModel ShowSpectacle(string spectacleTitle);
 
-        // Вывод спектакля по дате
-        Spectacle ShowSpectacleByDate(DateTime date);
-
-        // Вывод спектакля по названию
-        Spectacle ShowSpectacleByName(string name);
-
-        // Удаление спектакля
-        void DeleteSpectacle(int spectacleId);
+        // Добавление спектакля
+        void AddNewSpectacle(string title, string author, string genre, DateTime date, Dictionary<string, int> categories);
 
         // Изменение спектакля
-        void UpdateSpectacle(int spectacleId, string newName, DateTime newDate, string newDescription);
+        void UpdateSpectacle(string title, string author, string genre, DateTime date, Dictionary<string, int> categories);
+
+        // Удаление спектакля
+        void DeleteSpectacle(DateTime date);
+
+
+
 
     }
 }

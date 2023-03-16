@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,33 +20,48 @@ namespace App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
+            
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
             var xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
 
-            var userManager = new UserManager(xmlFilePath, xsdFilePath);
-            var allUsers = userManager.GetAll();
+            //var userManager = new UserManager(xmlFilePath, xsdFilePath);
+            //var allUsers = userManager.GetAll();
 
-            // Добавляем нового пользователя
-            userManager.Add(new User { Login = "asdasd", Password = "123451gvdvfbhsd", Role = "registered" });
+            UserServices userServices = new UserServices(xmlFilePath, xsdFilePath);
 
- 
-            // Обновляем информацию о пользователе
-            userManager.Update(new User { Login = "asdasd", Password = "12345", Role = "registered" });
+            var allUser = userServices.GetUser();
 
-            // Удаляем пользователя
-            userManager.Delete(new User { Login = "asdasd", Password = "12345", Role = "registered" });
-            */
+            foreach (var user in allUser)
+            {
+                label1.Text += $"Название: {user.Login}\n";
+                label1.Text += $"Автор: {user.Password}\n";
+                label1.Text += $"Жанр: {user.Role} \n";
+            }
+            userServices.DeleteUser("Абоба");
+
+            userServices.AddUser("Абоба", "32323223", "admin");
+
+            label1.Text += userServices.GetUser("Абоба").Password;
+
+            userServices.UpdateUserByName("Абоба", "Hello World", "register");
+
+            label1.Text += userServices.GetUser("Абоба").Password;
+
             
             
-            // Создаем экземпляр менеджера документа
-            var xmlManager = new SpectacleManager("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
-                                                  "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
+            SpectacleServices spectacleServices = new SpectacleServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
+                                                                        "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
 
-            // Получаем список всех спектаклей из документа
-            var spectacles = xmlManager.GetAll();
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+            keyValuePairs.Add("VIP", 100);
+            keyValuePairs.Add("Standart", 50);
+            keyValuePairs.Add("free", 10);
 
-            // Выводим на консоль информацию о каждом спектакле
+            spectacleServices.AddNewSpectacle("Горе от ума", "Пушкин", "Жанр", new DateTime(2020, 01, 23), keyValuePairs);
+            spectacleServices.UpdateSpectacle("Горе от ума", "Пушкин - Пелеметов", "Жанр", new DateTime(2020, 01, 23), keyValuePairs);
+
+            IEnumerable<SpectacleModel> spectacles = spectacleServices.ShowAllSpectacles();
+
             foreach (var spectacle in spectacles)
             {
                 label1.Text += $"Название: {spectacle.Title}\n";
@@ -58,61 +74,14 @@ namespace App
                 {
                     label1.Text += $"{category.Key}: {category.Value}\n";
                 }
-
-
             }
-
-            // Добавляем новый спектакль в документ
-            var newSpectacle = new Spectacle
-            {
-                Title = "Горе от ума",
-                Author = "А.С. Грибоедов",
-                Genre = "комедия",
-                Date = new DateTime(2015, 12, 20, 18, 30, 25),
-                Categories = new Dictionary<string, int>
-            {
-                {"VIP", 20},
-                {"Стандарт", 200},
-                {"Бюджет", 400}
-            }
-                    };
-
-            xmlManager.Add(newSpectacle);
-
-            // Обновляем информацию о существующем спектакле
-            var spectacleToUpdate = new Spectacle
-            {
-                Title = "Гамлет",
-                Author = "Уильям Шекспир",
-                Genre = "трагедия",
-                Date = new DateTime(2015, 7, 20, 18, 30, 25),
-                Categories = new Dictionary<string, int>
-            {
-                {"VIP", 10},
-                {"Стандарт", 100},
-                {"Бюджет", 200}
-            }
-                    };
-
-            xmlManager.Update(spectacleToUpdate);
-
-            // Удаляем спектакль из документа
-            var spectacleToDelete = new Spectacle
-            {
-                Title = "Мастер и Маргарита",
-                Author = "Михаил Булгаков",
-                Genre = "фантастика",
-                Date = DateTime.Parse("2021-09-02 19:00:00"),
-                Categories = new Dictionary<string, int>
-            {
-                {"VIP", 10},
-                {"Стандарт", 100},
-                {"Бюджет", 200}
-            }
-                    };
-
-            //xmlManager.Delete(spectacleToDelete);
             
+            DateTime dateToDelete = new DateTime(2022, 02, 15);
+            spectacleServices.DeleteSpectacle(new DateTime(2020, 01, 23));
+
+            label1.Text += spectacleServices.ShowSpectacle("Горе от ума").Genre;
+            label1.Text += spectacleServices.ShowSpectacle(new DateTime(2020, 01, 23)).Genre;
+            //spectacleServices.DeleteSpectacle(DateTime.Parse("2015-07-20 18:30:25"));
             
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-public class Spectacle
+public class SpectacleModel
 {
     public string Title { get; set; }
 

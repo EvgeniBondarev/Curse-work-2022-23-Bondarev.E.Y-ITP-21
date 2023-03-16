@@ -8,28 +8,68 @@ namespace App.Services
 {
     internal class SpectacleServices : ISpectacleServices
     {
-        public IEnumerable<Spectacle> ShowAllSpectacles()
+        private readonly SpectacleManager _spectacleManager;
+
+        public SpectacleServices(string xmlFile, string xsdFile)
         {
-            throw new NotImplementedException();
+            _spectacleManager = new SpectacleManager(xmlFile, xsdFile);
+        }
+       
+        public IEnumerable<SpectacleModel> ShowAllSpectacles()
+        {
+            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            return spectacles;
+        }
+        public SpectacleModel ShowSpectacle(DateTime date)
+        {
+            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Date.Equals(date));
+            if (spectacle == null)
+            {
+                return spectacle;
+            } 
+            else throw new ArgumentException($"Спектакль на дату {date} не найден.");
+        }
+        public SpectacleModel ShowSpectacle(string title)
+        {
+            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Title == title);
+            if (spectacle != null)
+            {
+                
+                return spectacle;
+            }
+            else throw new ArgumentException($"Спектакль c названием {title} не найден.");
         }
 
-        public Spectacle ShowSpectacleByDate(DateTime date)
+        public void AddNewSpectacle(string title, string author, string genre, DateTime date, Dictionary<string, int> categories)
         {
-            throw new NotImplementedException();
+            _spectacleManager.Add(CreateSpectacleElement(title, author, genre, date, categories));
         }
 
-        public Spectacle ShowSpectacleByName(string name)
+        public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date, Dictionary<string, int> newCategories)
         {
-            throw new NotImplementedException();
+            _spectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date, newCategories));
         }
-
-        public void UpdateSpectacle(int spectacleId, string newName, DateTime newDate, string newDescription)
+        public void DeleteSpectacle(DateTime date)
         {
-            throw new NotImplementedException();
+            SpectacleModel spectacleToDelete = _spectacleManager.GetAll().FirstOrDefault(x => x.Date.Equals(date));
+            if (spectacleToDelete != null)
+            {
+                _spectacleManager.Delete(spectacleToDelete);
+            }
+            else throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} не найден.");
         }
-        public void DeleteSpectacle(int spectacleId)
+        private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date, Dictionary<string, int> categories)
         {
-            throw new NotImplementedException();
+            return new SpectacleModel
+            {
+                Title = title,
+                Author = author,
+                Genre = genre,
+                Date = date,
+                Categories = categories,
+            };
         }
     }
 }

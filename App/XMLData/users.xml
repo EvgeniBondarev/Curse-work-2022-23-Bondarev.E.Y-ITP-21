@@ -65,4 +65,24 @@
     <password>12345</password>
     <role>registered</role>
   </user>
+  <user>
+    <login>Абоба1</login>
+    <password>32323223</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>Абоба2</login>
+    <password>32323223</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>Абоба4</login>
+    <password>32323223</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>Абоба</login>
+    <password>Hello World</password>
+    <role>register</role>
+  </user>
 </users>

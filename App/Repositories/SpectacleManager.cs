@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using System;
 using System.Xml.Schema;
 
-public class SpectacleManager : IXmlDocumentManager<Spectacle>
+public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
 {
     private readonly string _xmlFilePath;
     private readonly XDocument _xmlDoc;
@@ -17,9 +17,10 @@ public class SpectacleManager : IXmlDocumentManager<Spectacle>
         _schemas.Add(null, xsdFilePath);
     }
 
-    public IEnumerable<Spectacle> GetAll()
+    public IEnumerable<SpectacleModel> GetAll()
     {
-        return _xmlDoc.Root.Elements("spectacle").Select(x => new Spectacle
+
+        return _xmlDoc.Root.Elements("spectacle").Select(x => new SpectacleModel
         {
             Title = x.Element("title").Value,
             Author = x.Element("author").Value,
@@ -29,45 +30,42 @@ public class SpectacleManager : IXmlDocumentManager<Spectacle>
         });
     }
 
-    public void Add(Spectacle item)
+    public void Add(SpectacleModel item)
     {
-        if (!DataValidate(item))
+        if (DataValidate(item))
         {
-            throw new ArgumentException($"Данные не валидны.");
+            DateTime date = item.Date.Date;
+            if (GetAll().Any(x => x.Date.Date == date))
+            {
+                throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} уже существует.");
+            }
+
+            var newSpectacle = new XElement("spectacle",
+                new XElement("title", item.Title),
+                new XElement("author", item.Author),
+                new XElement("genre", item.Genre),
+                new XElement("date", item.Date.ToString("yyyy-MM-ddTHH:mm:ss"))
+            );
+
+            foreach (var category in item.Categories)
+            {
+                newSpectacle.Add(new XElement("category", category.Value,
+                    new XAttribute("name", category.Key)));
+            }
+
+            _xmlDoc.Root.Add(newSpectacle);
+            _xmlDoc.Save(_xmlFilePath);
         }
-
-        DateTime date = item.Date.Date;
-        if (GetAll().Any(x => x.Date.Date == date))
-        {
-            throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} уже существует.");
-        }
-
-        var newSpectacle = new XElement("spectacle",
-            new XElement("title", item.Title),
-            new XElement("author", item.Author),
-            new XElement("genre", item.Genre),
-            new XElement("date", item.Date.ToString("yyyy-MM-ddTHH:mm:ss"))
-        );
-
-        foreach (var category in item.Categories)
-        {
-            newSpectacle.Add(new XElement("category", category.Value,
-                new XAttribute("name", category.Key)));
-        }
-
-        _xmlDoc.Root.Add(newSpectacle);
-        _xmlDoc.Save(_xmlFilePath);
     }
 
-    public void Update(Spectacle item)
+    public void Update(SpectacleModel item)
     {
+        if (DataValidate(item)) { 
         XElement spectacleToUpdate = GetElement(item);
 
-        if (spectacleToUpdate != null)
-        {
             spectacleToUpdate.SetElementValue("author", item.Author);
             spectacleToUpdate.SetElementValue("genre", item.Genre);
-            spectacleToUpdate.SetElementValue("date", item.Date.ToString("yyyy-MM-ddTHH:mm:ss"));
+            spectacleToUpdate.SetElementValue("date", item.Date.ToString("yyyy-MM-dd"));
 
             foreach (var category in item.Categories)
             {
@@ -81,31 +79,31 @@ public class SpectacleManager : IXmlDocumentManager<Spectacle>
 
             _xmlDoc.Save(_xmlFilePath);
         }
-        else throw new ArgumentException("Элемент для обновления не найден.");
+
     }
 
-    public void Delete(Spectacle item)
+    public void Delete(SpectacleModel item)
     {
-        XElement spectacleToUpdate = GetElement(item);
+        XElement spectacleToDelete = GetElement(item);
+        spectacleToDelete.Remove();
+        _xmlDoc.Save(_xmlFilePath); 
+    }
 
-        if (spectacleToUpdate != null)
+    public XElement GetElement(SpectacleModel item)
+    {
+        DateTime date = item.Date.Date;
+        XElement element = _xmlDoc.Root.Elements("spectacle").FirstOrDefault(x => DateTime.Parse(x.Element("date").Value).Date == date);
+        if (element != null)
         {
-            spectacleToUpdate.Remove();
-            _xmlDoc.Save(_xmlFilePath);
+            return element;
         }
-        else throw new ArgumentException("Элемент для удаления не найден.");
+        else throw new ArgumentException("Элемент не найден.");
     }
 
-    public XElement GetElement(Spectacle item)
+    private bool DataValidate(SpectacleModel item)
     {
-        return _xmlDoc.Root.Elements("spectacle").FirstOrDefault(x => x.Element("title").Value == item.Title);
-    }
 
-    public bool DataValidate(Spectacle item)
-    {
-        bool isValid = true;
-
-        var tmpSpectacle = new XElement("spectacles",
+        XElement tmpSpectacle = new XElement("spectacles",
             new XElement("spectacle",
                 new XElement("title", item.Title),
                 new XElement("author", item.Author),
@@ -121,8 +119,9 @@ public class SpectacleManager : IXmlDocumentManager<Spectacle>
         var xdoc = new XDocument(tmpSpectacle);
         xdoc.Validate(_schemas, (o, e) =>
         {
-            isValid = false;
+            throw new ArgumentException(e.Message);
         });
-        return isValid;
+        return true;
+        
     }
 }

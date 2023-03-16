@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SpectacleManager">
+    <Position X="4.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAgCAEAAAAAAgEAAAAIBAA=</HashCode>
+      <FileName>Repositories\SpectacleManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="UserManager">
+    <Position X="7.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAgCAEgAAAACgEAAAAABAA=</HashCode>
+      <FileName>Repositories\UserManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="App.Services.SpectacleServices">
+    <Position X="10.75" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAEAAAAAAAAAAAAAAAAASQIAAAAAAAgAAAA=</HashCode>
+      <FileName>Services\SpectacleServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="App.Services.UserServices">
+    <Position X="13.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAEQAEAAAA=</HashCode>
+      <FileName>Services\UserServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Spectacle">
+    <Position X="16" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAgAIAAAAAAAAAEAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Spectacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="User">
+    <Position X="16" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IXmlDocumentManager&lt;T&gt;">
+    <Position X="5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgEAAAAAAAA=</HashCode>
+      <FileName>Repositories\IXmlDocumentManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="App.Services.ISpectacleServices">
+    <Position X="10.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAEAAAAAAAAAAAAAAAAAQAIAAAAAAAgAAAA=</HashCode>
+      <FileName>Services\ISpectacleServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="App.Services.IUserServices">
+    <Position X="13" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAEQAEAAAA=</HashCode>
+      <FileName>Services\IUserServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

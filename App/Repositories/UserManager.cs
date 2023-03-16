@@ -4,7 +4,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-public class UserManager :  IXmlDocumentManager<User>
+public class UserManager :  IXmlDocumentManager<UserModel>
 {
     private readonly string _xmlFilePath;
     private readonly XDocument _xmlDoc;
@@ -18,10 +18,10 @@ public class UserManager :  IXmlDocumentManager<User>
         _schemas.Add(null, xsdFilePath);
     }
 
-    public  IEnumerable<User> GetAll()
+    public  IEnumerable<UserModel> GetAll()
     {
         return _xmlDoc.Root.Elements("user").Select(u =>
-            new User
+            new UserModel
             {
                 Login = u.Element("login").Value,
                 Password = u.Element("password").Value,
@@ -29,15 +29,15 @@ public class UserManager :  IXmlDocumentManager<User>
             });
     }
 
-    public void Add(User user)
+    public void Add(UserModel user)
     {
         if (!DataValidate(user))
         {
             throw new ArgumentException("Двнные не валидны.");
         }
-        if (UserValid(user))
+        if (!UserValid(user))
         {
-            throw new ArgumentException("Пользователь с таким логином уже существует или данные не валидны.");
+            throw new ArgumentException("Пользователь с таким логином уже существует.");
         }
 
         _xmlDoc.Root.Add(new XElement("user",
@@ -48,13 +48,13 @@ public class UserManager :  IXmlDocumentManager<User>
         _xmlDoc.Save(_xmlFilePath);
     }
 
-    public  void Update(User user)
+    public  void Update(UserModel user)
     {
         if (!DataValidate(user))
         {
             throw new ArgumentException("Двнные не валидны.");
         }
-        if (!UserValid(user))
+        if (UserValid(user))
         {
             throw new ArgumentException("Пользователя с таким логином не существует.");
         }
@@ -70,9 +70,9 @@ public class UserManager :  IXmlDocumentManager<User>
         }
     }
 
-    public  void Delete(User user)
+    public  void Delete(UserModel user)
     {
-        if (!UserValid(user))
+        if (UserValid(user))
         {
             throw new ArgumentException("Пользователя с таким логином не существует.");
         }
@@ -101,16 +101,16 @@ public class UserManager :  IXmlDocumentManager<User>
         }
     }
 
-    private bool UserValid(User user)
+    private bool UserValid(UserModel user)
     {
         if (_xmlDoc.Root.Elements("user").Any(u => u.Element("login").Value == user.Login))
         {
-            return true;
+            return false;
         }
-        else return false;
+        else return true;
     }
 
-    public bool DataValidate(User user)
+    private bool DataValidate(UserModel user)
     {
         bool isValid = true;
 
