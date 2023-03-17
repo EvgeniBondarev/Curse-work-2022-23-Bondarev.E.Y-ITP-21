@@ -63,6 +63,10 @@
     <Compile Include="Services\SpectacleServices.cs" />
     <Compile Include="Services\ISpectacleServices.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="Users\Administrator.cs" />
+    <Compile Include="Users\Guest.cs" />
+    <Compile Include="Users\Registered.cs" />
+    <Compile Include="Users\User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

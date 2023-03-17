@@ -24,9 +24,6 @@ namespace App
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
             var xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
 
-            //var userManager = new UserManager(xmlFilePath, xsdFilePath);
-            //var allUsers = userManager.GetAll();
-
             UserServices userServices = new UserServices(xmlFilePath, xsdFilePath);
 
             var allUser = userServices.GetUser();
