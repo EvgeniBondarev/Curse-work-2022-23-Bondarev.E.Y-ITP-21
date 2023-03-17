@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace App.Services
 {
-    internal class UserServices : IUserServices<UserModel>
+    public class UserServices : IUserServices<UserModel>
     {
         private UserManager _userManager;
 
@@ -23,11 +23,12 @@ namespace App.Services
         public UserModel GetUser(string userLogin)
         {
             UserModel user = _userManager.GetAll().FirstOrDefault(x => x.Login == userLogin);
-            if (user == null)
+            if (user != null)
             {
-                throw new ArgumentException($"Пользователь {userLogin} не найден.");
+                return user;
             }
-            return user;
+            throw new ArgumentException($"Пользователь {userLogin} не найден.");
+            
         }
         public void AddUser(string login, string password, string role)
         {

@@ -26,7 +26,8 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
             Author = x.Element("author").Value,
             Genre = x.Element("genre").Value,
             Date = DateTime.Parse(x.Element("date").Value),
-            Categories = x.Elements("category").ToDictionary(y => y.Attribute("name").Value, y => int.Parse(y.Value))
+            Categories = x.Elements("category").ToDictionary(y => (Categorias)Enum.Parse(typeof(Categorias), y.Attribute("name").Value), y => decimal.Parse(y.Value))
+
         });
     }
 
@@ -44,12 +45,12 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
                 new XElement("title", item.Title),
                 new XElement("author", item.Author),
                 new XElement("genre", item.Genre),
-                new XElement("date", item.Date.ToString("yyyy-MM-ddTHH:mm:ss"))
+                new XElement("date", item.Date.ToString("yyyy-MM-dd"))
             );
 
             foreach (var category in item.Categories)
             {
-                newSpectacle.Add(new XElement("category", category.Value,
+                newSpectacle.Add(new XElement("category", category.Value.ToString(),
                     new XAttribute("name", category.Key)));
             }
 
@@ -60,8 +61,9 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
 
     public void Update(SpectacleModel item)
     {
-        if (DataValidate(item)) { 
-        XElement spectacleToUpdate = GetElement(item);
+        if (DataValidate(item))
+        {
+            XElement spectacleToUpdate = GetElement(item);
 
             spectacleToUpdate.SetElementValue("author", item.Author);
             spectacleToUpdate.SetElementValue("genre", item.Genre);
@@ -69,12 +71,13 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
 
             foreach (var category in item.Categories)
             {
-                var categoryToUpdate = spectacleToUpdate.Elements("category").FirstOrDefault(x => x.Attribute("name").Value == category.Key);
+                var categoryToUpdate = spectacleToUpdate.Elements("category").FirstOrDefault(x => Enum.Parse(typeof(Categorias), x.Attribute("name").Value).ToString() == category.Key.ToString());
 
                 if (categoryToUpdate != null)
                 {
-                    categoryToUpdate.SetValue(category.Value);
+                    categoryToUpdate.SetValue(category.Value.ToString());
                 }
+                else throw new Exception(categoryToUpdate.ToString());
             }
 
             _xmlDoc.Save(_xmlFilePath);
@@ -86,7 +89,7 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
     {
         XElement spectacleToDelete = GetElement(item);
         spectacleToDelete.Remove();
-        _xmlDoc.Save(_xmlFilePath); 
+        _xmlDoc.Save(_xmlFilePath);
     }
 
     public XElement GetElement(SpectacleModel item)
@@ -99,6 +102,7 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
         }
         else throw new ArgumentException("Элемент не найден.");
     }
+
 
     private bool DataValidate(SpectacleModel item)
     {

@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace App.Services
 {
-    internal interface IUserServices<T>
+    internal interface ITicketServices<T>
     {
         // Метод для вывода всех пользователей
-        IEnumerable<T> GetUser();
+        IEnumerable<T> GetTicket();
 
         // Метод для вывода пользователя по имени
-        T GetUser(string name);
+        IEnumerable<T> GetTicket(string owner);
+
+        // Метод для вывода пользователя по дате
+        T GetTicket(DateTime date);
 
         // Добавление нового пользователя
-        void AddUser(string login, string password, string role);
+        void AddTicket(UserModel userModel, SpectacleModel spectacleModel);
 
         // Метод для обновления пользователя по имени
-        void UpdateUserByName(string name, string newPassword, string newRole);
+        //void UpdateUserByName(string name, string newPassword, string newRole);
 
         // Метод для удаления пользователя
-        void DeleteUser(string name);
+        void DeletTicket(UserModel userModel, SpectacleModel spectacleModel);
     }
 }

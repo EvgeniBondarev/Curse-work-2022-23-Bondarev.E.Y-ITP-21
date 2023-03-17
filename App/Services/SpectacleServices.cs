@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Services
 {
-    internal class SpectacleServices : ISpectacleServices
+    public class SpectacleServices : ISpectacleServices<SpectacleModel>
     {
         private readonly SpectacleManager _spectacleManager;
 
@@ -24,7 +24,7 @@ namespace App.Services
         {
             IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
             SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Date.Equals(date));
-            if (spectacle == null)
+            if (spectacle != null)
             {
                 return spectacle;
             } 
@@ -42,14 +42,16 @@ namespace App.Services
             else throw new ArgumentException($"Спектакль c названием {title} не найден.");
         }
 
-        public void AddNewSpectacle(string title, string author, string genre, DateTime date, Dictionary<string, int> categories)
+        public void AddNewSpectacle(string title, string author, string genre, DateTime date,   
+                                    decimal vipPrise, decimal mediumPrice, decimal standartPrice)
         {
-            _spectacleManager.Add(CreateSpectacleElement(title, author, genre, date, categories));
+            _spectacleManager.Add(CreateSpectacleElement(title, author, genre, date, vipPrise, mediumPrice, standartPrice));
         }
 
-        public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date, Dictionary<string, int> newCategories)
+        public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date,
+                                    decimal newVipPrise, decimal newMediumPrice, decimal newStandartPrice)
         {
-            _spectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date, newCategories));
+            _spectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date,newVipPrise, newMediumPrice, newStandartPrice));
         }
         public void DeleteSpectacle(DateTime date)
         {
@@ -60,15 +62,24 @@ namespace App.Services
             }
             else throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} не найден.");
         }
-        private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date, Dictionary<string, int> categories)
+        private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date,     
+                                                      decimal vipPrise, decimal mediumPrice, decimal standartPrice)
         {
+            Dictionary<Categorias, decimal> thisCategories = new Dictionary<Categorias, decimal>()
+            {
+                { Categorias.VIP, vipPrise},
+                { Categorias.Medium, mediumPrice},
+                { Categorias.Standar, standartPrice}
+            };
+
             return new SpectacleModel
             {
                 Title = title,
                 Author = author,
                 Genre = genre,
                 Date = date,
-                Categories = categories,
+                Categories = thisCategories,
+
             };
         }
     }

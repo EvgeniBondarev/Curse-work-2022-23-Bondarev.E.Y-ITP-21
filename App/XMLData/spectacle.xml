@@ -2,29 +2,11 @@
 <spectacles>
   <spectacle>
     <title>Горе от ума</title>
-    <author>Пушкин</author>
-    <genre>Жанр</genre>
-    <date>2023-01-23T00:00:00</date>
-    <category name="VIP">100</category>
-    <category name="Standart">50</category>
-    <category name="free">10</category>
-  </spectacle>
-  <spectacle>
-    <title>Горе`</title>
     <author>Пушкин - Пелеметов</author>
     <genre>Жанр</genre>
-    <date>2024-01-23</date>
-    <category name="VIP">100</category>
-    <category name="Standart">50</category>
-    <category name="free">10</category>
-  </spectacle>
-  <spectacle>
-    <title>Горе от ума</title>
-    <author>Пушкин</author>
-    <genre>Жанр</genre>
-    <date>2014-01-23T00:00:00</date>
-    <category name="VIP">100</category>
-    <category name="Standart">50</category>
-    <category name="free">10</category>
+    <date>2020-01-23</date>
+    <category name="VIP">200</category>
+    <category name="Medium">250</category>
+    <category name="Standar">25</category>
   </spectacle>
 </spectacles>

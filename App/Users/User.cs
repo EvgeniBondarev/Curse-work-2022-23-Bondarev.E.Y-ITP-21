@@ -1,12 +1,10 @@
 ﻿using App.Services;
 using System;
 using System.Collections.Generic;
-public abstract class User : UserModel
+public class User : UserModel
 {
-    private readonly SpectacleServices _spectacleService;
-    public abstract void Register();
-    public abstract void LogIn();
-    public abstract void LogOut();
+    public readonly SpectacleServices _spectacleService;
+
 
     public User(SpectacleServices spectacleService)
     {

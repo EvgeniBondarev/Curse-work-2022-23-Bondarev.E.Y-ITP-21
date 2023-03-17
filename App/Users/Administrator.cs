@@ -9,14 +9,16 @@ public class Administrator : User
         _userServices = userServices;
     }
 
-    public void AddSpectacle(string title, string author, string genre, DateTime date, Dictionary<string, int> categories)
+    public void AddSpectacle(string title, string author, string genre, DateTime date,
+                                    decimal vipPrise, decimal mediumPrice, decimal standartPrice)
     {
-        _spectacleService.AddNewSpectacle(title, author, genre, date, categories);
+        _spectacleService.AddNewSpectacle(title, author, genre, date, vipPrise, mediumPrice, standartPrice);
     }
 
-    public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date, Dictionary<string, int> newCategories)
+    public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date,
+                                decimal newVipPrise, decimal newMediumPrice, decimal newStandartPrice)
     {
-        _spectacleService.UpdateSpectacle(newTitle, newAuthor, newGenre, date, newCategories);
+        _spectacleService.UpdateSpectacle(newTitle, newAuthor, newGenre, date, newVipPrise, newMediumPrice, newStandartPrice);
     }
 
     public void DeleteSpectacle(DateTime date)

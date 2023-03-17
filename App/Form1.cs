@@ -20,7 +20,7 @@ namespace App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            /*
             var xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
             var xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
 
@@ -43,6 +43,7 @@ namespace App
             userServices.UpdateUserByName("Абоба", "Hello World", "register");
 
             label1.Text += userServices.GetUser("Абоба").Password;
+            */
 
             
             
@@ -50,12 +51,10 @@ namespace App
                                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
 
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
-            keyValuePairs.Add("VIP", 100);
-            keyValuePairs.Add("Standart", 50);
-            keyValuePairs.Add("free", 10);
 
-            spectacleServices.AddNewSpectacle("Горе от ума", "Пушкин", "Жанр", new DateTime(2020, 01, 23), keyValuePairs);
-            spectacleServices.UpdateSpectacle("Горе от ума", "Пушкин - Пелеметов", "Жанр", new DateTime(2020, 01, 23), keyValuePairs);
+            spectacleServices.AddNewSpectacle("Горе от ума", "Пушкин", "Жанр", new DateTime(2020, 01, 23), 100, 50, 25);
+            
+            spectacleServices.UpdateSpectacle("Горе от ума", "Пушкин - Пелеметов", "Жанр", new DateTime(2020, 01, 23), 200, 250, 25);
 
             IEnumerable<SpectacleModel> spectacles = spectacleServices.ShowAllSpectacles();
 
@@ -73,12 +72,13 @@ namespace App
                 }
             }
             
-            DateTime dateToDelete = new DateTime(2022, 02, 15);
-            spectacleServices.DeleteSpectacle(new DateTime(2020, 01, 23));
 
+            //spectacleServices.DeleteSpectacle(new DateTime(2020, 01, 23));
+            /*
             label1.Text += spectacleServices.ShowSpectacle("Горе от ума").Genre;
             label1.Text += spectacleServices.ShowSpectacle(new DateTime(2020, 01, 23)).Genre;
             //spectacleServices.DeleteSpectacle(DateTime.Parse("2015-07-20 18:30:25"));
+            */
             
         }
     }

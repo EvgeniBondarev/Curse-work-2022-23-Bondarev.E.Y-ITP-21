@@ -7,18 +7,4 @@ public class Guest : User
     {
     }
 
-    public override void LogIn()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void LogOut()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Register()
-    {
-        throw new NotImplementedException();
-    }
 }

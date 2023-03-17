@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tickets>
+	<ticket>
+		<owner>Иванов Иван</owner>
+		<date>2023-04-15</date>
+		<category>Премиум</category>
+		<price>5000</price>
+	</ticket>
+	<ticket>
+		<owner>Петров Петр</owner>
+		<date>2023-04-15</date>
+		<category>Стандарт</category>
+		<price>2500</price>
+	</ticket>
+	<ticket>
+		<owner>Сидоров Сидор</owner>
+		<date>2023-04-16</date>
+		<category>Премиум</category>
+		<price>5500</price>
+	</ticket>
+</tickets>
