@@ -5,8 +5,11 @@ using System.Collections.Generic;
 public class Administrator : User
 {
     private UserServices _userServices;
-    public Administrator(SpectacleServices spectacleService, UserServices userServices) : base(spectacleService) {
+    private TicketServices _ticketServices;
+    public Administrator(SpectacleServices spectacleService, UserServices userServices, TicketServices ticketServices) : base(spectacleService)
+    {
         _userServices = userServices;
+        _ticketServices = ticketServices;
     }
 
     public void AddSpectacle(string title, string author, string genre, DateTime date,
@@ -51,5 +54,37 @@ public class Administrator : User
         _userServices.DeleteUser(login);
     }
 
-    
+    public IEnumerable<TicketModel> GetTicket(string owner)
+    {
+        return _ticketServices.GetTicket(owner);
+    }
+    public IEnumerable<TicketModel> GetTicket()
+    {
+        return _ticketServices.GetTicket();
+    }
+
+    public TicketModel GetTicket(DateTime date)
+    {
+        return _ticketServices.GetTicket(date);
+    }
+
+    public void AddTicket(string userName, DateTime spectacleDate, Categorias category)
+    {
+        _ticketServices.AddTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+    }
+
+    public void DeletTicket(string userName, DateTime spectacleDate, Categorias category)
+    {
+        _ticketServices.DeletTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+    }
+
+    private UserModel GetThisUser(string userName)
+    {
+        return _userServices.GetUser(userName);
+    }
+    private SpectacleModel GetThisSpectacle(DateTime spectacleDate)
+    {
+        return _spectacleService.ShowSpectacle(spectacleDate);
+    }
+
 }

@@ -69,7 +69,7 @@ namespace App.Services
             {
                 { Categorias.VIP, vipPrise},
                 { Categorias.Medium, mediumPrice},
-                { Categorias.Standar, standartPrice}
+                { Categorias.Standart, standartPrice}
             };
 
             return new SpectacleModel

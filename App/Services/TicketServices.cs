@@ -14,14 +14,14 @@ namespace App.Services
         {   
             _ticketManager = new TicketManager(xmlFile, xsdFile);
         }
-        public void AddTicket(UserModel userModel, SpectacleModel spectacleModel)
+        public void AddTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category)
         {
-            throw new NotImplementedException();
+            _ticketManager.Add(CreateTicketElement(userModel, spectacleModel, category));
         }
 
-        public void DeletTicket(UserModel userModel, SpectacleModel spectacleModel)
+        public void DeletTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category)
         {
-            throw new NotImplementedException();
+            _ticketManager.Delete(CreateTicketElement(userModel, spectacleModel, category));
         }
 
         public IEnumerable<TicketModel> GetTicket()
@@ -49,19 +49,16 @@ namespace App.Services
             }
             else throw new ArgumentException($"Билет на {date} не найден.");
         }
-        private TicketModel CreateTicketElement(UserModel userModel, SpectacleModel spectacleModel)
-        {/*
+        private TicketModel CreateTicketElement(UserModel userModel, SpectacleModel spectacleModel, Categorias category)
+        {
             return new TicketModel
             {
                 Owner = userModel.Login,
                 Date = spectacleModel.Date,
-                Category = "WEERD",
-                Price = spectacleModel.Categories["VIP"]
-
-
+                Title = spectacleModel.Title,
+                Category = category,
+                Price = spectacleModel.Categories[category]
             };
-        */
-            return null;
         }
     }
 }

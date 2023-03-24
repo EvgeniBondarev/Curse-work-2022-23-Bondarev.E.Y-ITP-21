@@ -18,12 +18,10 @@ namespace App.Services
         T GetTicket(DateTime date);
 
         // Добавление нового пользователя
-        void AddTicket(UserModel userModel, SpectacleModel spectacleModel);
+        void AddTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
 
-        // Метод для обновления пользователя по имени
-        //void UpdateUserByName(string name, string newPassword, string newRole);
 
         // Метод для удаления пользователя
-        void DeletTicket(UserModel userModel, SpectacleModel spectacleModel);
+        void DeletTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
     }
 }

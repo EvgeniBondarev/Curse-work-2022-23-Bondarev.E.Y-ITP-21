@@ -106,7 +106,6 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
 
     private bool DataValidate(SpectacleModel item)
     {
-
         XElement tmpSpectacle = new XElement("spectacles",
             new XElement("spectacle",
                 new XElement("title", item.Title),
@@ -126,6 +125,7 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
             throw new ArgumentException(e.Message);
         });
         return true;
+       
         
     }
 }

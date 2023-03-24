@@ -5,7 +5,7 @@ public enum Categorias
 {
     VIP,
     Medium,
-    Standar
+    Standart
 }
 
 public class SpectacleModel

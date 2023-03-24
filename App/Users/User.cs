@@ -1,9 +1,9 @@
 ﻿using App.Services;
 using System;
 using System.Collections.Generic;
-public class User : UserModel
+public abstract class User : UserModel
 {
-    public readonly SpectacleServices _spectacleService;
+    public readonly SpectacleServices  _spectacleService;
 
 
     public User(SpectacleServices spectacleService)

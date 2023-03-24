@@ -45,7 +45,7 @@ namespace App
             label1.Text += userServices.GetUser("Абоба").Password;
             */
 
-            
+            /*
             
             SpectacleServices spectacleServices = new SpectacleServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
                                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
@@ -79,7 +79,43 @@ namespace App
             label1.Text += spectacleServices.ShowSpectacle(new DateTime(2020, 01, 23)).Genre;
             //spectacleServices.DeleteSpectacle(DateTime.Parse("2015-07-20 18:30:25"));
             */
+            SpectacleServices spectacleServices = new SpectacleServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
+                                                                        "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
+            UserServices userServices = new UserServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml",
+                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd");
+            TicketServices ticketServices = new TicketServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xml",
+                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xsd");
+
+            Administrator administrator = new Administrator(spectacleServices, userServices, ticketServices);
+
+            //administrator.AddTicket("Абоба1", new DateTime(2020, 01, 23), Categorias.Medium);
+
+            var tickers = administrator.GetTicket();
+
+            dataGridView1.Columns.Add("Name", "Имя");
+            dataGridView1.Columns.Add("Author", "Автор");
+            dataGridView1.Columns.Add("Ganre", "Жанр");
+            dataGridView1.Columns.Add("Price", "Цена");
+            dataGridView1.Columns.Add("Date", "Дата");
             
+
+            foreach (TicketModel ticket in tickers)
+            {
+                dataGridView1.Rows.Add(ticket.Owner, ticket.Title,  ticket.Category, ticket.Price, ticket.Date);
+            }
+
+            foreach (var tiket in tickers)
+            {
+                label1.Text += $"Название: {tiket.Owner}\n";
+                label1.Text += $"Автор: {tiket.Price}\n";
+                label1.Text += $"Жанр: {tiket.Category} \n";
+                label1.Text += $"Дата: {tiket.Date} \n";       
+            }
+        }
+        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
