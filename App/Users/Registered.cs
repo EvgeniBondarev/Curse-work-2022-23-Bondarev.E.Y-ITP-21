@@ -8,7 +8,7 @@ public class Registered : User
     private TicketServices _ticketServices;
     private UserServices _userServices;
 
-    public Registered(SpectacleServices spectacleService, TicketServices ticketServices, UserServices userServices) : base(spectacleService)
+    public Registered(SpectacleServices spectacleService, UserServices userServices, TicketServices ticketServices) : base(spectacleService)
     {
         _ticketServices = ticketServices;
         _userServices = userServices;

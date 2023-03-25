@@ -20,7 +20,6 @@ namespace App.Services
         // Добавление нового пользователя
         void AddTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
 
-
         // Метод для удаления пользователя
         void DeletTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
     }

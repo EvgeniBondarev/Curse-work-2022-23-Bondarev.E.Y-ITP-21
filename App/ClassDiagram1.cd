@@ -19,53 +19,118 @@
   <Class Name="App.Services.SpectacleServices">
     <Position X="10.75" Y="5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABIAEAAAAAAAAAAAAAAAAASQIAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAABIAAAAAAAAAAAAAAEAAAAAQIAAAAAAAgABAA=</HashCode>
       <FileName>Services\SpectacleServices.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="App.Services.UserServices">
-    <Position X="13.25" Y="4.75" Width="2.25" />
+    <Position X="13.5" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAEQAEAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAEAAAAAIAAAAAAAAAgEAAEAAAAAAA=</HashCode>
       <FileName>Services\UserServices.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Spectacle">
-    <Position X="16" Y="2.75" Width="2.25" />
+  <Class Name="User">
+    <Position X="18.75" Y="5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAgAIAAAAAAAAAEAABAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Spectacle.cs</FileName>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Users\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="User">
-    <Position X="16" Y="4.75" Width="1.75" />
+  <Class Name="SpectacleModel">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAgAIAAAAAAAAAEAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SpectacleModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketModel">
+    <Position X="17" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAQAAAEAAAAAAAAAAAAAAAAABAAAAAAAACAA=</HashCode>
+      <FileName>Models\TicketModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserModel">
+    <Position X="18.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
-      <FileName>Models\User.cs</FileName>
+      <FileName>Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketManager">
+    <Position X="7.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAgCAEAAAAAAgEAAAAABAA=</HashCode>
+      <FileName>Repositories\TicketManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="App.Services.TicketServices">
+    <Position X="16" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAIAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAQ=</HashCode>
+      <FileName>Services\TicketServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Registered">
+    <Position X="16.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAIAIACgAAAAAAAAAAAQAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Users\Registered.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guest">
+    <Position X="20.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Users\Guest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Administrator">
+    <Position X="23" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAIQIACgAEAAAAAAAAAQAAAAIAEAAAQAgAAAA=</HashCode>
+      <FileName>Users\Administrator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="IXmlDocumentManager&lt;T&gt;">
     <Position X="5" Y="3" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgEAAAAAAAA=</HashCode>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Repositories\IXmlDocumentManager.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="App.Services.ISpectacleServices">
+  <Interface Name="App.Services.ISpectacleServices&lt;T&gt;">
     <Position X="10.75" Y="2.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABIAEAAAAAAAAAAAAAAAAAQAIAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAABIAAAAAAAAAAAAAAEAAAAAAIAAAAAAAgAAAA=</HashCode>
       <FileName>Services\ISpectacleServices.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="App.Services.IUserServices">
-    <Position X="13" Y="2.75" Width="2.5" />
+  <Interface Name="App.Services.IUserServices&lt;T&gt;">
+    <Position X="13.5" Y="2.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAEQAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgEAAEAAAAAAA=</HashCode>
       <FileName>Services\IUserServices.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="App.Services.ITicketServices&lt;T&gt;">
+    <Position X="16" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ITicketServices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Categorias">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAEAgA=</HashCode>
+      <FileName>Models\SpectacleModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

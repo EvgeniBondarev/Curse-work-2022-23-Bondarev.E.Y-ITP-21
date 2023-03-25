@@ -86,31 +86,53 @@ namespace App
             TicketServices ticketServices = new TicketServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xml",
                                                          "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xsd");
 
-            Administrator administrator = new Administrator(spectacleServices, userServices, ticketServices);
+            UserFactory userFactary = new UserFactory(userServices, spectacleServices, ticketServices);
 
-            //administrator.AddTicket("Абоба1", new DateTime(2020, 01, 23), Categorias.Medium);
-
-            var tickers = administrator.GetTicket();
-
-            dataGridView1.Columns.Add("Name", "Имя");
-            dataGridView1.Columns.Add("Author", "Автор");
-            dataGridView1.Columns.Add("Ganre", "Жанр");
-            dataGridView1.Columns.Add("Price", "Цена");
-            dataGridView1.Columns.Add("Date", "Дата");
-            
-
-            foreach (TicketModel ticket in tickers)
+            User newUser = UserFactory.CreateUser("admin");
+            User user = null;
+            if(newUser is Administrator) {
+                 user = newUser as Administrator;
+            }
+            else if(newUser is Registered)
             {
-                dataGridView1.Rows.Add(ticket.Owner, ticket.Title,  ticket.Category, ticket.Price, ticket.Date);
+                user = newUser as Registered;
+            }
+            else
+            {
+                user = newUser as Guest;
             }
 
-            foreach (var tiket in tickers)
+
+
+
+            label1.Text += $"{user.GetType()}";
+
+
+            IEnumerable<SpectacleModel> spectacles = user.ViewSpectacle();
+
+            foreach (var spectacle in spectacles)
             {
-                label1.Text += $"Название: {tiket.Owner}\n";
-                label1.Text += $"Автор: {tiket.Price}\n";
-                label1.Text += $"Жанр: {tiket.Category} \n";
-                label1.Text += $"Дата: {tiket.Date} \n";       
+                label1.Text += $"Название: {spectacle.Title}\n";
+                label1.Text += $"Автор: {spectacle.Author}\n";
+                label1.Text += $"Жанр: {spectacle.Genre} \n";
+                label1.Text += $"Дата: {spectacle.Date} \n";
+                label1.Text += $"Категории:";
+
+                foreach (var category in spectacle.Categories)
+                {
+                    label1.Text += $"{category.Key}: {category.Value}\n";
+                }
             }
+
+            var allUser = user.GetUser(); ;
+
+            foreach (var userw in allUser)
+            {
+                label1.Text += $"Название: {userw.Login}\n";
+                label1.Text += $"Автор: {userw.Password}\n";
+                label1.Text += $"Жанр: {userw.Role} \n";
+            }
+
         }
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
