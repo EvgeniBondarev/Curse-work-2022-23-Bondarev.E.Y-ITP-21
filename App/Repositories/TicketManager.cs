@@ -4,21 +4,20 @@ using System.Xml.Schema;
 using System;
 using System.Linq;
 
-public class TicketManager : IXmlDocumentManager<TicketModel>
+public static class TicketManager
 {
-    private readonly string _xmlFilePath;
-    private readonly XDocument _xmlDoc;
-    private readonly XmlSchemaSet _schemas;
+    private static readonly string _xmlFilePath;
+    private static readonly XDocument _xmlDoc;
+    private static readonly XmlSchemaSet _schemas;
 
-    public TicketManager(string xmlFilePath, string xsdFilePath)
+    static TicketManager()
     {
-        _xmlFilePath = xmlFilePath;
+        _xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xml";
         _xmlDoc = XDocument.Load(_xmlFilePath);
         _schemas = new XmlSchemaSet();
-        _schemas.Add(null, xsdFilePath);
+        _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xsd");
     }
-
-    public IEnumerable<TicketModel> GetAll()
+    public static IEnumerable<TicketModel> GetAll()
     {
         return _xmlDoc.Root.Elements("ticket").Select(t =>
             new TicketModel
@@ -30,7 +29,7 @@ public class TicketManager : IXmlDocumentManager<TicketModel>
             }); 
     }
 
-    public void Add(TicketModel ticket)
+    public static void Add(TicketModel ticket)
     {
         if (!DataValidate(ticket))
         {
@@ -46,7 +45,7 @@ public class TicketManager : IXmlDocumentManager<TicketModel>
         _xmlDoc.Save(_xmlFilePath);
     }
 
-    public void Update(TicketModel ticket)
+    public static void Update(TicketModel ticket)
     {
         if (!DataValidate(ticket))
         {
@@ -66,7 +65,7 @@ public class TicketManager : IXmlDocumentManager<TicketModel>
         else throw new ArgumentException("Такого билета не существует");
     }
 
-    public void Delete(TicketModel ticket)
+    public static void Delete(TicketModel ticket)
     {
         XElement ticketToDelete = _xmlDoc.Root.Elements("ticket")
             .SingleOrDefault(t => t.Element("owner").Value == ticket.Owner);
@@ -79,7 +78,7 @@ public class TicketManager : IXmlDocumentManager<TicketModel>
         else throw new ArgumentException("Такого билета не существует");
     }
 
-    private bool DataValidate(TicketModel ticket)
+    private static bool DataValidate(TicketModel ticket)
     {
         bool isValid = true;
 

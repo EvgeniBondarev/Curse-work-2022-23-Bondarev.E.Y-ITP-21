@@ -8,21 +8,18 @@ namespace App.Services
 {
     public class SpectacleServices : ISpectacleServices<SpectacleModel>
     {
-        private readonly SpectacleManager _spectacleManager;
-
-        public SpectacleServices(string xmlFile, string xsdFile)
+        public SpectacleServices()
         {
-            _spectacleManager = new SpectacleManager(xmlFile, xsdFile);
         }
        
         public IEnumerable<SpectacleModel> ShowAllSpectacles()
         {
-            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            IEnumerable<SpectacleModel> spectacles = SpectacleManager.GetAll();
             return spectacles;
         }
         public SpectacleModel ShowSpectacle(DateTime date)
         {
-            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            IEnumerable<SpectacleModel> spectacles = SpectacleManager.GetAll();
             SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Date.Equals(date));
             if (spectacle != null)
             {
@@ -32,7 +29,7 @@ namespace App.Services
         }
         public SpectacleModel ShowSpectacle(string title)
         {
-            IEnumerable<SpectacleModel> spectacles = _spectacleManager.GetAll();
+            IEnumerable<SpectacleModel> spectacles = SpectacleManager.GetAll();
             SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Title == title);
             if (spectacle != null)
             {
@@ -45,20 +42,20 @@ namespace App.Services
         public void AddNewSpectacle(string title, string author, string genre, DateTime date,   
                                     decimal vipPrise, decimal mediumPrice, decimal standartPrice)
         {
-            _spectacleManager.Add(CreateSpectacleElement(title, author, genre, date, vipPrise, mediumPrice, standartPrice));
+            SpectacleManager.Add(CreateSpectacleElement(title, author, genre, date, vipPrise, mediumPrice, standartPrice));
         }
 
         public void UpdateSpectacle(string newTitle, string newAuthor, string newGenre, DateTime date,
                                     decimal newVipPrise, decimal newMediumPrice, decimal newStandartPrice)
         {
-            _spectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date,newVipPrise, newMediumPrice, newStandartPrice));
+            SpectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date,newVipPrise, newMediumPrice, newStandartPrice));
         }
         public void DeleteSpectacle(DateTime date)
         {
-            SpectacleModel spectacleToDelete = _spectacleManager.GetAll().FirstOrDefault(x => x.Date.Equals(date));
+            SpectacleModel spectacleToDelete =SpectacleManager.GetAll().FirstOrDefault(x => x.Date.Equals(date));
             if (spectacleToDelete != null)
             {
-                _spectacleManager.Delete(spectacleToDelete);
+                SpectacleManager.Delete(spectacleToDelete);
             }
             else throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} не найден.");
         }

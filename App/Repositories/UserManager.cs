@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-public class UserManager :  IXmlDocumentManager<UserModel>
+public static class UserManager
 {
-    private readonly string _xmlFilePath;
-    private readonly XDocument _xmlDoc;
-    private readonly XmlSchemaSet _schemas;
+    private static readonly string _xmlFilePath;
+    private static readonly XDocument _xmlDoc;
+    private static readonly XmlSchemaSet _schemas;
 
-    public UserManager(string xmlFilePath, string xsdFilePath)
+    static UserManager()
     {
-        _xmlFilePath = xmlFilePath;
+        _xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
         _xmlDoc = XDocument.Load(_xmlFilePath);
         _schemas = new XmlSchemaSet();
-        _schemas.Add(null, xsdFilePath);
+        _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd");
     }
 
-    public  IEnumerable<UserModel> GetAll()
+
+    public static IEnumerable<UserModel> GetAll()
     {
         return _xmlDoc.Root.Elements("user").Select(u =>
             new UserModel
@@ -29,26 +31,34 @@ public class UserManager :  IXmlDocumentManager<UserModel>
             });
     }
 
-    public void Add(UserModel user)
+    public static void Add(UserModel user)
     {
         if (!DataValidate(user))
         {
-            throw new ArgumentException("Двнные не валидны.");
+            throw new ArgumentException("Данные не валидны.");
         }
         if (!UserValid(user))
         {
             throw new ArgumentException("Пользователь с таким логином уже существует.");
         }
 
-        _xmlDoc.Root.Add(new XElement("user",
+        var newUser = new XElement("user",
             new XElement("login", user.Login),
             new XElement("password", user.Password),
             new XElement("role", user.Role)
-        ));
-        _xmlDoc.Save(_xmlFilePath);
-    }
+        );
+        _xmlDoc.Root.Add(newUser);
+        using (var ms = new MemoryStream())
+        {
+            _xmlDoc.Save(ms);
 
-    public  void Update(UserModel user)
+            using (var file = new FileStream(_xmlFilePath, FileMode.Create, FileAccess.Write))
+            {
+                ms.WriteTo(file);
+            }
+        }
+    }
+    public static void Update(UserModel user)
     {
         if (!DataValidate(user))
         {
@@ -70,7 +80,7 @@ public class UserManager :  IXmlDocumentManager<UserModel>
         }
     }
 
-    public  void Delete(UserModel user)
+    public static void Delete(UserModel user)
     {
         if (UserValid(user))
         {
@@ -86,7 +96,7 @@ public class UserManager :  IXmlDocumentManager<UserModel>
             _xmlDoc.Save(_xmlFilePath);
         }
     }
-    public string GetUserRole(string login)
+    public static string GetUserRole(string login)
     {
 
         var user = _xmlDoc.Descendants("user")
@@ -101,7 +111,7 @@ public class UserManager :  IXmlDocumentManager<UserModel>
         }
     }
 
-    private bool UserValid(UserModel user)
+    private static bool UserValid(UserModel user)
     {
         if (_xmlDoc.Root.Elements("user").Any(u => u.Element("login").Value == user.Login))
         {
@@ -110,7 +120,7 @@ public class UserManager :  IXmlDocumentManager<UserModel>
         else return true;
     }
 
-    private bool DataValidate(UserModel user)
+    private static bool DataValidate(UserModel user)
     {
         bool isValid = true;
 
@@ -121,7 +131,7 @@ public class UserManager :  IXmlDocumentManager<UserModel>
             new XElement("role", user.Role)
             ));
 
-     
+
         var xdoc = new XDocument(tmpSpectacle);
         xdoc.Validate(_schemas, (o, e) =>
         {

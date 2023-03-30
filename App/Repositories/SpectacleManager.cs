@@ -4,20 +4,20 @@ using System.Xml.Linq;
 using System;
 using System.Xml.Schema;
 
-public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
+public static  class SpectacleManager
 {
-    private readonly string _xmlFilePath;
-    private readonly XDocument _xmlDoc;
-    private readonly XmlSchemaSet _schemas;
-    public SpectacleManager(string xmlFilePath, string xsdFilePath)
+    private static readonly string _xmlFilePath;
+    private static readonly XDocument _xmlDoc;
+    private static readonly XmlSchemaSet _schemas;
+
+    static SpectacleManager()
     {
-        _xmlFilePath = xmlFilePath;
+        _xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml";
         _xmlDoc = XDocument.Load(_xmlFilePath);
         _schemas = new XmlSchemaSet();
-        _schemas.Add(null, xsdFilePath);
+        _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
     }
-
-    public IEnumerable<SpectacleModel> GetAll()
+    public static IEnumerable<SpectacleModel> GetAll()
     {
 
         return _xmlDoc.Root.Elements("spectacle").Select(x => new SpectacleModel
@@ -31,7 +31,7 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
         });
     }
 
-    public void Add(SpectacleModel item)
+    public static void Add(SpectacleModel item)
     {
         if (DataValidate(item))
         {
@@ -53,13 +53,12 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
                 newSpectacle.Add(new XElement("category", category.Value.ToString(),
                     new XAttribute("name", category.Key)));
             }
-
             _xmlDoc.Root.Add(newSpectacle);
             _xmlDoc.Save(_xmlFilePath);
         }
     }
 
-    public void Update(SpectacleModel item)
+    public static void Update(SpectacleModel item)
     {
         if (DataValidate(item))
         {
@@ -79,20 +78,16 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
                 }
                 else throw new Exception(categoryToUpdate.ToString());
             }
-
             _xmlDoc.Save(_xmlFilePath);
         }
-
     }
-
-    public void Delete(SpectacleModel item)
+    public static void Delete(SpectacleModel item)
     {
         XElement spectacleToDelete = GetElement(item);
         spectacleToDelete.Remove();
         _xmlDoc.Save(_xmlFilePath);
     }
-
-    public XElement GetElement(SpectacleModel item)
+    public static XElement GetElement(SpectacleModel item)
     {
         DateTime date = item.Date.Date;
         XElement element = _xmlDoc.Root.Elements("spectacle").FirstOrDefault(x => DateTime.Parse(x.Element("date").Value).Date == date);
@@ -102,9 +97,7 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
         }
         else throw new ArgumentException("Элемент не найден.");
     }
-
-
-    private bool DataValidate(SpectacleModel item)
+    private static bool DataValidate(SpectacleModel item)
     {
         XElement tmpSpectacle = new XElement("spectacles",
             new XElement("spectacle",
@@ -125,7 +118,5 @@ public class SpectacleManager : IXmlDocumentManager<SpectacleModel>
             throw new ArgumentException(e.Message);
         });
         return true;
-       
-        
     }
 }

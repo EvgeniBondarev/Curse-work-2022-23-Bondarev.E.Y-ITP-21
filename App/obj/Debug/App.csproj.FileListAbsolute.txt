@@ -8,4 +8,6 @@ C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.csproj.GenerateResource.cac
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.csproj.CoreCompileInputs.cache
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.exe
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.pdb
-C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.Form1.resources
+C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.MaiForm.resources
+C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.LoginForm.resources
+C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.RegistrForm.resources

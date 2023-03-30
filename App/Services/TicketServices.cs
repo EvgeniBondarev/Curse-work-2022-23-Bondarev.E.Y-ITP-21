@@ -8,30 +8,27 @@ namespace App.Services
 {
     public class TicketServices : ITicketServices<TicketModel>
     {
-        private readonly TicketManager _ticketManager;
-
-        public TicketServices(string xmlFile, string xsdFile)
+        public TicketServices()
         {   
-            _ticketManager = new TicketManager(xmlFile, xsdFile);
         }
         public void AddTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category)
         {
-            _ticketManager.Add(CreateTicketElement(userModel, spectacleModel, category));
+            TicketManager.Add(CreateTicketElement(userModel, spectacleModel, category));
         }
 
         public void DeletTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category)
         {
-            _ticketManager.Delete(CreateTicketElement(userModel, spectacleModel, category));
+            TicketManager.Delete(CreateTicketElement(userModel, spectacleModel, category));
         }
 
         public IEnumerable<TicketModel> GetTicket()
         {
-            return _ticketManager.GetAll();
+            return TicketManager.GetAll();
         }
 
         public IEnumerable<TicketModel> GetTicket(string owner)
         {
-            IEnumerable<TicketModel> tickets = _ticketManager.GetAll().Where(x => x.Owner == owner); ;
+            IEnumerable<TicketModel> tickets = TicketManager.GetAll().Where(x => x.Owner == owner); ;
             if (tickets != null)
             {
                 return tickets;
@@ -41,7 +38,7 @@ namespace App.Services
 
         public TicketModel GetTicket(DateTime date)
         {
-            IEnumerable<TicketModel> tickets = _ticketManager.GetAll();
+            IEnumerable<TicketModel> tickets = TicketManager.GetAll();
             TicketModel ticket = tickets.FirstOrDefault(x => x.Date.Equals(date));
             if (ticket != null)
             {

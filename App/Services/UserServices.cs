@@ -7,52 +7,48 @@ namespace App.Services
 {
     public class UserServices : IUserServices<UserModel>
     {
-        private UserManager _userManager;
-
-        public UserServices(string xmlFile, string xsdFile)
+        public UserServices()
         {
-            _userManager = new UserManager(xmlFile, xsdFile);
         }
         
-
         public IEnumerable<UserModel> GetUser()
         {
-            return _userManager.GetAll();
+            return UserManager.GetAll();
         }
 
         public UserModel GetUser(string userLogin)
         {
-            UserModel user = _userManager.GetAll().FirstOrDefault(x => x.Login == userLogin);
+            UserModel user = UserManager.GetAll().FirstOrDefault(x => x.Login == userLogin);
             if (user != null)
             {
                 return user;
             }
-            throw new ArgumentException($"Пользователь {userLogin} не найден.");
+            throw new ArgumentException($"Пользователь '{userLogin}' не найден.");
             
         }
         public void AddUser(string login, string password, string role)
         {
-            _userManager.Add(CreateUserElement(login, password, role));
+            UserManager.Add(CreateUserElement(login, password, role));
         }
         public void UpdateUserByName(string name, string newPassword, string newRole)
         {
-            UserModel thisUser = _userManager.GetAll().FirstOrDefault(x => x.Login == name);
+            UserModel thisUser = UserManager.GetAll().FirstOrDefault(x => x.Login == name);
             if (thisUser != null)
             {
 
-                _userManager.Update(CreateUserElement(name, newPassword, newRole));
+                UserManager.Update(CreateUserElement(name, newPassword, newRole));
             }
-            else throw new ArgumentException($"Пользователь с логином {thisUser.Login} не найден.");
+            else throw new ArgumentException($"Пользователь с логином '{thisUser.Login}' не найден.");
         }
 
         public void DeleteUser(string name)
         {
-            UserModel userToDelete = _userManager.GetAll().FirstOrDefault(x => x.Login == name);
+            UserModel userToDelete = UserManager.GetAll().FirstOrDefault(x => x.Login == name);
             if (userToDelete != null)
             {
-                _userManager.Delete(userToDelete);
+                UserManager.Delete(userToDelete);
             }
-            else throw new ArgumentException($"Пользователь с логином {userToDelete.Login} не найден.");
+            else throw new ArgumentException($"Пользователь с логином '{userToDelete.Login}' не найден.");
         }
 
         private UserModel CreateUserElement(string login, string password, string role)

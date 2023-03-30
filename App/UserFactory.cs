@@ -20,16 +20,16 @@ namespace App
             _ticketServices = ticketServices;
         }
 
-        public static User CreateUser(string userType)
+        public static User CreateUser(UserModel checkUser)
         {
-            User user = null;
-            if (userType == "admin")
+            User user= null;
+            if (checkUser.Role == "admin") 
             {
-                user = new Administrator(_spectacleServices, _userServices, _ticketServices);
+                user = new Administrator(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
             }
-            else if (userType == "registered")
+            else if (checkUser.Role == "registered")
             {
-                user = new Registered(_spectacleServices, _userServices, _ticketServices);
+                user = new Registered(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
             }
             else user = new Guest(_spectacleServices);
 

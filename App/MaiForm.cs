@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Form1 : Form
+    public partial class MaiForm : Form
     {
-        public Form1()
+        public MaiForm()
         {
             InitializeComponent();
         }
@@ -79,15 +79,12 @@ namespace App
             label1.Text += spectacleServices.ShowSpectacle(new DateTime(2020, 01, 23)).Genre;
             //spectacleServices.DeleteSpectacle(DateTime.Parse("2015-07-20 18:30:25"));
             */
-            SpectacleServices spectacleServices = new SpectacleServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml",
-                                                                        "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
-            UserServices userServices = new UserServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml",
-                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd");
-            TicketServices ticketServices = new TicketServices("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xml",
-                                                         "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xsd");
+            SpectacleServices spectacleServices = new SpectacleServices();
+            UserServices userServices = new UserServices();
+            TicketServices ticketServices = new TicketServices();
 
             UserFactory userFactary = new UserFactory(userServices, spectacleServices, ticketServices);
-
+            /*
             User newUser = UserFactory.CreateUser("admin");
             User user = null;
             if(newUser is Administrator) {
@@ -101,9 +98,9 @@ namespace App
             {
                 user = newUser as Guest;
             }
-
-
-
+            
+            
+            
 
             label1.Text += $"{user.GetType()}";
 
@@ -124,15 +121,36 @@ namespace App
                 }
             }
 
-            var allUser = user.GetUser(); ;
+            
 
+         
+            /*
             foreach (var userw in allUser)
             {
                 label1.Text += $"Название: {userw.Login}\n";
                 label1.Text += $"Автор: {userw.Password}\n";
                 label1.Text += $"Жанр: {userw.Role} \n";
             }
+            */
 
+        }
+        public void CreateUser(UserModel user)
+        {
+            UserModel newUser = UserFactory.CreateUser(user);
+
+            Administrator admin = newUser as Administrator;
+            Guest guest = newUser as Guest;
+            Registered registered = newUser as Registered;
+
+            if (admin != null)
+            {
+                label1.Text = "Вы админ";
+            }
+            else if (registered != null)
+            {
+                label1.Text = "Вы юзер";
+            }
+            else label1.Text = "вы гость";
         }
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
