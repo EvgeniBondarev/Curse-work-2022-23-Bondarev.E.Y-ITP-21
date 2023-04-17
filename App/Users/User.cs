@@ -15,9 +15,9 @@ public abstract class User : UserModel
     {
         return _spectacleService.ShowAllSpectacles();
     }
-    public SpectacleModel ViewSpectacle(string title)
+    public IEnumerable<SpectacleModel> ViewSpectacle(string genre)
     {
-        return _spectacleService.ShowSpectacle(title);
+        return _spectacleService.ShowSpectacle(genre);
         
     }
     public SpectacleModel ViewSpectacle(DateTime date)

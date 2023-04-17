@@ -50,7 +50,7 @@ namespace App
                 try
                 {
                     userServices.AddUser(newUserName, newUserPassword, "registered");
-                    this.Visible = false;
+                    this.Close();
 
                 }
                 catch (ArgumentException exp)

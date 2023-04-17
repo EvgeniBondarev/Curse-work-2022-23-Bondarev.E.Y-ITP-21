@@ -14,16 +14,16 @@ namespace App
 {
     public partial class LoginForm : Form
     {
-        private MaiForm maiForm;
-        private RegistrForm regForm;
-        private UserServices userServices;
+        private MainForm _maiForm;
+        private RegistrForm _regForm;
+        private UserServices _userServices;
 
-        public LoginForm()
+        public LoginForm(MainForm mainForm)
         {
             InitializeComponent();
-            userServices = new UserServices();
-            maiForm = new MaiForm();
-            regForm = new RegistrForm();
+            _userServices = new UserServices();
+            _maiForm = mainForm;
+            _regForm = new RegistrForm();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -31,17 +31,18 @@ namespace App
         }
         private void registerButton_Click(object sender, EventArgs e)
         {
-            regForm.Show();
+            _regForm.ShowDialog();
         }
         private void skipButton_Click(object sender, EventArgs e)
         {
             UserModel nullUser = new UserModel() { Login = null, Password = null, Role = null };
-            maiForm.CreateUser(nullUser);
+            _maiForm.CreateUser(nullUser);
+            this.Close();
         }
         private void RegisterForm_Load(object sender, EventArgs e)
         {
             exptLable.Text = "";
-            this.Show();
+ 
         }
         private void LogIn()
         {
@@ -57,12 +58,13 @@ namespace App
             {
                 try
                 {
-                    UserModel user = userServices.GetUser(userName);
+                    UserModel user = _userServices.GetUser(userName);
 
                     if (user.Password == userPassword)
                     {
-                        maiForm.CreateUser(user);
-                        maiForm.Show(); 
+                        _maiForm.CreateUser(user);
+                        userNameForm.Text = userPasswordForm.Text = "";
+                        this.Close();
                     }
                     else
                     {
@@ -77,7 +79,5 @@ namespace App
                 }
             }
         }
-
-        
     }
 }

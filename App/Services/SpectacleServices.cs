@@ -20,24 +20,28 @@ namespace App.Services
         public SpectacleModel ShowSpectacle(DateTime date)
         {
             IEnumerable<SpectacleModel> spectacles = SpectacleManager.GetAll();
-            SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Date.Equals(date));
+            SpectacleModel spectacle = spectacles.FirstOrDefault(x=> x.Date.ToString("d") == date.ToString("d"));
+
             if (spectacle != null)
             {
                 return spectacle;
             } 
-            else throw new ArgumentException($"Спектакль на дату {date} не найден.");
+            else throw new ArgumentException($"Спектакль на дату `{date.ToString("d")}` не найден.");
         }
-        public SpectacleModel ShowSpectacle(string title)
+        public IEnumerable<SpectacleModel> ShowSpectacle(string genre)
         {
             IEnumerable<SpectacleModel> spectacles = SpectacleManager.GetAll();
-            SpectacleModel spectacle = spectacles.FirstOrDefault(x => x.Title == title);
-            if (spectacle != null)
+            IEnumerable<SpectacleModel> filteredSpectacles = spectacles.Where(x => x.Genre.ToLower() == genre.ToLower());
+            if (filteredSpectacles.Any())
             {
-                
-                return spectacle;
+                return filteredSpectacles;
             }
-            else throw new ArgumentException($"Спектакль c названием {title} не найден.");
+            else
+            {
+                throw new ArgumentException($"Спектакли c жанром `{genre}` не найдены.");
+            }
         }
+
 
         public void AddNewSpectacle(string title, string author, string genre, DateTime date,   
                                     decimal vipPrise, decimal mediumPrice, decimal standartPrice)
@@ -57,7 +61,7 @@ namespace App.Services
             {
                 SpectacleManager.Delete(spectacleToDelete);
             }
-            else throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} не найден.");
+            else throw new ArgumentException($"Спектакль на дату `{date.ToString("d")}` не найден.");
         }
         private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date,     
                                                       decimal vipPrise, decimal mediumPrice, decimal standartPrice)

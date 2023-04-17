@@ -9,9 +9,9 @@ namespace App
 {
     class UserFactory
     {
-        private static UserServices _userServices;
-        private static SpectacleServices _spectacleServices { get; set; }
-        private static TicketServices _ticketServices;
+        private UserServices _userServices;
+        private SpectacleServices _spectacleServices { get; set; }
+        private TicketServices _ticketServices;
 
         public UserFactory(UserServices userServices, SpectacleServices spectacleServices, TicketServices ticketServices)
         {
@@ -20,7 +20,7 @@ namespace App
             _ticketServices = ticketServices;
         }
 
-        public static User CreateUser(UserModel checkUser)
+        public User CreateUser(UserModel checkUser)
         {
             User user= null;
             if (checkUser.Role == "admin") 

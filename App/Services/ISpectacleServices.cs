@@ -9,7 +9,7 @@ namespace App.Services
         // Вывод всех спектаклей
         IEnumerable<T> ShowAllSpectacles();
         T ShowSpectacle(DateTime dateTime);
-        T ShowSpectacle(string spectacleTitle);
+        IEnumerable<T> ShowSpectacle(string spectacleTitle);
 
         // Добавление спектакля
         void AddNewSpectacle(string title, string author, string genre, DateTime date, decimal vipPrise, decimal mediumPrice, decimal standartPrice);
