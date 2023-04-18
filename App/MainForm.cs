@@ -21,6 +21,7 @@ namespace App
         public UserServices userServices = new UserServices();
         public TicketServices ticketServices = new TicketServices();
         public LoginForm loginForm;
+        public TicketBuyForm ticketBuyForm;
         public dynamic _user;
 
 
@@ -28,6 +29,7 @@ namespace App
         {
             InitializeComponent();
             loginForm = new LoginForm(this);
+            ticketBuyForm = new TicketBuyForm();
 
             dataGridView1.Columns.Add("Название", "Название");
             dataGridView1.Columns.Add("Жанр", "Жанр");
@@ -42,17 +44,19 @@ namespace App
         private void Form1_Load(object sender, EventArgs e)
         {       
             loginForm.ShowDialog();
+            dataGridView1.CellClick += dataGridView1_CellClick;
+
 
         }
         public void CreateUser(UserModel user)
         {
             UserFactory userFactary = new UserFactory(userServices, spectacleServices, ticketServices);
 
-            this._user = userFactary.CreateUser(user);
+            _user = userFactary.CreateUser(user);
 
-            ShowWindowToUser(this._user);
+            ShowWindowToUser(_user);
             ShowSpectacle();
-            userInfo.Text = $"{this._user.Login}";
+            userInfo.Text = $"{_user.Login}";
 
         }
         public void ShowWindowToUser(Administrator user)
@@ -74,14 +78,14 @@ namespace App
         {
             dataGridView1.Rows.Clear();
 
-            IEnumerable<SpectacleModel> spectacles = this._user.ViewSpectacle();
+            IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle();
  
             foreach (SpectacleModel spectacle in spectacles)
             {
   
                     dataGridView1.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
-                                           $"{spectacle.Categories[Categorias.VIP]} p.", $"{spectacle.Categories[Categorias.Medium]} p.",
-                                           $"{spectacle.Categories[Categorias.Standart]} p.");
+                                           $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
+                                           $"{spectacle.Categories[Categorias.Standart]}");
 
                 mainExpString.Text = "";
             }
@@ -92,15 +96,15 @@ namespace App
             dataGridView1.Rows.Clear();
 
             try {
-                IEnumerable<SpectacleModel> spectacles = this._user.ViewSpectacle(ganre);
+                IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle(ganre);
 
 
                 foreach (SpectacleModel spectacle in spectacles)
                 {
 
                     dataGridView1.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
-                                           $"{spectacle.Categories[Categorias.VIP]} p.", $"{spectacle.Categories[Categorias.Medium]} p.",
-                                           $"{spectacle.Categories[Categorias.Standart]} p.");
+                                           $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
+                                           $"{spectacle.Categories[Categorias.Standart]}");
 
                     mainExpString.Text = "";
                 }
@@ -117,11 +121,11 @@ namespace App
 
             try
             {
-                SpectacleModel spectacle = this._user.ViewSpectacle(date);
+                SpectacleModel spectacle = _user.ViewSpectacle(date);
 
                 dataGridView1.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
-                                           $"{spectacle.Categories[Categorias.VIP]} p.", $"{spectacle.Categories[Categorias.Medium]} p.",
-                                           $"{spectacle.Categories[Categorias.Standart]} p.");
+                                           $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
+                                           $"{spectacle.Categories[Categorias.Standart]}");
 
                     mainExpString.Text = "";
                 
@@ -147,14 +151,43 @@ namespace App
         private void searchSpectacleByDate_ValueChanged(object sender, EventArgs e)
         {
             DateTime selectedDate = searchSpectacleByDate.Value;
-
-            MessageBox.Show(selectedDate.ToString("d"));
             ShowSpectacle(selectedDate);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+
+            if (rowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+
+                if(row.Cells[0].Value != null) {
+                    Dictionary<Categorias, decimal> thisCategories = new Dictionary<Categorias, decimal>()
+                        {
+                            { Categorias.VIP, Decimal.Parse(row.Cells[4].Value.ToString())},
+                            { Categorias.Medium, Decimal.Parse(row.Cells[5].Value.ToString())},
+                            { Categorias.Standart, Decimal.Parse(row.Cells[6].Value.ToString())}
+                        };
+
+                    SpectacleModel thisSpectacle = new SpectacleModel
+                    {
+                        Title = row.Cells[0].Value.ToString(),
+                        Genre = row.Cells[1].Value.ToString(),
+                        Author = row.Cells[2].Value.ToString(),
+                        Date = DateTime.Parse(row.Cells[3].Value.ToString()),
+                        Categories = thisCategories
+                    };
+                    ticketBuyForm.ShowDialog(thisSpectacle, _user);
+                    ShowSpectacle();
+                }
+
+                
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

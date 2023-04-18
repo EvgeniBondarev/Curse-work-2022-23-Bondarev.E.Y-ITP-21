@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 358);
+            this.ClientSize = new System.Drawing.Size(374, 351);
             this.Controls.Add(this.userPasswordLable);
             this.Controls.Add(this.userNameLable);
             this.Controls.Add(this.exptRegisterLable);
@@ -107,7 +107,7 @@
             this.Controls.Add(this.newUserNameForm);
             this.Controls.Add(this.registerButtog);
             this.Name = "RegistrForm";
-            this.Text = "Form1";
+            this.Text = "Регистрация";
             this.Load += new System.EventHandler(this.RegistrForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

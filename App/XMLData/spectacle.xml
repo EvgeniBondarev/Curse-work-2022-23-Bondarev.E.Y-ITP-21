@@ -1,74 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <spectacles>
-	
-	<spectacle>
-		<title>Горе от ума</title>
-		<author>Пушкин</author>
-		<genre>Комедия</genre>
-		<date>2023-04-18</date>
-		<category name="VIP">200</category>
-		<category name="Medium">250</category>
-		<category name="Standart">25</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Евгений Онегин</title>
-		<author>Пушкин</author>
-		<genre>Драма</genre>
-		<date>2023-05-10</date>
-		<category name="VIP">300</category>
-		<category name="Medium">200</category>
-		<category name="Standart">20</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Ревизор</title>
-		<author>Гоголь</author>
-		<genre>Комедия</genre>
-		<date>2023-02-15</date>
-		<category name="VIP">150</category>
-		<category name="Medium">100</category>
-		<category name="Standart">15</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Вишневый сад</title>
-		<author>Чехов</author>
-		<genre>Драма</genre>
-		<date>2023-08-08</date>
-		<category name="VIP">250</category>
-		<category name="Medium">150</category>
-		<category name="Standart">30</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Мастер и Маргарита</title>
-		<author>Булгаков</author>
-		<genre>Фантастика</genre>
-		<date>2023-06-02</date>
-		<category name="VIP">400</category>
-		<category name="Medium">300</category>
-		<category name="Standart">40</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Шекспировский фестиваль</title>
-		<author>Шекспир</author>
-		<genre>Драма</genre>
-		<date>2023-05-15</date>
-		<category name="VIP">500</category>
-		<category name="Medium">400</category>
-		<category name="Standart">50</category>
-	</spectacle>
-	
-	<spectacle>
-		<title>Бесприданница</title>
-		<author>Островский</author>
-		<genre>Комедия</genre>
-		<date>2023-11-12</date>
-		<category name="VIP">180</category>
-		<category name="Medium">120</category>
-		<category name="Standart">18</category>
-	</spectacle>
-	
+  <spectacle>
+    <title>Горе от ума</title>
+    <author>Пушкин</author>
+    <genre>Комедия</genre>
+    <date>2023-04-18</date>
+    <category name="VIP">301</category>
+    <category name="Medium">250</category>
+    <category name="Standart">25</category>
+  </spectacle>
+  <spectacle>
+    <title>Евгений Онегин</title>
+    <author>Пушкин</author>
+    <genre>Комедия</genre>
+    <date>2023-04-19</date>
+    <category name="VIP">302</category>
+    <category name="Medium">250</category>
+    <category name="Standart">25</category>
+  </spectacle>
+  <spectacle>
+    <title>Ревизор</title>
+    <author>Гоголь</author>
+    <genre>Комедия</genre>
+    <date>2023-02-15</date>
+    <category name="VIP">150</category>
+    <category name="Medium">100</category>
+    <category name="Standart">15</category>
+  </spectacle>
+  <spectacle>
+    <title>Вишневый сад</title>
+    <author>Чехов</author>
+    <genre>Драма</genre>
+    <date>2023-08-08</date>
+    <category name="VIP">250</category>
+    <category name="Medium">150</category>
+    <category name="Standart">30</category>
+  </spectacle>
+  <spectacle>
+    <title>Мастер и Маргарита</title>
+    <author>Булгаков</author>
+    <genre>Фантастика</genre>
+    <date>2023-06-02</date>
+    <category name="VIP">400</category>
+    <category name="Medium">300</category>
+    <category name="Standart">40</category>
+  </spectacle>
+  <spectacle>
+    <title>Шекспировский фестиваль</title>
+    <author>Шекспир</author>
+    <genre>Драма</genre>
+    <date>2023-05-15</date>
+    <category name="VIP">500</category>
+    <category name="Medium">400</category>
+    <category name="Standart">50</category>
+  </spectacle>
 </spectacles>

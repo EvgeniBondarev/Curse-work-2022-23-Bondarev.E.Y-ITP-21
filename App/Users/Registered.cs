@@ -19,9 +19,9 @@ public class Registered : User
         _userServices.UpdateUserByName(userName, newPassword, "registered");
     }
 
-    public IEnumerable<TicketModel> GetTicket(string owner)
+    public IEnumerable<TicketModel> GetTicket()
     {
-        return _ticketServices.GetTicket(owner);
+        return _ticketServices.GetTicket(this.Login);
     }
 
     public TicketModel GetTicket(DateTime date)

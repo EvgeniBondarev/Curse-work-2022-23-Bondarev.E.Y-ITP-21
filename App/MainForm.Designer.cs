@@ -52,7 +52,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 57);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(797, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(797, 288);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -80,9 +80,9 @@
             this.mainExpString.ForeColor = System.Drawing.Color.Brown;
             this.mainExpString.Location = new System.Drawing.Point(12, 12);
             this.mainExpString.Name = "mainExpString";
-            this.mainExpString.Size = new System.Drawing.Size(35, 13);
+            this.mainExpString.Size = new System.Drawing.Size(46, 13);
             this.mainExpString.TabIndex = 6;
-            this.mainExpString.Text = "label1";
+            this.mainExpString.Text = "ERROR";
             // 
             // searchSpectacleByDate
             // 

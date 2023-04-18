@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 359);
+            this.ClientSize = new System.Drawing.Size(374, 351);
             this.Controls.Add(this.userPasswordLable);
             this.Controls.Add(this.userNameLable);
             this.Controls.Add(this.registerButton);
@@ -130,7 +130,7 @@
             this.Controls.Add(this.userNameForm);
             this.Controls.Add(this.logInButtog);
             this.Name = "LoginForm";
-            this.Text = "X";
+            this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

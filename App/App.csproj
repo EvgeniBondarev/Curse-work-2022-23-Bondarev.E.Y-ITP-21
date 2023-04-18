@@ -79,6 +79,12 @@
     <Compile Include="Services\ISpectacleServices.cs" />
     <Compile Include="Services\TicketServices.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="TicketBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketBuyForm.Designer.cs">
+      <DependentUpon>TicketBuyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserFactory.cs" />
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Guest.cs" />
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketBuyForm.resx">
+      <DependentUpon>TicketBuyForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
