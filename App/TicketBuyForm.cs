@@ -60,6 +60,19 @@ namespace App
 
             return base.ShowDialog();
         }
+        public new DialogResult ShowDialog(Administrator user)
+        {
+            AdminBuyPanel.Visible = true;
+            RegisterBuyPanel.Visible = false;
+
+            _owner = user;
+
+            changeTiket.Text = "Добавить";
+            changeTiket.Location = new Point((this.ClientSize.Width - changeTiket.Width) / 2, 297);
+            delSpectacle.Visible = false;
+
+            return base.ShowDialog();
+        }
         public new DialogResult ShowDialog(SpectacleModel thisSpectacle, Registered user)
         {
 
@@ -84,6 +97,7 @@ namespace App
         {
 
         }
+        
         private void BuyTicket_Click(object sender, EventArgs e)
         {
             try{
@@ -108,16 +122,25 @@ namespace App
         }
         private void changeTiket_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, newGenreName.Text, newDateName.Value,
-                                   newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
+            try {
+                if (changeTiket.Text == "Изменить")
+                {
+                    _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, newGenreName.Text, newDateName.Value,
+                                       newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
+                }
+                else if (changeTiket.Text == "Добавить")
+                {
+                    _owner.AddSpectacle(newSpectacleName.Text, newAuthorName.Text, newGenreName.Text, newDateName.Value,
+                                       newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);                  
+                }
                 this.Close();
             }
-            catch (ArgumentException exp)
+            catch(ArgumentException exp)
             {
                 MessageBox.Show(exp.Message);
             }
+            
+            
         }
         private void delSpectacle_Click(object sender, EventArgs e)
         {
@@ -131,7 +154,7 @@ namespace App
                 MessageBox.Show(exp.Message);
             }
         }
-
+        // TODO: переделать для изитнение даты
         private void newDateName_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -146,8 +169,7 @@ namespace App
                 changeTiket.Text = "Добавить";
                 changeTiket.Location = new Point((this.ClientSize.Width - changeTiket.Width) / 2, 297);
                 delSpectacle.Visible = false;
-            }
-            
+            } 
         }
 
         private void label5_Click(object sender, EventArgs e)

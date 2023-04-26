@@ -15,9 +15,4 @@ public class SpectacleModel
     public string Genre { get; set; }
     public DateTime Date { get; set; }
     public Dictionary<Categorias, decimal> Categories { get; set; }
-
-    internal DateTime ToString(string v)
-    {
-        throw new NotImplementedException();
-    }
 }

@@ -5,8 +5,8 @@
     <author>Пушкин</author>
     <genre>Комедия</genre>
     <date>2023-04-18</date>
-    <category name="VIP">301</category>
-    <category name="Medium">250</category>
+    <category name="VIP">310</category>
+    <category name="Medium">200</category>
     <category name="Standart">25</category>
   </spectacle>
   <spectacle>
@@ -14,8 +14,8 @@
     <author>Пушкин</author>
     <genre>Комедия</genre>
     <date>2023-04-19</date>
-    <category name="VIP">302</category>
-    <category name="Medium">250</category>
+    <category name="VIP">310</category>
+    <category name="Medium">200</category>
     <category name="Standart">25</category>
   </spectacle>
   <spectacle>

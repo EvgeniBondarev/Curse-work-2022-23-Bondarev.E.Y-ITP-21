@@ -34,6 +34,7 @@
             this.searchSpectacleByGenre = new System.Windows.Forms.TextBox();
             this.mainExpString = new System.Windows.Forms.Label();
             this.searchSpectacleByDate = new System.Windows.Forms.DateTimePicker();
+            this.addSpectacle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // userInfo
             // 
             this.userInfo.AutoSize = true;
-            this.userInfo.Location = new System.Drawing.Point(624, 22);
+            this.userInfo.Location = new System.Drawing.Point(638, 22);
             this.userInfo.Name = "userInfo";
             this.userInfo.Size = new System.Drawing.Size(60, 13);
             this.userInfo.TabIndex = 4;
@@ -92,11 +93,22 @@
             this.searchSpectacleByDate.TabIndex = 7;
             this.searchSpectacleByDate.ValueChanged += new System.EventHandler(this.searchSpectacleByDate_ValueChanged);
             // 
+            // addSpectacle
+            // 
+            this.addSpectacle.Location = new System.Drawing.Point(326, 29);
+            this.addSpectacle.Name = "addSpectacle";
+            this.addSpectacle.Size = new System.Drawing.Size(75, 23);
+            this.addSpectacle.TabIndex = 8;
+            this.addSpectacle.Text = "Добавить";
+            this.addSpectacle.UseVisualStyleBackColor = true;
+            this.addSpectacle.Click += new System.EventHandler(this.addSpectacle_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 450);
+            this.Controls.Add(this.addSpectacle);
             this.Controls.Add(this.searchSpectacleByDate);
             this.Controls.Add(this.mainExpString);
             this.Controls.Add(this.searchSpectacleByGenre);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.TextBox searchSpectacleByGenre;
         private System.Windows.Forms.Label mainExpString;
         private System.Windows.Forms.DateTimePicker searchSpectacleByDate;
+        private System.Windows.Forms.Button addSpectacle;
     }
 }
 

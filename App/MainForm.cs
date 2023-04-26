@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -62,14 +63,19 @@ namespace App
         public void ShowWindowToUser(Administrator user)
         {
             RegistrBut.Text = "Выйти";
+            addSpectacle.Visible = true;
+
+
         }
         public void ShowWindowToUser(Registered user)
         {
             RegistrBut.Text = "Выйти";
+            addSpectacle.Visible= false;
         }
         public void ShowWindowToUser(Guest user)
         {
             RegistrBut.Text = "Регистрация";
+            addSpectacle.Visible = false;
         }
 
 
@@ -89,8 +95,8 @@ namespace App
 
                 mainExpString.Text = "";
             }
+           
         }
-        // TODO: переделать под пустое поле
         public void ShowSpectacle(string ganre)
         {
             dataGridView1.Rows.Clear();
@@ -185,9 +191,20 @@ namespace App
                     ticketBuyForm.ShowDialog(thisSpectacle, _user);
                     ShowSpectacle();
                 }
+                else if(_user is Administrator)
+                {
+                    ticketBuyForm.ShowDialog(_user);
+                    ShowSpectacle();
+                }
 
                 
             }
+        }
+
+        private void addSpectacle_Click(object sender, EventArgs e)
+        {
+            ticketBuyForm.ShowDialog(_user);
+            ShowSpectacle();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -222,6 +239,6 @@ namespace App
 
         }
 
-       
+        
     }
 }

@@ -12,4 +12,10 @@
     <category>Medium</category>
     <price>250</price>
   </ticket>
+  <ticket>
+    <owner>123</owner>
+    <date>2023-04-18</date>
+    <category>Medium</category>
+    <price>200</price>
+  </ticket>
 </tickets>
