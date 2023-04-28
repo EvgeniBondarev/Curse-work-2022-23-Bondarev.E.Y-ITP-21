@@ -11,8 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
-
+using System.IO;
 
 namespace App
 {
@@ -39,14 +38,16 @@ namespace App
             dataGridView1.Columns.Add("VIP", "VIP");
             dataGridView1.Columns.Add("Ложа", "Ложа");
             dataGridView1.Columns.Add("Галерея", "Галерея");
-
         }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {       
             loginForm.ShowDialog();
             dataGridView1.CellClick += dataGridView1_CellClick;
 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 
         }
         public void CreateUser(UserModel user)
@@ -57,23 +58,26 @@ namespace App
 
             ShowWindowToUser(_user);
             ShowSpectacle();
-            userInfo.Text = $"{_user.Login}";
+            userInfo.Text = $"Пользователь: {_user.Login}";
 
         }
         public void ShowWindowToUser(Administrator user)
         {
+            userInfo.Text += $"\nСтатус: {user.Role}";
             RegistrBut.Text = "Выйти";
             addSpectacle.Visible = true;
 
-
+            var a = user.GetAllGenres();
         }
         public void ShowWindowToUser(Registered user)
         {
+            userInfo.Text += $"\nСтатус: {user.Role}";
             RegistrBut.Text = "Выйти";
             addSpectacle.Visible= false;
         }
         public void ShowWindowToUser(Guest user)
         {
+            userInfo.Text += $"\nСтатус: {user.Role}";
             RegistrBut.Text = "Регистрация";
             addSpectacle.Visible = false;
         }
@@ -239,6 +243,9 @@ namespace App
 
         }
 
-        
+        private void ControlPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

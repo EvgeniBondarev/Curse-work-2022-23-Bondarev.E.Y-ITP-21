@@ -26,11 +26,11 @@ namespace App.Services
             throw new ArgumentException($"Пользователь '{userLogin}' не найден.");
             
         }
-        public void AddUser(string login, string password, string role)
+        public void AddUser(string login, string password, Role role)
         {
             UserManager.Add(CreateUserElement(login, password, role));
         }
-        public void UpdateUserByName(string name, string newPassword, string newRole)
+        public void UpdateUserByName(string name, string newPassword, Role newRole)
         {
             UserModel thisUser = UserManager.GetAll().FirstOrDefault(x => x.Login == name);
             if (thisUser != null)
@@ -51,7 +51,7 @@ namespace App.Services
             else throw new ArgumentException($"Пользователь с логином '{userToDelete.Login}' не найден.");
         }
 
-        private UserModel CreateUserElement(string login, string password, string role)
+        private UserModel CreateUserElement(string login, string password, Role role)
         {
             return new UserModel
             {

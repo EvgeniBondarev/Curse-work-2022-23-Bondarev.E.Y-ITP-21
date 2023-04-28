@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace App.Services
 {
@@ -53,6 +54,15 @@ namespace App.Services
                                     decimal newVipPrise, decimal newMediumPrice, decimal newStandartPrice)
         {
             SpectacleManager.Update(CreateSpectacleElement(newTitle, newAuthor, newGenre, date,newVipPrise, newMediumPrice, newStandartPrice));
+        }
+
+        public void AddGanre(string ganreName)
+        {
+            SpectacleManager.AddGenre(ganreName);
+        }
+        public List<string> GetAllGenres()
+        {
+            return SpectacleManager.GetAllGenres();
         }
         public void DeleteSpectacle(DateTime date)
         {

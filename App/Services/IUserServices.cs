@@ -15,10 +15,10 @@ namespace App.Services
         T GetUser(string name);
 
         // Добавление нового пользователя
-        void AddUser(string login, string password, string role);
+        void AddUser(string login, string password, Role role);
 
         // Метод для обновления пользователя по имени
-        void UpdateUserByName(string name, string newPassword, string newRole);
+        void UpdateUserByName(string name, string newPassword, Role newRole);
 
         // Метод для удаления пользователя
         void DeleteUser(string name);

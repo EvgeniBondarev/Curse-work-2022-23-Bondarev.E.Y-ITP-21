@@ -29,7 +29,16 @@ public class Administrator : User
         _spectacleService.DeleteSpectacle(date);
     }
 
-    public void CreateUser(string login, string password, string role)
+    public void AddGanre(string name)
+    {
+        _spectacleService.AddGanre(name);
+    }
+    public List<string> GetAllGenres()
+    {
+        return _spectacleService.GetAllGenres();
+    }
+
+    public void CreateUser(string login, string password, Role role)
     {
        _userServices.AddUser(login, password, role); 
     }
@@ -44,7 +53,7 @@ public class Administrator : User
         return _userServices.GetUser(login);
     }
 
-    public void UpdateUser(string login, string password, string role)
+    public void UpdateUser(string login, string password, Role role)
     {
         _userServices.UpdateUserByName(login, password, role);
     }

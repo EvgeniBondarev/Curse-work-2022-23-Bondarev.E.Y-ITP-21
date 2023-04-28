@@ -3,19 +3,25 @@ using System.Linq;
 using System.Xml.Linq;
 using System;
 using System.Xml.Schema;
+using System.Collections.ObjectModel;
 
 public static  class SpectacleManager
 {
     private static readonly string _xmlFilePath;
+    private static readonly string _xmlGanrePath;
+
     private static readonly XDocument _xmlDoc;
     private static readonly XmlSchemaSet _schemas;
-
+    private static readonly XDocument _genreDoc;
     static SpectacleManager()
     {
         _xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xml";
+        _xmlGanrePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\genres.xml";
+
         _xmlDoc = XDocument.Load(_xmlFilePath);
         _schemas = new XmlSchemaSet();
         _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\spectacle.xsd");
+        _genreDoc = XDocument.Load(_xmlGanrePath);
     }
     public static IEnumerable<SpectacleModel> GetAll()
     {
@@ -24,7 +30,7 @@ public static  class SpectacleManager
         {
             Title = x.Element("title").Value,
             Author = x.Element("author").Value,
-            Genre = x.Element("genre").Value,
+            Genre = GetGenreNameById(Int32.Parse(x.Element("genre").Value)),
             Date = DateTime.Parse(x.Element("date").Value),
             Categories = x.Elements("category").ToDictionary(y => (Categorias)Enum.Parse(typeof(Categorias), y.Attribute("name").Value), y => decimal.Parse(y.Value))
 
@@ -41,10 +47,12 @@ public static  class SpectacleManager
                 throw new ArgumentException($"Спектакль на дату {date.ToShortDateString()} уже существует.");
             }
 
-            var newSpectacle = new XElement("spectacle",
+            int genreId = GetGenreIdByName(item.Genre);
+
+            XElement newSpectacle = new XElement("spectacle",
                 new XElement("title", item.Title),
                 new XElement("author", item.Author),
-                new XElement("genre", item.Genre),
+                new XElement("genre", genreId),
                 new XElement("date", item.Date.ToString("yyyy-MM-dd"))
             );
 
@@ -58,6 +66,39 @@ public static  class SpectacleManager
         }
     }
 
+    private static int GetGenreIdByName(string name)
+    {
+        var genreElement = _genreDoc.Descendants("genre")
+                                    .FirstOrDefault(x => x.Value == name);
+        if (genreElement != null && int.TryParse(genreElement.Attribute("id").Value, out int genreId))
+        {
+            return genreId;
+        }
+        throw new Exception($"Жанр {name} не найден в базе данных.");
+    }
+
+    private static string GetGenreNameById(int id)
+    {
+        var genreElement = _genreDoc.Descendants("genre")
+                                    .FirstOrDefault(x => x.Attribute("id")?.Value == id.ToString());
+        if (genreElement != null)
+        {
+            return genreElement.Value;
+        }
+        throw new Exception($"Жанр с id {id} не найден в базе данных.");
+    }
+
+    public static void AddGenre(string name)
+    {
+        int maxId = _genreDoc.Root.Elements("genre").Select(g => (int)g.Attribute("id")).Max();
+        XElement newGenre = new XElement("genre", new XAttribute("id", maxId + 1), name);
+        _genreDoc.Root.Add(newGenre);
+        _genreDoc.Save(_xmlGanrePath);
+    }
+    public static List<string> GetAllGenres()
+    {
+        return _genreDoc.Root.Elements("genre").Select(x => x.Value).ToList();
+    }
     public static void Update(SpectacleModel item)
     {
         if (DataValidate(item))
@@ -65,7 +106,7 @@ public static  class SpectacleManager
             XElement spectacleToUpdate = GetElement(item);
 
             spectacleToUpdate.SetElementValue("author", item.Author);
-            spectacleToUpdate.SetElementValue("genre", item.Genre);
+            spectacleToUpdate.SetElementValue("genre", GetGenreIdByName(item.Genre).ToString());
             spectacleToUpdate.SetElementValue("date", item.Date.ToString("yyyy-MM-dd"));
 
             foreach (var category in item.Categories)

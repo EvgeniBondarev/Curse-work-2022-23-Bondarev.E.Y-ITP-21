@@ -49,6 +49,8 @@ namespace App
             _spectacleModel = thisSpectacle;
             _owner = user;
 
+            ClearAdminFields();
+
             newSpectacleName.Text = _spectacleModel.Title;
             newAuthorName.Text = _spectacleModel.Author;
             newGenreName.Text = _spectacleModel.Genre;
@@ -82,6 +84,8 @@ namespace App
             _spectacleModel = thisSpectacle;
             _owner = user;
 
+            ClearUserFields();
+
             SpectacleTitle.Text = _spectacleModel.Title;
             SpectacleAuthor.Text = $"Автор: {_spectacleModel.Author}";
             SpectacleGenre.Text = $"Жанр: {_spectacleModel.Genre}";
@@ -93,6 +97,29 @@ namespace App
 
             return base.ShowDialog();
         }
+        private void ClearUserFields()
+        {
+            SpectacleTitle.Text = string.Empty;
+            SpectacleAuthor.Text = string.Empty;
+            SpectacleGenre.Text = string.Empty;
+            SpectacleDate.Text = string.Empty;
+
+            CategoriesRadio1.Text = string.Empty;
+            CategoriesRadio2.Text = string.Empty;
+            CategoriesRadio3.Text = string.Empty;
+        }
+        private void ClearAdminFields()
+        {
+            newSpectacleName.Text = string.Empty;
+            newAuthorName.Text = string.Empty;
+            newGenreName.Text = string.Empty;
+            newDateName.Value = DateTime.Today;
+
+            newVIPPrice.Value = 0;
+            newMediumPrice.Value = 0;
+            newStandartPrice.Value = 0;
+        }
+
         public new void ShowDialog(SpectacleModel thisSpectacle, Guest user)
         {
 
@@ -187,6 +214,9 @@ namespace App
 
         }
 
-        
+        private void newSpectacleName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

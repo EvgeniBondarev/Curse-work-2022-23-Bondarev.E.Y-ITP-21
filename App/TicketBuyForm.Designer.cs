@@ -39,8 +39,15 @@
             this.BuyTicket = new System.Windows.Forms.Button();
             this.RegisterBuyPanel = new System.Windows.Forms.Panel();
             this.AdminBuyPanel = new System.Windows.Forms.Panel();
+            this.delSpectacle = new System.Windows.Forms.Button();
+            this.newDateName = new System.Windows.Forms.DateTimePicker();
             this.changeTiket = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.newStandartPrice = new System.Windows.Forms.NumericUpDown();
+            this.newMediumPrice = new System.Windows.Forms.NumericUpDown();
+            this.newVIPPrice = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.newGenreName = new System.Windows.Forms.TextBox();
@@ -49,20 +56,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.newAuthorName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.newVIPPrice = new System.Windows.Forms.NumericUpDown();
-            this.newMediumPrice = new System.Windows.Forms.NumericUpDown();
-            this.newStandartPrice = new System.Windows.Forms.NumericUpDown();
-            this.newDateName = new System.Windows.Forms.DateTimePicker();
-            this.delSpectacle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.RegisterBuyPanel.SuspendLayout();
             this.AdminBuyPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newVIPPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newMediumPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newStandartPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newMediumPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVIPPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // SpectacleTitle
@@ -200,6 +200,25 @@
             this.AdminBuyPanel.TabIndex = 6;
             this.AdminBuyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminBuyPanel_Paint);
             // 
+            // delSpectacle
+            // 
+            this.delSpectacle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delSpectacle.Location = new System.Drawing.Point(167, 297);
+            this.delSpectacle.Name = "delSpectacle";
+            this.delSpectacle.Size = new System.Drawing.Size(134, 34);
+            this.delSpectacle.TabIndex = 12;
+            this.delSpectacle.Text = "Удалить";
+            this.delSpectacle.UseVisualStyleBackColor = true;
+            this.delSpectacle.Click += new System.EventHandler(this.delSpectacle_Click);
+            // 
+            // newDateName
+            // 
+            this.newDateName.Location = new System.Drawing.Point(85, 125);
+            this.newDateName.Name = "newDateName";
+            this.newDateName.Size = new System.Drawing.Size(192, 20);
+            this.newDateName.TabIndex = 11;
+            this.newDateName.ValueChanged += new System.EventHandler(this.newDateName_ValueChanged);
+            // 
             // changeTiket
             // 
             this.changeTiket.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -226,6 +245,65 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Категория";
+            // 
+            // newStandartPrice
+            // 
+            this.newStandartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newStandartPrice.Location = new System.Drawing.Point(78, 96);
+            this.newStandartPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.newStandartPrice.Name = "newStandartPrice";
+            this.newStandartPrice.Size = new System.Drawing.Size(87, 26);
+            this.newStandartPrice.TabIndex = 9;
+            // 
+            // newMediumPrice
+            // 
+            this.newMediumPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newMediumPrice.Location = new System.Drawing.Point(62, 60);
+            this.newMediumPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.newMediumPrice.Name = "newMediumPrice";
+            this.newMediumPrice.Size = new System.Drawing.Size(87, 26);
+            this.newMediumPrice.TabIndex = 8;
+            // 
+            // newVIPPrice
+            // 
+            this.newVIPPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newVIPPrice.Location = new System.Drawing.Point(47, 27);
+            this.newVIPPrice.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.newVIPPrice.Name = "newVIPPrice";
+            this.newVIPPrice.Size = new System.Drawing.Size(87, 26);
+            this.newVIPPrice.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(6, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Галерея";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Ложа";
             // 
             // label5
             // 
@@ -273,6 +351,7 @@
             this.newSpectacleName.Name = "newSpectacleName";
             this.newSpectacleName.Size = new System.Drawing.Size(171, 29);
             this.newSpectacleName.TabIndex = 4;
+            this.newSpectacleName.TextChanged += new System.EventHandler(this.newSpectacleName_TextChanged);
             // 
             // label2
             // 
@@ -302,84 +381,6 @@
             this.newAuthorName.Size = new System.Drawing.Size(192, 29);
             this.newAuthorName.TabIndex = 0;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Ложа";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 102);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Галерея";
-            // 
-            // newVIPPrice
-            // 
-            this.newVIPPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newVIPPrice.Location = new System.Drawing.Point(47, 27);
-            this.newVIPPrice.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.newVIPPrice.Name = "newVIPPrice";
-            this.newVIPPrice.Size = new System.Drawing.Size(87, 26);
-            this.newVIPPrice.TabIndex = 7;
-            // 
-            // newMediumPrice
-            // 
-            this.newMediumPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newMediumPrice.Location = new System.Drawing.Point(62, 60);
-            this.newMediumPrice.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.newMediumPrice.Name = "newMediumPrice";
-            this.newMediumPrice.Size = new System.Drawing.Size(87, 26);
-            this.newMediumPrice.TabIndex = 8;
-            // 
-            // newStandartPrice
-            // 
-            this.newStandartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newStandartPrice.Location = new System.Drawing.Point(78, 96);
-            this.newStandartPrice.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.newStandartPrice.Name = "newStandartPrice";
-            this.newStandartPrice.Size = new System.Drawing.Size(87, 26);
-            this.newStandartPrice.TabIndex = 9;
-            // 
-            // newDateName
-            // 
-            this.newDateName.Location = new System.Drawing.Point(85, 125);
-            this.newDateName.Name = "newDateName";
-            this.newDateName.Size = new System.Drawing.Size(192, 20);
-            this.newDateName.TabIndex = 11;
-            this.newDateName.ValueChanged += new System.EventHandler(this.newDateName_ValueChanged);
-            // 
-            // delSpectacle
-            // 
-            this.delSpectacle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delSpectacle.Location = new System.Drawing.Point(167, 297);
-            this.delSpectacle.Name = "delSpectacle";
-            this.delSpectacle.Size = new System.Drawing.Size(134, 34);
-            this.delSpectacle.TabIndex = 12;
-            this.delSpectacle.Text = "Удалить";
-            this.delSpectacle.UseVisualStyleBackColor = true;
-            this.delSpectacle.Click += new System.EventHandler(this.delSpectacle_Click);
-            // 
             // TicketBuyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,9 +399,9 @@
             this.AdminBuyPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newVIPPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newMediumPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newStandartPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newMediumPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVIPPrice)).EndInit();
             this.ResumeLayout(false);
 
         }

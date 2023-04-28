@@ -16,7 +16,7 @@ public class Registered : User
 
     public void UpdateUser(string userName, string newPassword)
     {
-        _userServices.UpdateUserByName(userName, newPassword, "registered");
+        _userServices.UpdateUserByName(userName, newPassword, Role.registered);
     }
 
     public IEnumerable<TicketModel> GetTicket()

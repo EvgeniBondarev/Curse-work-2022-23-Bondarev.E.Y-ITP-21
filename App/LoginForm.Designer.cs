@@ -63,6 +63,7 @@
             this.userPasswordForm.Name = "userPasswordForm";
             this.userPasswordForm.Size = new System.Drawing.Size(178, 29);
             this.userPasswordForm.TabIndex = 2;
+            this.userPasswordForm.TextChanged += new System.EventHandler(this.userPasswordForm_TextChanged);
             // 
             // exptLable
             // 

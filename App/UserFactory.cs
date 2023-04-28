@@ -23,11 +23,11 @@ namespace App
         public User CreateUser(UserModel checkUser)
         {
             User user= null;
-            if (checkUser.Role == "admin") 
+            if (checkUser.Role == Role.admin) 
             {
                 user = new Administrator(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
             }
-            else if (checkUser.Role == "registered")
+            else if (checkUser.Role == Role.registered)
             {
                 user = new Registered(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
             }

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<genres>
+  <genre id="1">Комедия</genre>
+  <genre id="2">Драма</genre>
+  <genre id="3">Фантастика</genre>
+  <genre id="4">testGanre</genre>
+</genres>

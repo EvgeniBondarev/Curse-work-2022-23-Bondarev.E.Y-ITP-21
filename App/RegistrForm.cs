@@ -13,8 +13,6 @@ namespace App
 {
     public partial class RegistrForm : Form
     {
-        private string xmlFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xml";
-        private string xsdFilePath = "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd";
         private UserServices userServices;
         public RegistrForm()
         {
@@ -33,6 +31,7 @@ namespace App
         {
             exptRegisterLable.Text = "";
             newUserNameForm.Text = "";
+            newUserPasswordForm.PasswordChar = '*';
             newUserPasswordForm.Text = "";
         }
         private void Registr()
@@ -49,7 +48,7 @@ namespace App
             {
                 try
                 {
-                    userServices.AddUser(newUserName, newUserPassword, "registered");
+                    userServices.AddUser(newUserName, newUserPassword, Role.registered);
                     this.Close();
 
                 }

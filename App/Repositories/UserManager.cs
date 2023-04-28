@@ -27,7 +27,7 @@ public static class UserManager
             {
                 Login = u.Element("login").Value,
                 Password = u.Element("password").Value,
-                Role = u.Element("role").Value
+                Role = (Role)Enum.Parse(typeof(Role), u.Element("role").Value)
             });
     }
 
@@ -75,7 +75,7 @@ public static class UserManager
         if (userToUpdate != null)
         {
             userToUpdate.Element("password").Value = user.Password;
-            userToUpdate.Element("role").Value = user.Role;
+            userToUpdate.Element("role").Value = user.Role.ToString();
             _xmlDoc.Save(_xmlFilePath);
         }
     }

@@ -129,6 +129,7 @@
     <Content Include="XMLData\spectacle.xml" />
     <Content Include="XMLData\tickets.xml" />
     <Content Include="XMLData\users.xml" />
+    <Content Include="XMLData\genres.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,12 +35,13 @@ namespace App
         }
         private void skipButton_Click(object sender, EventArgs e)
         {
-            UserModel nullUser = new UserModel() { Login = null, Password = null, Role = null };
+            UserModel nullUser = new UserModel() { Login = null, Password = null, Role = Role.guest};
             _maiForm.CreateUser(nullUser);
             this.Close();
         }
         private void RegisterForm_Load(object sender, EventArgs e)
         {
+            userPasswordForm.PasswordChar = '*';
             exptLable.Text = "";
  
         }
@@ -78,6 +79,11 @@ namespace App
                     userNameForm.Text = userPasswordForm.Text = "";
                 }
             }
+        }
+
+        private void userPasswordForm_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
