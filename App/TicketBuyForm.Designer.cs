@@ -43,6 +43,7 @@
             this.newDateName = new System.Windows.Forms.DateTimePicker();
             this.changeTiket = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GanreBox = new System.Windows.Forms.ComboBox();
             this.newStandartPrice = new System.Windows.Forms.NumericUpDown();
             this.newMediumPrice = new System.Windows.Forms.NumericUpDown();
             this.newVIPPrice = new System.Windows.Forms.NumericUpDown();
@@ -50,7 +51,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.newGenreName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.newSpectacleName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -183,12 +183,12 @@
             // 
             // AdminBuyPanel
             // 
+            this.AdminBuyPanel.Controls.Add(this.GanreBox);
             this.AdminBuyPanel.Controls.Add(this.delSpectacle);
             this.AdminBuyPanel.Controls.Add(this.newDateName);
             this.AdminBuyPanel.Controls.Add(this.changeTiket);
             this.AdminBuyPanel.Controls.Add(this.groupBox2);
             this.AdminBuyPanel.Controls.Add(this.label4);
-            this.AdminBuyPanel.Controls.Add(this.newGenreName);
             this.AdminBuyPanel.Controls.Add(this.label3);
             this.AdminBuyPanel.Controls.Add(this.newSpectacleName);
             this.AdminBuyPanel.Controls.Add(this.label2);
@@ -245,6 +245,16 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Категория";
+            // 
+            // GanreBox
+            // 
+            this.GanreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GanreBox.FormattingEnabled = true;
+            this.GanreBox.Location = new System.Drawing.Point(85, 83);
+            this.GanreBox.Name = "GanreBox";
+            this.GanreBox.Size = new System.Drawing.Size(192, 32);
+            this.GanreBox.TabIndex = 13;
+            this.GanreBox.SelectedIndexChanged += new System.EventHandler(this.GanreBox_SelectedIndexChanged);
             // 
             // newStandartPrice
             // 
@@ -325,14 +335,6 @@
             this.label4.Size = new System.Drawing.Size(64, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "Дата: ";
-            // 
-            // newGenreName
-            // 
-            this.newGenreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newGenreName.Location = new System.Drawing.Point(85, 82);
-            this.newGenreName.Name = "newGenreName";
-            this.newGenreName.Size = new System.Drawing.Size(192, 29);
-            this.newGenreName.TabIndex = 6;
             // 
             // label3
             // 
@@ -422,7 +424,6 @@
         private System.Windows.Forms.TextBox newAuthorName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox newGenreName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox newSpectacleName;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -436,5 +437,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker newDateName;
         private System.Windows.Forms.Button delSpectacle;
+        private System.Windows.Forms.ComboBox GanreBox;
     }
 }

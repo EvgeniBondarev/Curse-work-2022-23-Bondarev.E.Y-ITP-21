@@ -3,7 +3,7 @@
   <spectacle>
     <title>Горе от ума</title>
     <author>Пушкин</author>
-    <genre>1</genre>
+    <genre>6</genre>
     <date>2023-04-18</date>
     <category name="VIP">310</category>
     <category name="Medium">200</category>
@@ -48,19 +48,19 @@
   <spectacle>
     <title>Шекспировский фестиваль</title>
     <author>Шекспир</author>
-    <genre>2</genre>
+    <genre>3</genre>
     <date>2023-05-15</date>
     <category name="VIP">500</category>
     <category name="Medium">400</category>
     <category name="Standart">50</category>
   </spectacle>
   <spectacle>
-    <title>Горе от ума</title>
-    <author>Пушкин</author>
-    <genre>1</genre>
-    <date>2023-05-03</date>
-    <category name="VIP">310</category>
-    <category name="Medium">200</category>
-    <category name="Standart">25</category>
+    <title>sads</title>
+    <author>asdasd</author>
+    <genre>4</genre>
+    <date>2023-05-01</date>
+    <category name="VIP">12</category>
+    <category name="Medium">213</category>
+    <category name="Standart">123</category>
   </spectacle>
 </spectacles>

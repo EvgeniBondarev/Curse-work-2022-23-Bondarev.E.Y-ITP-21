@@ -66,7 +66,7 @@ public static  class SpectacleManager
         }
     }
 
-    private static int GetGenreIdByName(string name)
+    public static int GetGenreIdByName(string name)
     {
         var genreElement = _genreDoc.Descendants("genre")
                                     .FirstOrDefault(x => x.Value == name);
@@ -74,7 +74,7 @@ public static  class SpectacleManager
         {
             return genreId;
         }
-        throw new Exception($"Жанр {name} не найден в базе данных.");
+        throw new ArgumentException($"Жанр {name} не найден в базе данных.");
     }
 
     private static string GetGenreNameById(int id)
@@ -85,7 +85,7 @@ public static  class SpectacleManager
         {
             return genreElement.Value;
         }
-        throw new Exception($"Жанр с id {id} не найден в базе данных.");
+        throw new ArgumentException($"Жанр с id {id} не найден в базе данных.");
     }
 
     public static void AddGenre(string name)

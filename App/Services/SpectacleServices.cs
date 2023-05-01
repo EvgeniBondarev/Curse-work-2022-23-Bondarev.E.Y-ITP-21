@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+
 
 namespace App.Services
 {
@@ -63,6 +61,10 @@ namespace App.Services
         public List<string> GetAllGenres()
         {
             return SpectacleManager.GetAllGenres();
+        }
+        public int GetGenreIdByName(string name)
+        {
+            return SpectacleManager.GetGenreIdByName(name);
         }
         public void DeleteSpectacle(DateTime date)
         {

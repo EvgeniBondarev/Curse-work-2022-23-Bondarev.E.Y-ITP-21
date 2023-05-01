@@ -37,6 +37,10 @@ public class Administrator : User
     {
         return _spectacleService.GetAllGenres();
     }
+    public int GetGenreIdByName(string name)
+    {
+        return _spectacleService.GetGenreIdByName(name);
+    }
 
     public void CreateUser(string login, string password, Role role)
     {

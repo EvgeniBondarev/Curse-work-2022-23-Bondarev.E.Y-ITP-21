@@ -53,8 +53,11 @@ namespace App
 
             newSpectacleName.Text = _spectacleModel.Title;
             newAuthorName.Text = _spectacleModel.Author;
-            newGenreName.Text = _spectacleModel.Genre;
+            GanreBox.Text = _spectacleModel.Genre;
             newDateName.Value = _spectacleModel.Date;
+
+            GanreBox.Items.Clear();
+            GanreBox.Items.AddRange(_owner.GetAllGenres().ToArray());
 
             newVIPPrice.Value = _spectacleModel.Categories[Categorias.VIP];
             newMediumPrice.Value = _spectacleModel.Categories[Categorias.Medium];
@@ -68,6 +71,9 @@ namespace App
             RegisterBuyPanel.Visible = false;
 
             _owner = user;
+
+            GanreBox.Items.Clear();
+            GanreBox.Items.AddRange(_owner.GetAllGenres().ToArray());
 
             changeTiket.Text = "Добавить";
             changeTiket.Location = new Point((this.ClientSize.Width - changeTiket.Width) / 2, 297);
@@ -97,6 +103,10 @@ namespace App
 
             return base.ShowDialog();
         }
+        public new void ShowDialog(SpectacleModel thisSpectacle, Guest user)
+        {
+
+        }
         private void ClearUserFields()
         {
             SpectacleTitle.Text = string.Empty;
@@ -112,7 +122,7 @@ namespace App
         {
             newSpectacleName.Text = string.Empty;
             newAuthorName.Text = string.Empty;
-            newGenreName.Text = string.Empty;
+            GanreBox.Text = string.Empty;
             newDateName.Value = DateTime.Today;
 
             newVIPPrice.Value = 0;
@@ -120,10 +130,7 @@ namespace App
             newStandartPrice.Value = 0;
         }
 
-        public new void ShowDialog(SpectacleModel thisSpectacle, Guest user)
-        {
-
-        }
+        
         
         private void BuyTicket_Click(object sender, EventArgs e)
         {
@@ -149,15 +156,29 @@ namespace App
         }
         private void changeTiket_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _owner.GetGenreIdByName(GanreBox.Text);
+            }
+            catch (ArgumentException exp)
+            {
+                DialogResult addGanreMessage = MessageBox.Show($"{exp.Message}\nДобавить жанр?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (addGanreMessage == DialogResult.Yes)
+                {
+                    _owner.AddGanre(GanreBox.Text);
+                }
+                return;
+            }
             try {
                 if (changeTiket.Text == "Изменить")
                 {
-                    _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, newGenreName.Text, newDateName.Value,
+                    _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, GanreBox.Text, newDateName.Value,
                                        newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
                 }
                 else if (changeTiket.Text == "Добавить")
                 {
-                    _owner.AddSpectacle(newSpectacleName.Text, newAuthorName.Text, newGenreName.Text, newDateName.Value,
+                    _owner.AddSpectacle(newSpectacleName.Text, newAuthorName.Text, GanreBox.Text, newDateName.Value,
                                        newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);                  
                 }
                 this.Close();
@@ -165,8 +186,10 @@ namespace App
             catch(ArgumentException exp)
             {
                 MessageBox.Show(exp.Message);
-            }
-            
+            } 
+        }
+        private void GanreBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
         }
         private void delSpectacle_Click(object sender, EventArgs e)
@@ -218,5 +241,7 @@ namespace App
         {
 
         }
+
+        
     }
 }

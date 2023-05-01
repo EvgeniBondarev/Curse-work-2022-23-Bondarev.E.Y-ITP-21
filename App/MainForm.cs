@@ -66,8 +66,6 @@ namespace App
             userInfo.Text += $"\nСтатус: {user.Role}";
             RegistrBut.Text = "Выйти";
             addSpectacle.Visible = true;
-
-            var a = user.GetAllGenres();
         }
         public void ShowWindowToUser(Registered user)
         {
