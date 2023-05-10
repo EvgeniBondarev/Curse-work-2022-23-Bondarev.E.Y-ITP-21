@@ -12,3 +12,4 @@ C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.LoginForm.resources
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.RegistrForm.resources
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.MainForm.resources
 C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.TicketBuyForm.resources
+C:\Users\Evgeni\Desktop\CourseWork\App\obj\Debug\App.UserTicketsForm.resources

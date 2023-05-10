@@ -23,20 +23,23 @@ public class Registered : User
     {
         return _ticketServices.GetTicket(this.Login);
     }
-
-    public TicketModel GetTicket(DateTime date)
+    public IEnumerable<TicketModel> GetTicket(string owner)
     {
-        return _ticketServices.GetTicket(date);
+        return _ticketServices.GetTicket(owner);
     }
-
+    public TicketModel GetTicket(int id)
+    {
+        return _ticketServices.GetTicket(id);
+    }
+    
     public void AddTicket(string userName, DateTime spectacleDate, Categorias category)
     {
-        _ticketServices.AddTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+        _ticketServices.AddTicket(userName, GetThisSpectacle(spectacleDate), category);
     }
 
-    public void DeletTicket(string userName, DateTime spectacleDate, Categorias category)
+    public void DeletTicket(int id)
     {
-        _ticketServices.DeletTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+        _ticketServices.DeletTicket(id);
     }
 
     private UserModel GetThisUser(string userName)

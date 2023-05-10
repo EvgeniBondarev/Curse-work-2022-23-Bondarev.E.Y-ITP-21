@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Log>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Горе от ума</SpectacleName>
+    <SpectacleDate>18.04.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>310</Price>
+    <Timestamp>2023-05-09T14:52:32.9865272+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Ревизор</SpectacleName>
+    <SpectacleDate>15.02.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>100</Price>
+    <Timestamp>2023-05-09T14:52:36.4979527+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Мастер и Маргарита</SpectacleName>
+    <SpectacleDate>02.06.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>300</Price>
+    <Timestamp>2023-05-09T14:52:40.4838037+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>sads</SpectacleName>
+    <SpectacleDate>01.05.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>12</Price>
+    <Timestamp>2023-05-09T14:52:44.6662882+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Возврат билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>sads</SpectacleName>
+    <SpectacleDate>01.05.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>12</Price>
+    <Timestamp>2023-05-09T15:00:43.5728262+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Возврат билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Горе от ума</SpectacleName>
+    <SpectacleDate>18.04.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>310</Price>
+    <Timestamp>2023-05-09T21:30:18.9390684+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Возврат билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Мастер и Маргарита</SpectacleName>
+    <SpectacleDate>02.06.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>300</Price>
+    <Timestamp>2023-05-09T21:31:01.8663404+03:00</Timestamp>
+  </Operation>
+</Log>

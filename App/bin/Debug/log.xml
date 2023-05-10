@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Log>
+  <Operation>
+    <Method>AddTicket</Method>
+    <Arguments>123Горе от умаMedium</Arguments>
+    <Timestamp>2023-05-09T14:05:11.6454534+03:00</Timestamp>
+    <Assembly>App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+  </Operation>
+</Log>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,14 @@ namespace App
     public partial class TicketBuyForm : Form
     {
         private SpectacleModel _spectacleModel;
+        private TicketServices _ticketServices;
+        private TicketServicesXmlLoggingDecorator _ticketServicesLog;
         private dynamic _owner;
       
         public TicketBuyForm()
         {
+            _ticketServices = new TicketServices();
+            _ticketServicesLog = new TicketServicesXmlLoggingDecorator(_ticketServices);
             InitializeComponent();
         }
 
@@ -43,13 +48,13 @@ namespace App
         // TODO: Если другая дата, то создать новый спектакль
         public new DialogResult ShowDialog(SpectacleModel thisSpectacle, Administrator user)
         {
+            ClearAdminFields();
+
             AdminBuyPanel.Visible = true;
             RegisterBuyPanel.Visible = false;
 
             _spectacleModel = thisSpectacle;
             _owner = user;
-
-            ClearAdminFields();
 
             newSpectacleName.Text = _spectacleModel.Title;
             newAuthorName.Text = _spectacleModel.Author;
@@ -67,6 +72,8 @@ namespace App
         }
         public new DialogResult ShowDialog(Administrator user)
         {
+            ClearAdminFields();
+
             AdminBuyPanel.Visible = true;
             RegisterBuyPanel.Visible = false;
 
@@ -83,14 +90,13 @@ namespace App
         }
         public new DialogResult ShowDialog(SpectacleModel thisSpectacle, Registered user)
         {
+            ClearUserFields();
 
             AdminBuyPanel.Visible = false;
             RegisterBuyPanel.Visible = true;
 
             _spectacleModel = thisSpectacle;
             _owner = user;
-
-            ClearUserFields();
 
             SpectacleTitle.Text = _spectacleModel.Title;
             SpectacleAuthor.Text = $"Автор: {_spectacleModel.Author}";
@@ -145,7 +151,7 @@ namespace App
                 else throw new ArgumentException("Ни одина категория не выбрана");
     
 
-                _owner.AddTicket(_owner.Login, _spectacleModel.Date, category);
+                _ticketServicesLog.AddTicket(_owner.Login, _spectacleModel, category);
                 this.Close();
             }
             catch(ArgumentException exp)
@@ -174,12 +180,12 @@ namespace App
                 if (changeTiket.Text == "Изменить")
                 {
                     _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, GanreBox.Text, newDateName.Value,
-                                       newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
+                                           newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
                 }
                 else if (changeTiket.Text == "Добавить")
                 {
                     _owner.AddSpectacle(newSpectacleName.Text, newAuthorName.Text, GanreBox.Text, newDateName.Value,
-                                       newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);                  
+                                        newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);                  
                 }
                 this.Close();
             }

@@ -6,6 +6,7 @@ public class Administrator : User
 {
     private UserServices _userServices;
     private TicketServices _ticketServices;
+    
     public Administrator(SpectacleServices spectacleService, UserServices userServices, TicketServices ticketServices) : base(spectacleService)
     {
         _userServices = userServices;
@@ -42,7 +43,7 @@ public class Administrator : User
         return _spectacleService.GetGenreIdByName(name);
     }
 
-    public void CreateUser(string login, string password, Role role)
+    public void AddeUser(string login, string password, Role role)
     {
        _userServices.AddUser(login, password, role); 
     }
@@ -76,19 +77,19 @@ public class Administrator : User
         return _ticketServices.GetTicket();
     }
 
-    public TicketModel GetTicket(DateTime date)
+    public TicketModel GetTicket(int id)
     {
-        return _ticketServices.GetTicket(date);
+        return _ticketServices.GetTicket(id);
     }
 
     public void AddTicket(string userName, DateTime spectacleDate, Categorias category)
     {
-        _ticketServices.AddTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+        _ticketServices.AddTicket(userName, GetThisSpectacle(spectacleDate), category);
     }
 
-    public void DeletTicket(string userName, DateTime spectacleDate, Categorias category)
+    public void DeletTicket(int id)
     {
-        _ticketServices.DeletTicket(GetThisUser(userName), GetThisSpectacle(spectacleDate), category);
+        _ticketServices.DeletTicket(id);
     }
 
     private UserModel GetThisUser(string userName)

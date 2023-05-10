@@ -28,15 +28,6 @@
     <category name="Standart">15</category>
   </spectacle>
   <spectacle>
-    <title>Вишневый сад</title>
-    <author>Чехов</author>
-    <genre>2</genre>
-    <date>2023-08-08</date>
-    <category name="VIP">250</category>
-    <category name="Medium">150</category>
-    <category name="Standart">30</category>
-  </spectacle>
-  <spectacle>
     <title>Мастер и Маргарита</title>
     <author>Булгаков</author>
     <genre>3</genre>

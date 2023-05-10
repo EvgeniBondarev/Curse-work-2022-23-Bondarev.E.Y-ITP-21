@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -47,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logs\XmlToExcel.cs" />
+    <Compile Include="Logs\TicketServicesXmlLoggingDecorator .cs" />
     <Compile Include="RegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     <Compile Include="Users\Guest.cs" />
     <Compile Include="Users\Registered.cs" />
     <Compile Include="Users\User.cs" />
+    <Compile Include="UserTicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserTicketsForm.Designer.cs">
+      <DependentUpon>UserTicketsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="RegistrForm.resx">
       <DependentUpon>RegistrForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -111,7 +124,11 @@
     <EmbeddedResource Include="TicketBuyForm.resx">
       <DependentUpon>TicketBuyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserTicketsForm.resx">
+      <DependentUpon>UserTicketsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,6 +143,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\icons\del-24.png" />
+    <None Include="img\icons\add-24.png" />
+    <None Include="img\icons\user-48.png" />
     <Content Include="XMLData\spectacle.xml" />
     <Content Include="XMLData\tickets.xml" />
     <Content Include="XMLData\users.xml" />

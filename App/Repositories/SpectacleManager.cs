@@ -36,7 +36,7 @@ public static  class SpectacleManager
 
         });
     }
-
+ 
     public static void Add(SpectacleModel item)
     {
         if (DataValidate(item))

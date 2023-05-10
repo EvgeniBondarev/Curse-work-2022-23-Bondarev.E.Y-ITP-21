@@ -39,11 +39,11 @@
             this.BuyTicket = new System.Windows.Forms.Button();
             this.RegisterBuyPanel = new System.Windows.Forms.Panel();
             this.AdminBuyPanel = new System.Windows.Forms.Panel();
+            this.GanreBox = new System.Windows.Forms.ComboBox();
             this.delSpectacle = new System.Windows.Forms.Button();
             this.newDateName = new System.Windows.Forms.DateTimePicker();
             this.changeTiket = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.GanreBox = new System.Windows.Forms.ComboBox();
             this.newStandartPrice = new System.Windows.Forms.NumericUpDown();
             this.newMediumPrice = new System.Windows.Forms.NumericUpDown();
             this.newVIPPrice = new System.Windows.Forms.NumericUpDown();
@@ -200,6 +200,16 @@
             this.AdminBuyPanel.TabIndex = 6;
             this.AdminBuyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminBuyPanel_Paint);
             // 
+            // GanreBox
+            // 
+            this.GanreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GanreBox.FormattingEnabled = true;
+            this.GanreBox.Location = new System.Drawing.Point(85, 83);
+            this.GanreBox.Name = "GanreBox";
+            this.GanreBox.Size = new System.Drawing.Size(192, 32);
+            this.GanreBox.TabIndex = 13;
+            this.GanreBox.SelectedIndexChanged += new System.EventHandler(this.GanreBox_SelectedIndexChanged);
+            // 
             // delSpectacle
             // 
             this.delSpectacle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -245,16 +255,6 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Категория";
-            // 
-            // GanreBox
-            // 
-            this.GanreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GanreBox.FormattingEnabled = true;
-            this.GanreBox.Location = new System.Drawing.Point(85, 83);
-            this.GanreBox.Name = "GanreBox";
-            this.GanreBox.Size = new System.Drawing.Size(192, 32);
-            this.GanreBox.TabIndex = 13;
-            this.GanreBox.SelectedIndexChanged += new System.EventHandler(this.GanreBox_SelectedIndexChanged);
             // 
             // newStandartPrice
             // 
@@ -387,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 351);
+            this.ClientSize = new System.Drawing.Size(642, 345);
             this.Controls.Add(this.AdminBuyPanel);
             this.Controls.Add(this.RegisterBuyPanel);
             this.Name = "TicketBuyForm";

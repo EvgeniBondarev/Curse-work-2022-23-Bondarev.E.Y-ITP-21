@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace App.Services
 {
@@ -15,12 +16,12 @@ namespace App.Services
         IEnumerable<T> GetTicket(string owner);
 
         // Метод для вывода пользователя по дате
-        T GetTicket(DateTime date);
+        T GetTicket(int id);
 
         // Добавление нового пользователя
-        void AddTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
+        void AddTicket(string userName, SpectacleModel spectacleModel, Categorias category);
 
         // Метод для удаления пользователя
-        void DeletTicket(UserModel userModel, SpectacleModel spectacleModel, Categorias category);
+        void DeletTicket(int id);
     }
 }

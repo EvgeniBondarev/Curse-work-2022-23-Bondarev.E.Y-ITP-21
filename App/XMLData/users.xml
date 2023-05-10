@@ -6,28 +6,8 @@
     <role>registered</role>
   </user>
   <user>
-    <login>test1</login>
-    <password>123</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>1212</login>
-    <password>1212</password>
-    <role>registered</role>
-  </user>
-  <user>
     <login>1</login>
     <password>1</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>232</login>
-    <password>232</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>testUser</login>
-    <password>123</password>
     <role>registered</role>
   </user>
   <user>
@@ -36,28 +16,18 @@
     <role>admin</role>
   </user>
   <user>
-    <login>test</login>
+    <login>testUser</login>
+    <password>123</password>
+    <role>admin</role>
+  </user>
+  <user>
+    <login>132</login>
     <password>123</password>
     <role>registered</role>
   </user>
   <user>
-    <login>evg</login>
-    <password>123</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>3345</login>
-    <password>3345</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>testo</login>
-    <password>123</password>
-    <role>registered</role>
-  </user>
-  <user>
-    <login>arsen</login>
-    <password>123</password>
-    <role>registered</role>
+    <login>esrftgsdf</login>
+    <password>asdsdas</password>
+    <role>admin</role>
   </user>
 </users>

@@ -1,21 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tickets>
-  <ticket>
-    <owner>123</owner>
-    <date>2023-04-18</date>
-    <category>Medium</category>
-    <price>250</price>
-  </ticket>
-  <ticket>
-    <owner>admin</owner>
-    <date>2023-04-18</date>
-    <category>Medium</category>
-    <price>250</price>
-  </ticket>
-  <ticket>
+  <ticket id="3">
     <owner>123</owner>
     <date>2023-04-18</date>
     <category>Medium</category>
     <price>200</price>
+  </ticket>
+  <ticket id="4">
+    <owner>123</owner>
+    <date>2023-04-18</date>
+    <category>Medium</category>
+    <price>200</price>
+  </ticket>
+  <ticket id="5">
+    <owner>123</owner>
+    <date>2023-04-19</date>
+    <category>Medium</category>
+    <price>200</price>
+  </ticket>
+  <ticket id="10">
+    <owner>132</owner>
+    <date>2023-06-02</date>
+    <category>Medium</category>
+    <price>300</price>
+  </ticket>
+  <ticket id="11">
+    <owner>132</owner>
+    <date>2023-04-19</date>
+    <category>VIP</category>
+    <price>310</price>
+  </ticket>
+  <ticket id="12">
+    <owner>132</owner>
+    <date>2023-05-01</date>
+    <category>Medium</category>
+    <price>213</price>
+  </ticket>
+  <ticket id="14">
+    <owner>123</owner>
+    <date>2023-02-15</date>
+    <category>VIP</category>
+    <price>150</price>
   </ticket>
 </tickets>
