@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Windows.Forms;
 
 public enum Categorias
 {
@@ -15,4 +16,5 @@ public class SpectacleModel
     public string Genre { get; set; }
     public DateTime Date { get; set; }
     public Dictionary<Categorias, decimal> Categories { get; set; }
+    public int FreePlace { get; set; }
 }

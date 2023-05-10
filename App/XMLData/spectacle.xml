@@ -8,6 +8,7 @@
     <category name="VIP">310</category>
     <category name="Medium">200</category>
     <category name="Standart">25</category>
+    <freePlase>25</freePlase>
   </spectacle>
   <spectacle>
     <title>Евгений Онегин</title>
@@ -17,6 +18,7 @@
     <category name="VIP">310</category>
     <category name="Medium">200</category>
     <category name="Standart">25</category>
+    <freePlase>27</freePlase>
   </spectacle>
   <spectacle>
     <title>Ревизор</title>
@@ -26,6 +28,7 @@
     <category name="VIP">150</category>
     <category name="Medium">100</category>
     <category name="Standart">15</category>
+    <freePlase>26</freePlase>
   </spectacle>
   <spectacle>
     <title>Мастер и Маргарита</title>
@@ -35,6 +38,7 @@
     <category name="VIP">400</category>
     <category name="Medium">300</category>
     <category name="Standart">40</category>
+    <freePlase>25</freePlase>
   </spectacle>
   <spectacle>
     <title>Шекспировский фестиваль</title>
@@ -44,6 +48,7 @@
     <category name="VIP">500</category>
     <category name="Medium">400</category>
     <category name="Standart">50</category>
+    <freePlase>25</freePlase>
   </spectacle>
   <spectacle>
     <title>sads</title>
@@ -53,5 +58,6 @@
     <category name="VIP">12</category>
     <category name="Medium">213</category>
     <category name="Standart">123</category>
+    <freePlase>25</freePlase>
   </spectacle>
 </spectacles>

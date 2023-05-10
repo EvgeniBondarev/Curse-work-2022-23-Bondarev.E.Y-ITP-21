@@ -39,6 +39,7 @@ namespace App
 
             spectacleGridView.ReadOnly = true;
             spectacleGridView.Columns.Add("Название", "Название");
+            spectacleGridView.Columns.Add("Свободных мест", "Свободных мест");
             spectacleGridView.Columns.Add("Жанр", "Жанр");
             spectacleGridView.Columns.Add("Автор", "Автор");
             spectacleGridView.Columns.Add("Дата", "Дата");
@@ -159,10 +160,11 @@ namespace App
         private void ticketMenuItem_Click(object sender, EventArgs e)
         {
             userTicketsForm.ShowDialog(_user);
+            ShowSpectacle();
         }
         private void ticketLog_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Cформировать статистическиq отчёт о продажах билетов?", "Формирование отчета",
+            DialogResult result = MessageBox.Show("Cформировать статистический отчёт о продажах билетов?", "Формирование отчета",
                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -185,7 +187,7 @@ namespace App
             foreach (SpectacleModel spectacle in spectacles)
             {
   
-                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
+                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.FreePlace, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
                                            $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
                                            $"{spectacle.Categories[Categorias.Standart]}");
 
@@ -204,7 +206,7 @@ namespace App
                 foreach (SpectacleModel spectacle in spectacles)
                 {
 
-                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
+                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.FreePlace, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
                                            $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
                                            $"{spectacle.Categories[Categorias.Standart]}");
 
@@ -292,7 +294,7 @@ namespace App
 
                 if (row.Cells[3].Value != null)
                 {
-                    SpectacleModel thisSpectacle = _user.ViewSpectacle(DateTime.Parse(row.Cells[3].Value.ToString()));
+                    SpectacleModel thisSpectacle = _user.ViewSpectacle(DateTime.Parse(row.Cells[4].Value.ToString()));
                     ticketBuyForm.ShowDialog(thisSpectacle, _user);
                 }
                 else ticketBuyForm.ShowDialog(_user);
@@ -301,7 +303,8 @@ namespace App
             else if(_user is Administrator)
             {
                 ticketBuyForm.ShowDialog(_user);
-            }  
+            }
+            ShowSpectacle();
         }
         
         private void userGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -412,6 +415,7 @@ namespace App
         {
             userTicketsForm.ShowDialog(_user, userLoginBox.Text);
             ShowTicketsList(userLoginBox.Text);
+            ShowSpectacle();
 
         }
         private void tabPage1_Click(object sender, EventArgs e)

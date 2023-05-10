@@ -32,9 +32,10 @@ public static  class SpectacleManager
             Author = x.Element("author").Value,
             Genre = GetGenreNameById(Int32.Parse(x.Element("genre").Value)),
             Date = DateTime.Parse(x.Element("date").Value),
-            Categories = x.Elements("category").ToDictionary(y => (Categorias)Enum.Parse(typeof(Categorias), y.Attribute("name").Value), y => decimal.Parse(y.Value))
+            Categories = x.Elements("category").ToDictionary(y => (Categorias)Enum.Parse(typeof(Categorias), y.Attribute("name").Value), y => decimal.Parse(y.Value)),
+            FreePlace = Int32.Parse(x.Element("freePlase").Value)
 
-        });
+        });;
     }
  
     public static void Add(SpectacleModel item)
@@ -53,7 +54,8 @@ public static  class SpectacleManager
                 new XElement("title", item.Title),
                 new XElement("author", item.Author),
                 new XElement("genre", genreId),
-                new XElement("date", item.Date.ToString("yyyy-MM-dd"))
+                new XElement("date", item.Date.ToString("yyyy-MM-dd"),
+                new XElement("freePlase", item.FreePlace))
             );
 
             foreach (var category in item.Categories)
@@ -108,6 +110,7 @@ public static  class SpectacleManager
             spectacleToUpdate.SetElementValue("author", item.Author);
             spectacleToUpdate.SetElementValue("genre", GetGenreIdByName(item.Genre).ToString());
             spectacleToUpdate.SetElementValue("date", item.Date.ToString("yyyy-MM-dd"));
+            spectacleToUpdate.SetElementValue("freePlase", item.FreePlace);
 
             foreach (var category in item.Categories)
             {

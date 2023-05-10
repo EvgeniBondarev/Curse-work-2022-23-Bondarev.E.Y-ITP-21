@@ -71,6 +71,7 @@ public static class TicketManager
             throw new ArgumentException($"Ticket with id {ticketId} does not exist.");
         }
     }
+    
     private static bool DataValidate(TicketModel ticket)
     {
         bool isValid = true;

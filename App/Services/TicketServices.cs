@@ -8,16 +8,30 @@ namespace App.Services
 {
     public class TicketServices : ITicketServices<TicketModel>
     {
+        private static SpectacleServices _spectacleServices;
         public TicketServices()
         {   
+            _spectacleServices = new SpectacleServices();
         }
         public void AddTicket(string userName, SpectacleModel spectacleModel, Categorias category)
         {
-            TicketManager.Add(CreateTicketElement(userName, spectacleModel, category));
+
+            if (spectacleModel.FreePlace > 0)
+            {
+                spectacleModel.FreePlace -= 1;
+                SpectacleManager.Update(spectacleModel);
+                TicketManager.Add(CreateTicketElement(userName, spectacleModel, category));
+            }
+            else throw new ArgumentException($"На спектакль {spectacleModel.Title} нет свободных мест.");
+            
         }
 
         public void DeletTicket(int id)
         {
+            SpectacleModel spectacle = _spectacleServices.ShowSpectacle(GetTicket(id).Date);
+            spectacle.FreePlace += 1;
+            SpectacleManager.Update(spectacle);
+
             TicketManager.Delete(id);
         }
        
@@ -47,6 +61,7 @@ namespace App.Services
             }
             else throw new ArgumentException($"Билет на c id={id} не найден.");
         }
+
         private TicketModel CreateTicketElement(string userName, SpectacleModel spectacleModel, Categorias category)
         {
             return new TicketModel

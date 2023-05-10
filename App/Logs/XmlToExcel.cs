@@ -52,12 +52,12 @@ namespace App.Logs
 
                 if (method == "Покупка билета")
                 {
-                    xlRange = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row, 7]];
+                    xlRange = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row, 10]];
                     xlRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Green);
                 }
                 else if (method == "Возврат билета")
                 {
-                    xlRange = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row, 7]];
+                    xlRange = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row, 10]];
                     xlRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
                 }
 

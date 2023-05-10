@@ -92,6 +92,7 @@ namespace App.Services
                 Genre = genre,
                 Date = date,
                 Categories = thisCategories,
+                FreePlace = 25
 
             };
         }
