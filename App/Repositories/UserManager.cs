@@ -96,21 +96,6 @@ public static class UserManager
             _xmlDoc.Save(_xmlFilePath);
         }
     }
-    public static string GetUserRole(string login)
-    {
-
-        var user = _xmlDoc.Descendants("user")
-                         .FirstOrDefault(u => u.Element("login").Value == login);
-        if (user != null)
-        {
-            return user.Element("role").Value;
-        }
-        else
-        {
-            throw new ArgumentException("Пользователя с таким логином не существует.");
-        }
-    }
-
     private static bool UserValid(UserModel user)
     {
         if (_xmlDoc.Root.Elements("user").Any(u => u.Element("login").Value == user.Login))

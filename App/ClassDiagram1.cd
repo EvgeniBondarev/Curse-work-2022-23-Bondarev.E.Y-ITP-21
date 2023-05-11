@@ -38,9 +38,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SpectacleModel">
-    <Position X="15.25" Y="0.75" Width="1.5" />
+    <Position X="15.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAgAIAAAAAAAAAEAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAAEAAgAIAAAAAAAAAEAABAAAAAAAAAAA=</HashCode>
       <FileName>Models\SpectacleModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -68,7 +68,7 @@
   <Class Name="App.Services.TicketServices">
     <Position X="16" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAIAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAIAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAE=</HashCode>
       <FileName>Services\TicketServices.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
