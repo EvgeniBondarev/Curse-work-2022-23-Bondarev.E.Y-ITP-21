@@ -57,11 +57,11 @@ namespace App
             RemoveAdminPanel();
 
         }
-       
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             loginForm.ShowDialog();
             spectacleGridView.CellClick += dataGridView1_CellClick;
 
@@ -83,10 +83,9 @@ namespace App
 
             ShowWindowToUser(_user);
             ShowSpectacle();
-            
+
 
         }
-        //TODO: Добавить в userInfo.Text роль
         public void ShowWindowToUser(Administrator user)
         {
             userInfo.Visible = true;
@@ -104,7 +103,7 @@ namespace App
             userInfo.Visible = true;
             userInfo.Text = $"Пользователь: {_user.Login}";
             RegistrBut.Text = "Выйти";
-            addSpectacle.Visible= false;
+            addSpectacle.Visible = false;
             permissionTabControl.TabPages[0].Text = "Выбор спектаклей";
             RemoveAdminPanel();
             userRolePictureBox.Image = Image.FromFile("C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\img\\icons\\user.png");
@@ -124,132 +123,152 @@ namespace App
 
         private void InitializeContextMenu(object sender, MouseEventArgs e)
         {
-            userInfoContextMenu.Items.Clear();
-
-            userInfoContextMenu.Items.Add($"Имя: {_user.Login}");
-
-            
-
-            if(_user is Registered) {
-                userInfoContextMenu.Items.Add($"Роль: Пользователь");
-
-                ToolStripButton showUserTicketsButton = new ToolStripButton();
-                showUserTicketsButton.Text = "Мои билеты";
-                showUserTicketsButton.Click += new EventHandler(ticketMenuItem_Click);
-
-                showUserTicketsButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
- 
-                userInfoContextMenu.Items.Add(showUserTicketsButton);
-            }
-            else if(_user is Administrator)
+            if (_user is Registered || _user is Administrator)
             {
-                userInfoContextMenu.Items.Add($"Роль: Администратор");
-                ToolStripButton showUserTicketsButton = new ToolStripButton();
-                showUserTicketsButton.Text = "Сформировать отчет";
-                showUserTicketsButton.Click += new EventHandler(ticketLog_Click);
+                userInfoContextMenu.Items.Clear();
 
-                showUserTicketsButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                userInfoContextMenu.Items.Add($"Имя: {_user.Login}");
 
-                userInfoContextMenu.Items.Add(showUserTicketsButton);
+
+
+                if (_user is Registered)
+                {
+                    userInfoContextMenu.Items.Add($"Роль: Пользователь");
+
+                    ToolStripButton showUserTicketsButton = new ToolStripButton();
+                    showUserTicketsButton.Text = "Мои билеты";
+                    showUserTicketsButton.Click += new EventHandler(ticketMenuItem_Click);
+
+                    showUserTicketsButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+
+                    userInfoContextMenu.Items.Add(showUserTicketsButton);
+                }
+                else if (_user is Administrator)
+                {
+                    userInfoContextMenu.Items.Add($"Роль: Администратор");
+                    ToolStripButton showUserTicketsButton = new ToolStripButton();
+                    showUserTicketsButton.Text = "Сформировать отчет";
+                    showUserTicketsButton.Click += new EventHandler(ticketLog_Click);
+
+                    showUserTicketsButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+
+                    userInfoContextMenu.Items.Add(showUserTicketsButton);
+                }
+
+                userInfoContextMenu.Name = "Информация о пользователе";
+
+                userInfoContextMenu.Show(userInfo, e.Location);
             }
-            
-            userInfoContextMenu.Name = "Информация о пользователе";
-
-            userInfoContextMenu.Show(userInfo, e.Location);
         }
         private void ticketMenuItem_Click(object sender, EventArgs e)
         {
-            userTicketsForm.ShowDialog(_user);
-            ShowSpectacle();
+            if (_user is Registered)
+            {
+                userTicketsForm.ShowDialog(_user);
+                ShowSpectacle();
+            }
         }
         private void ticketLog_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Cформировать статистический отчёт о продажах билетов?", "Формирование отчета",
-                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (_user is Administrator)
             {
-                XmlToExcel.CreateTable();
-            }
-            else if (result == DialogResult.No)
-            {
+                DialogResult result = MessageBox.Show("Cформировать статистический отчёт о продажах билетов?", "Формирование отчета",
+                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    XmlToExcel.CreateTable();
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
             }
 
         }
 
         public void ShowSpectacle()
         {
-            spectacleGridView.Rows.Clear();
-
-            IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle();
- 
-            foreach (SpectacleModel spectacle in spectacles)
+            if (_user is Administrator || _user is Registered || _user is Guest)
             {
-  
-                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.FreePlace, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
-                                           $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
-                                           $"{spectacle.Categories[Categorias.Standart]}");
+                spectacleGridView.Rows.Clear();
 
-                mainExpString.Text = "";
-            }
-           
-        }
-        public void ShowSpectacle(string ganre)
-        {
-            spectacleGridView.Rows.Clear();
-
-            try {
-                IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle(ganre);
-
+                IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle();
 
                 foreach (SpectacleModel spectacle in spectacles)
                 {
-
                     spectacleGridView.Rows.Add(spectacle.Title, spectacle.FreePlace, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
                                            $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
                                            $"{spectacle.Categories[Categorias.Standart]}");
-
                     mainExpString.Text = "";
                 }
             }
-            catch(ArgumentException e) { 
-                mainExpString.Text = e.Message;
+
+        }
+        public void ShowSpectacle(string ganre)
+        {
+            if (_user is Administrator || _user is Registered)
+            {
+                spectacleGridView.Rows.Clear();
+
+                try
+                {
+                    IEnumerable<SpectacleModel> spectacles = _user.ViewSpectacle(ganre);
+
+
+                    foreach (SpectacleModel spectacle in spectacles)
+                    {
+
+                        spectacleGridView.Rows.Add(spectacle.Title, spectacle.FreePlace, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
+                                               $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
+                                               $"{spectacle.Categories[Categorias.Standart]}");
+
+                        mainExpString.Text = "";
+                    }
+                }
+                catch (ArgumentException e)
+                {
+                    mainExpString.Text = e.Message;
+                }
             }
-                
-            
+
+
         }
         public void ShowSpectacle(DateTime date)
         {
-            spectacleGridView.Rows.Clear();
-
-            try
+            if (_user is Administrator || _user is Registered)
             {
-                SpectacleModel spectacle = _user.ViewSpectacle(date);
+                spectacleGridView.Rows.Clear();
 
-                spectacleGridView.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
-                                           $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
-                                           $"{spectacle.Categories[Categorias.Standart]}");
+                try
+                {
+                    SpectacleModel spectacle = _user.ViewSpectacle(date);
+
+                    spectacleGridView.Rows.Add(spectacle.Title, spectacle.Genre, spectacle.Author, spectacle.Date.ToString("d"),
+                                               $"{spectacle.Categories[Categorias.VIP]}", $"{spectacle.Categories[Categorias.Medium]}",
+                                               $"{spectacle.Categories[Categorias.Standart]}");
 
                     mainExpString.Text = "";
-                
-            }
-            catch (ArgumentException e)
-            {
-                mainExpString.Text = e.Message;
+
+                }
+                catch (ArgumentException e)
+                {
+                    mainExpString.Text = e.Message;
+                }
             }
         }
         private void ShowUsers()
         {
-            userGridView.Rows.Clear();
-
-            IEnumerable<UserModel> users = _user.GetUser();
-
-            foreach (UserModel user in users)
+            if (_user is Administrator)
             {
+                userGridView.Rows.Clear();
 
-                userGridView.Rows.Add(user.Login, user.Password, user.Role == Role.registered ? "Пользователь": "Администратор");
+                IEnumerable<UserModel> users = _user.GetUser();
 
+                foreach (UserModel user in users)
+                {
+                    userGridView.Rows.Add(user.Login, user.Password, user.Role == Role.registered ? "Пользователь" : "Администратор");
+                }
             }
         }
         private void RemoveAdminPanel()
@@ -257,7 +276,7 @@ namespace App
             if (permissionTabControl.TabPages.Count == 2) {
                 permissionTabControl.TabPages.Remove(AdminTabPanel);
             }
-            
+
         }
         private void ShowAdminPanel() {
             if (permissionTabControl.TabPages.Count == 1)
@@ -288,57 +307,67 @@ namespace App
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 )
+            if (_user is Registered || _user is Administrator)
             {
-                DataGridViewRow row = spectacleGridView.Rows[e.RowIndex];
-
-                if (row.Cells[3].Value != null)
+                if (e.RowIndex >= 0)
                 {
-                    SpectacleModel thisSpectacle = _user.ViewSpectacle(DateTime.Parse(row.Cells[4].Value.ToString()));
-                    ticketBuyForm.ShowDialog(thisSpectacle, _user);
+                    DataGridViewRow row = spectacleGridView.Rows[e.RowIndex];
+
+                    if (row.Cells[3].Value != null)
+                    {
+                        SpectacleModel thisSpectacle = _user.ViewSpectacle(DateTime.Parse(row.Cells[4].Value.ToString()));
+                        ticketBuyForm.ShowDialog(thisSpectacle, _user);
+                    }
+                    else ticketBuyForm.ShowDialog(_user);
+
                 }
-                else ticketBuyForm.ShowDialog(_user);
- 
+                else if (_user is Administrator)
+                {
+                    ticketBuyForm.ShowDialog(_user);
+                }
+                ShowSpectacle();
             }
-            else if(_user is Administrator)
-            {
-                ticketBuyForm.ShowDialog(_user);
-            }
-            ShowSpectacle();
         }
-        
+
         private void userGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (_user is Administrator)
             {
-                DataGridViewRow row = userGridView.Rows[e.RowIndex];
-
-                if (row.Cells[0].Value != null)
+                if (e.RowIndex >= 0)
                 {
-                    UserModel thisUser = _user.GetUser(row.Cells[0].Value.ToString());
-                    userLoginBox.Text = thisUser.Login;
-                    userPasswordBox.Text = thisUser.Password;
-                    userRoleBox.Text = thisUser.Role == Role.registered ? "Пользователь" : "Администратор";
-                    delUserButton.Visible = true;
+                    DataGridViewRow row = userGridView.Rows[e.RowIndex];
 
-                    ShowTicketsList(thisUser.Login);
+                    if (row.Cells[0].Value != null)
+                    {
+                        UserModel thisUser = _user.GetUser(row.Cells[0].Value.ToString());
+                        userLoginBox.Text = thisUser.Login;
+                        userPasswordBox.Text = thisUser.Password;
+                        userRoleBox.Text = thisUser.Role == Role.registered ? "Пользователь" : "Администратор";
+                        delUserButton.Visible = true;
+
+                        ShowTicketsList(thisUser.Login);
+                    }
+
+
                 }
- 
+                else if (_user is Administrator)
+                {
+                    userLoginBox.Text = "";
+                    userPasswordBox.Text = "";
+                    userRoleBox.Text = "";
+                    delUserButton.Visible = false;
+                }
+            }
 
-            }
-            else if (_user is Administrator)
-            {
-                userLoginBox.Text = "";
-                userPasswordBox.Text = "";
-                userRoleBox.Text = "";
-                delUserButton.Visible = false;
-            }
         }
-        
+
         private void addSpectacle_Click(object sender, EventArgs e)
         {
-            ticketBuyForm.ShowDialog(_user);
-            ShowSpectacle();
+            if (_user is Administrator)
+            {
+                ticketBuyForm.ShowDialog(_user);
+                ShowSpectacle();
+            }
         }
         private void RegistrBut_Click(object sender, EventArgs e)
         {
@@ -346,76 +375,95 @@ namespace App
         }
         private void userLoginBox_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (_user is Administrator)
             {
-                UserModel newUser = _user.GetUser(userLoginBox.Text);
-                userPasswordBox.Text = newUser.Password;
-                userRoleBox.Text = newUser.Role == Role.registered ? "Пользователь" : "Администратор";
-                addUserButton.Text = "Изменить";
-                delUserButton.Visible = true;
+                try
+                {
+                    UserModel newUser = _user.GetUser(userLoginBox.Text);
+                    userPasswordBox.Text = newUser.Password;
+                    userRoleBox.Text = newUser.Role == Role.registered ? "Пользователь" : "Администратор";
+                    addUserButton.Text = "Изменить";
+                    delUserButton.Visible = true;
 
-                ShowTicketsList(newUser.Login);
+                    ShowTicketsList(newUser.Login);
 
 
-            }
-            catch(ArgumentException userNull)
-            {
-                userPasswordBox.Text = "";
-                userRoleBox.Text = "";
-                addUserButton.Text = "Добавить";
+                }
+                catch (ArgumentException userNull)
+                {
+                    userPasswordBox.Text = "";
+                    userRoleBox.Text = "";
+                    addUserButton.Text = "Добавить";
 
-                delUserButton.Visible = false;
-                userTicketsLable.Visible = false;
-                userTicketsListBox.Clear();
+                    delUserButton.Visible = false;
+                    userTicketsLable.Visible = false;
+                    userTicketsListBox.Clear();
+                }
             }
         }
         private void ShowTicketsList(string userLogin)
         {
-            userTicketsLable.Visible = true;
-            userTicketsLable.Text = $"Билеты пользователя `{userLogin}`:";
-
-            userTicketsListBox.Clear();
-          
-            IEnumerable<TicketModel> tickets = _user.GetTicket(userLogin);
-            foreach (TicketModel ticket in tickets)
+            if (_user is Administrator || _user is Registered)
             {
-                userTicketsListBox.Text += ($"Название:{ticket.Title}\nДата: {ticket.Date.ToString("d")}\nКатегория: {ticket.Category}\nЦена: {ticket.Price} р.\n\n");
+                userTicketsLable.Visible = true;
+                userTicketsLable.Text = $"Билеты пользователя `{userLogin}`:";
+
+                userTicketsListBox.Clear();
+
+                IEnumerable<TicketModel> tickets = _user.GetTicket(userLogin);
+                foreach (TicketModel ticket in tickets)
+                {
+                    userTicketsListBox.Text += ($"Название:{ticket.Title}\nДата: {ticket.Date.ToString("d")}\nКатегория: {ticket.Category}\nЦена: {ticket.Price} р.\n\n");
+                }
             }
+
         }
 
 
         private void AddUserButton_Click(object sender, EventArgs e)
         {
-            if(addUserButton.Text == "Добавить")
+            if (_user is Administrator)
             {
-                _user.AddeUser(userLoginBox.Text, userPasswordBox.Text,  userRoleBox.Text == "Пользователь" ? Role.registered : Role.admin);
-                ShowUsers();
+                if (addUserButton.Text == "Добавить")
+                {
+                    _user.AddeUser(userLoginBox.Text, userPasswordBox.Text, userRoleBox.Text == "Пользователь" ? Role.registered : Role.admin);
+                    ShowUsers();
+                }
+                else if (addUserButton.Text == "Изменить")
+                {
+                    _user.UpdateUser(userLoginBox.Text, userPasswordBox.Text, userRoleBox.Text == "Пользователь" ? Role.registered : Role.admin);
+                    ShowUsers();
+                }
             }
-            else if(addUserButton.Text == "Изменить")
-            {
-                _user.UpdateUser(userLoginBox.Text, userPasswordBox.Text, userRoleBox.Text == "Пользователь" ? Role.registered : Role.admin);
-                ShowUsers();
-            }
+
         }
         private void delUserButton_Click(object sender, EventArgs e)
         {
-            try {
-                if(userLoginBox.Text != _user.Login) {
-                    _user.DeleteUser(userLoginBox.Text);
-                    ShowUsers();
-                }
-                else MessageBox.Show("Невозможно удалить данного пользователя!");
-            }
-            catch(ArgumentException delUserExp)
+            if (_user is Administrator)
             {
-                MessageBox.Show(delUserExp.Message);
+                try
+                {
+                    if (userLoginBox.Text != _user.Login)
+                    {
+                        _user.DeleteUser(userLoginBox.Text);
+                        ShowUsers();
+                    }
+                    else MessageBox.Show("Невозможно удалить данного пользователя!");
+                }
+                catch (ArgumentException delUserExp)
+                {
+                    MessageBox.Show(delUserExp.Message);
+                }
             }
         }
         private void changeTicketsButton_Click(object sender, EventArgs e)
         {
-            userTicketsForm.ShowDialog(_user, userLoginBox.Text);
-            ShowTicketsList(userLoginBox.Text);
-            ShowSpectacle();
+            if (_user is Administrator || _user is Registered)
+            {
+                userTicketsForm.ShowDialog(_user, userLoginBox.Text);
+                ShowTicketsList(userLoginBox.Text);
+                ShowSpectacle();
+            }
 
         }
         private void tabPage1_Click(object sender, EventArgs e)

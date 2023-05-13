@@ -42,4 +42,16 @@
     <category>Medium</category>
     <price>200</price>
   </ticket>
+  <ticket id="18">
+    <owner>Valid Owner</owner>
+    <date>2023-05-13</date>
+    <category>Medium</category>
+    <price>100</price>
+  </ticket>
+  <ticket id="19">
+    <owner />
+    <date>2023-05-13</date>
+    <category>VIP</category>
+    <price>-1</price>
+  </ticket>
 </tickets>

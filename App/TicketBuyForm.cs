@@ -113,6 +113,14 @@ namespace App
         {
 
         }
+        public new void ShowDialog(User user)
+        {
+
+        }
+        public new void ShowDialog(SpectacleModel thisSpectacle, User user)
+        {
+
+        }
         private void ClearUserFields()
         {
             SpectacleTitle.Text = string.Empty;
@@ -179,6 +187,7 @@ namespace App
             try {
                 if (changeTiket.Text == "Изменить")
                 {
+                    var q = newDateName.Value;
                     _owner.UpdateSpectacle(newSpectacleName.Text, newAuthorName.Text, GanreBox.Text, newDateName.Value,
                                            newVIPPrice.Value, newMediumPrice.Value, newStandartPrice.Value);
                 }

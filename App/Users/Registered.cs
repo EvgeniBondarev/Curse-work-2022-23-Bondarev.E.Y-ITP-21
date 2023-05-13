@@ -1,9 +1,10 @@
 ﻿using App.Services;
+using App.Users;
 using System;
 using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-public class Registered : User
+public class Registered : User, IUser
 {
     private TicketServices _ticketServices;
     private UserServices _userServices;
@@ -42,10 +43,7 @@ public class Registered : User
         _ticketServices.DeletTicket(id);
     }
 
-    private UserModel GetThisUser(string userName)
-    {
-        return _userServices.GetUser(userName);
-    }
+
     private SpectacleModel GetThisSpectacle(DateTime spectacleDate)
     {
         return _spectacleService.ShowSpectacle(spectacleDate);

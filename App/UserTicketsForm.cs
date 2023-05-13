@@ -57,7 +57,10 @@ namespace App
             ShowTickets();
             return base.ShowDialog();
         }
-      
+        public new DialogResult ShowDialog(User user)
+        {
+            return base.ShowDialog();
+        }
 
         public new void ShowTickets()
         {

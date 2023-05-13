@@ -94,6 +94,7 @@
     <Compile Include="UserFactory.cs" />
     <Compile Include="Users\Administrator.cs" />
     <Compile Include="Users\Guest.cs" />
+    <Compile Include="Users\IUser.cs" />
     <Compile Include="Users\Registered.cs" />
     <Compile Include="Users\User.cs" />
     <Compile Include="UserTicketsForm.cs">

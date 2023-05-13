@@ -25,13 +25,17 @@ namespace App
             User user= null;
             if (checkUser.Role == Role.admin) 
             {
-                user = new Administrator(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
+                user = new Administrator(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login, 
+                                                                                               Password = checkUser.Password, 
+                                                                                               Role = Role.admin };
             }
             else if (checkUser.Role == Role.registered)
             {
-                user = new Registered(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login };
+                user = new Registered(_spectacleServices, _userServices, _ticketServices) { Login = checkUser.Login, 
+                                                                                            Password = checkUser.Password, 
+                                                                                            Role = Role.registered };
             }
-            else user = new Guest(_spectacleServices);
+            else user = new Guest(_spectacleServices) { Role = Role.guest};
 
             return user;
         }

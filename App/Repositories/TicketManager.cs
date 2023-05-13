@@ -5,6 +5,9 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using App.Services;
 
+/// <summary>
+/// Предоставляет методы для управления билетами в документе XML.
+/// </summary>
 public static class TicketManager
 {
     private static readonly string _xmlFilePath;
@@ -20,7 +23,10 @@ public static class TicketManager
         _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\tickets.xsd");
         _spectacleServices = new SpectacleServices();
     }
-
+    /// <summary>
+    /// Получает все билеты.
+    /// </summary>
+    /// <returns>Список всех билетов.</returns>
     public static IEnumerable<TicketModel> GetAll()
     {
         return _xmlDoc.Root.Elements("ticket").Select(t =>
@@ -34,7 +40,11 @@ public static class TicketManager
                 Price = int.Parse(t.Element("price").Value)
             });
     }
-
+    /// <summary>
+    /// Добавляет новый билет.
+    /// </summary>
+    /// <param name="ticket">Новый билет для добавления.</param>
+    /// <exception cref="ArgumentException">Выдается, когда данные недействительны.</exception>
     public static void Add(TicketModel ticket)
     {
         if (!DataValidate(ticket))
@@ -53,9 +63,11 @@ public static class TicketManager
         _xmlDoc.Root.Add(newTicket);
         _xmlDoc.Save(_xmlFilePath);
     }
-
-    
-
+    /// <summary>
+    /// Удаляет билет.
+    /// </summary>
+    /// <param name="ticketId">Идентификатор удаляемого билета.</param>
+    /// <exception cref="ArgumentException">Выдается, когда билет с указанным идентификатором не существует.</exception>
     public static void Delete(int ticketId)
     {
         XElement ticketToDelete = _xmlDoc.Root.Elements("ticket")
@@ -71,7 +83,11 @@ public static class TicketManager
             throw new ArgumentException($"Ticket with id {ticketId} does not exist.");
         }
     }
-    
+    /// <summary>
+    /// Проверяет, что данные билета проходят валидацию.
+    /// </summary>
+    /// <param name="ticket">Спектакль, данные которого нужно проверить.</param>
+    /// <returns>true, если данные проходят валидацию, false в противном случае.</returns>
     private static bool DataValidate(TicketModel ticket)
     {
         bool isValid = true;

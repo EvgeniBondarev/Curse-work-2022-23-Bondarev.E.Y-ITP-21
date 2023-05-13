@@ -5,6 +5,9 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
+/// <summary>
+/// Предоставляет методы для работы с пользователями в файле XML.
+/// </summary>
 public static class UserManager
 {
     private static readonly string _xmlFilePath;
@@ -18,8 +21,10 @@ public static class UserManager
         _schemas = new XmlSchemaSet();
         _schemas.Add(null, "C:\\Users\\Evgeni\\Desktop\\CourseWork\\App\\XMLData\\users.xsd");
     }
-
-
+    /// <summary>
+    /// Возвращает все объекты UserModel из файла XML.
+    /// </summary>
+    /// <returns>Все объекты UserModel из файла XML.</returns>
     public static IEnumerable<UserModel> GetAll()
     {
         return _xmlDoc.Root.Elements("user").Select(u =>
@@ -30,7 +35,11 @@ public static class UserManager
                 Role = (Role)Enum.Parse(typeof(Role), u.Element("role").Value)
             });
     }
-
+    /// <summary>
+    /// Добавляет новый объект UserModel в файл XML.
+    /// </summary>
+    /// <param name="user">Объект UserModel для добавления.</param>
+    /// <exception cref="ArgumentException">Вызывается, когда данные не валидны или пользователь с таким логином уже существует.</exception>
     public static void Add(UserModel user)
     {
         if (!DataValidate(user))
@@ -58,6 +67,11 @@ public static class UserManager
             }
         }
     }
+    // <summary>
+    /// Обновляет объект UserModel в файле XML.
+    /// </summary>
+    /// <param name="user">Объект UserModel для обновления.</param>
+    /// <exception cref="ArgumentException">Вызывается, когда данные не валидны или пользователь с таким логином не существует.</exception>
     public static void Update(UserModel user)
     {
         if (!DataValidate(user))
@@ -79,7 +93,11 @@ public static class UserManager
             _xmlDoc.Save(_xmlFilePath);
         }
     }
-
+    // <summary>
+    /// Удаление объекта UserModel в файле XML.
+    /// </summary>
+    /// <param name="user">Объект UserModel для удаления.</param>
+    /// <exception cref="ArgumentException">Вызывается, когда пользователя не существует.</exception>
     public static void Delete(UserModel user)
     {
         if (UserValid(user))
@@ -96,6 +114,10 @@ public static class UserManager
             _xmlDoc.Save(_xmlFilePath);
         }
     }
+    // <summary>
+    /// Проверка уникальности пользователя.
+    /// </summary>
+    /// <param name="user">Объект UserModel для проверки валидации.</param>
     private static bool UserValid(UserModel user)
     {
         if (_xmlDoc.Root.Elements("user").Any(u => u.Element("login").Value == user.Login))
@@ -104,7 +126,11 @@ public static class UserManager
         }
         else return true;
     }
-
+    /// <summary>
+    /// Проверяет, что данные пользователя проходят валидацию.
+    /// </summary>
+    /// <param name="user">Пользователь которого нужно проверить.</param>
+    /// <returns>true, если данные проходят валидацию, false в противном случае.</returns>
     private static bool DataValidate(UserModel user)
     {
         bool isValid = true;

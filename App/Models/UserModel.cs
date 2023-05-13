@@ -4,6 +4,9 @@
     registered, 
     guest
 }
+/// <summary>
+/// Класс сущности пользователя
+/// </summary>
 public class UserModel
 {
     public string Login { get; set; }
