@@ -1,5 +1,8 @@
 ﻿using System;
 
+/// <summary>
+/// Класс сущности билета
+/// </summary>
 public class TicketModel
 {
     public int Id { get; set; }

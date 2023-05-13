@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:v='http://schemas.microsoft.com/visio/2003/SVGExtensions/' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' width='1021.8898pt' height='1445.6693pt' viewBox='0 0 1021.8898 1445.6693'>
+ <v:documentProperties>
+  <v:userDefs>
+   <v:ud v:nameU='msvNoAutoConnect' v:val='1'/>
+  </v:userDefs>
+ </v:documentProperties>
+ <g id='SFixTitle'/>
+ <g id='SContent'>
+  <g>
+   <g transform='matrix(1,0,0,-1,0,1445.6693)'>
+    <g transform='matrix(1,0,0,1,372.04724,1392.5197)' v:mID='1'>
+     <title>Shape1</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='1'>
+      <title>Shape1</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='10.878178' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Авторизация</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,531.49603,1392.5197)' v:mID='2'>
+     <title>Shape2</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='2'>
+      <title>Shape2</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='12.116035' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Регистрация</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,457.08664,1413.0708)' v:mID='3'>
+     <title>Dynamic connector.3</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='3'>
+      <title>Dynamic connector.3</title>
+      <path d='M68.649452209,-2.171338797 L74.409446716,0.708661437 L68.649452209,3.588661671 M68.649452209,-2.171338797 C69.801445007,-0.443338633 69.801445007,1.860661507 68.649452209,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(1,0,0,1,0,0)'/>
+      <path d='M0,0.708661437 L74.409446716,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M68.649452209,-2.171338797 L74.409446716,0.708661437 L68.649452209,3.588661671 M68.649452209,-2.171338797 C69.801445007,-0.443338633 69.801445007,1.860661507 68.649452209,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(1,0,0,1,0,0)'/>
+     <path d='M0,0.708661437 L74.409446716,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,457.08664,1413.0708)' v:mID='4'>
+     <title>Dynamic connector.4</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='4'>
+      <title>Dynamic connector.4</title>
+      <path d='M-5.760000229,-2.171338797 L0,0.708661437 L-5.760000229,3.588661671 M-5.759999752,-2.171338797 C-4.608000278,-0.443338633 -4.608000278,1.860661507 -5.759999752,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-1,0,0,-1,0,1.4173229)'/>
+      <path d='M74.409446716,0.708661437 L0,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.171338797 L0,0.708661437 L-5.760000229,3.588661671 M-5.759999752,-2.171338797 C-4.608000278,-0.443338633 -4.608000278,1.860661507 -5.759999752,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-1,0,0,-1,0,1.4173229)'/>
+     <path d='M74.409446716,0.708661437 L0,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,255.1181,1360.6299)' v:mID='5'>
+     <title>Shape5</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='5'>
+      <title>Shape5</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='21.66716' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Пропуск</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,340.15747,1381.8898)' v:mID='6'>
+     <title>Dynamic connector.6</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='6'>
+      <title>Dynamic connector.6</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-1,0,0,-1,0,0)'/>
+      <path d='M31.889762878,31.889762878 L16.299211502,31.889762878 L16.299211502,31.889762878 L16.299211502,0 L16.299211502,0 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-1,0,0,-1,0,0)'/>
+     <path d='M31.889762878,31.889762878 L16.299211502,31.889762878 L16.299211502,31.889762878 L16.299211502,0 L16.299211502,0 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,159.44882,1275.5905)' v:mID='7'>
+     <title>Shape7</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='7'>
+      <title>Shape7</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='15.963875' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Окно гостя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,201.96852,1318.1102)' v:mID='8'>
+     <title>Dynamic connector.8</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='8'>
+      <title>Dynamic connector.8</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M53.149604797,63.779525757 L0,63.779525757 L0,63.779525757 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M53.149604797,63.779525757 L0,63.779525757 L0,63.779525757 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,276.37793,1275.5905)' v:mID='9'>
+     <title>Shape9</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='9'>
+      <title>Shape9</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='1.2179847' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Окно пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,324.56693,1318.1102)' v:mID='10'>
+     <title>Dynamic connector.10</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='10'>
+      <title>Dynamic connector.10</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M90,74.409446716 L90,36.850395203 L90,36.850395203 L0,36.850395203 L0,36.850395203 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M90,74.409446716 L90,36.850395203 L90,36.850395203 L0,36.850395203 L0,36.850395203 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,425.19684,1275.5905)' v:mID='11'>
+     <title>Shape11</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='11'>
+      <title>Shape11</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='34.38511' y='0' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Окно</text>
+      <text x='7.579133' y='13.19811' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>администратора</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,233.85829,1179.9213)' v:mID='12'>
+     <title>Shape12</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='12'>
+      <title>Shape12</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='31.16023' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Вывод</text>
+      <text x='11.864653' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>информации о</text>
+      <text x='20.833096' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>спектаклях</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,233.85829,1105.5118)' v:mID='13'>
+     <title>Shape13</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='13'>
+      <title>Shape13</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='4.7033243' y='0' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Поиск спектаклей</text>
+      <text x='8.64246' y='13.19811' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>по дате и жанру</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,281.6929,1148.0315)' v:mID='14'>
+     <title>Dynamic connector.14</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='14'>
+      <title>Dynamic connector.14</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M0,31.889762878 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M0,31.889762878 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,366.73227,1179.9213)' v:mID='15'>
+     <title>Shape15</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='15'>
+      <title>Shape15</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='3.4063926' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Покупка и возврат</text>
+      <text x='20.492079' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>билетов на</text>
+      <text x='21.99577' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>спектакль </text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,324.56693,1222.4409)' v:mID='16'>
+     <title>Dynamic connector.16</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='16'>
+      <title>Dynamic connector.16</title>
+      <path d='M84.239997864,-2.880000114 L90,0 L84.239997864,2.880000114 M84.239997864,-2.879999876 C85.391998291,-1.15200007 85.391998291,1.15200007 84.239997864,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,90,90)'/>
+      <path d='M0,53.149604797 L0,26.220472336 L0,26.220472336 L90,26.220472336 L90,26.220472336 L90,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M84.239997864,-2.880000114 L90,0 L84.239997864,2.880000114 M84.239997864,-2.879999876 C85.391998291,-1.15200007 85.391998291,1.15200007 84.239997864,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,90,90)'/>
+     <path d='M0,53.149604797 L0,26.220472336 L0,26.220472336 L90,26.220472336 L90,26.220472336 L90,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,414.56693,1318.1102)' v:mID='17'>
+     <title>Dynamic connector.17</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='17'>
+      <title>Dynamic connector.17</title>
+      <path d='M53.058898926,-2.880000114 L58.818901062,0 L53.058898926,2.880000114 M53.058898926,-2.879999876 C54.210899353,-1.15200007 54.210899353,1.15200007 53.058898926,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,58.8189,58.8189)'/>
+      <path d='M0,74.409446716 L0,36.850395203 L0,36.850395203 L58.818901062,36.850395203 L58.818901062,36.850395203 L58.818901062,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M53.058898926,-2.880000114 L58.818901062,0 L53.058898926,2.880000114 M53.058898926,-2.879999876 C54.210899353,-1.15200007 54.210899353,1.15200007 53.058898926,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,58.8189,58.8189)'/>
+     <path d='M0,74.409446716 L0,36.850395203 L0,36.850395203 L58.818901062,36.850395203 L58.818901062,36.850395203 L58.818901062,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,478.34644,1179.9213)' v:mID='18'>
+     <title>Shape18</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='18'>
+      <title>Shape18</title>
+      <path d='M0,42.519687653 L127.559051514,42.519687653 L127.559051514,42.519687653 L127.559051514,0 L127.559051514,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L127.559051514,42.519687653 L127.559051514,42.519687653 L127.559051514,0 L127.559051514,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173203,-5.6692905)'>
+      <text x='4.3788114' y='0' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,30.22866)'>Удаление, добавление и</text>
+      <text x='8.73683' y='13.19811' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,30.22866)'>изменение спектаклей</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,473.38583,1222.4409)' v:mID='19'>
+     <title>Dynamic connector.19</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='19'>
+      <title>Dynamic connector.19</title>
+      <path d='M62.98015976,-2.880000114 L68.740158081,0 L62.98015976,2.880000114 M62.980155945,-2.879999876 C64.132156372,-1.15200007 64.132156372,1.15200007 62.980155945,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,68.74016,68.74016)'/>
+      <path d='M0,53.149604797 L0,26.220472336 L0,26.220472336 L68.740158081,26.220472336 L68.740158081,26.220472336 L68.740158081,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M62.98015976,-2.880000114 L68.740158081,0 L62.98015976,2.880000114 M62.980155945,-2.879999876 C64.132156372,-1.15200007 64.132156372,1.15200007 62.980155945,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,68.74016,68.74016)'/>
+     <path d='M0,53.149604797 L0,26.220472336 L0,26.220472336 L68.740158081,26.220472336 L68.740158081,26.220472336 L68.740158081,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,659.0551,1275.5905)' v:mID='20'>
+     <title>Shape20</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='20'>
+      <title>Shape20</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.417326)'>
+      <text x='29.299412' y='0' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>Панель</text>
+      <text x='9.209028' y='13.19811' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.142046)'>администрации</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,520.8661,1296.1417)' v:mID='21'>
+     <title>Dynamic connector.21</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='21'>
+      <title>Dynamic connector.21</title>
+      <path d='M132.428970337,-2.171338797 L138.188980103,0.708661437 L132.428970337,3.588661671 M132.428970337,-2.171338797 C133.580978394,-0.443338633 133.580978394,1.860661507 132.428970337,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(1,0,0,1,0,0)'/>
+      <path d='M0,0.708661437 L138.188980103,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M132.428970337,-2.171338797 L138.188980103,0.708661437 L132.428970337,3.588661671 M132.428970337,-2.171338797 C133.580978394,-0.443338633 133.580978394,1.860661507 132.428970337,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(1,0,0,1,0,0)'/>
+     <path d='M0,0.708661437 L138.188980103,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,786.61414,1233.0708)' v:mID='22'>
+     <title>Shape22</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='22'>
+      <title>Shape22</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='1.1740007' y='0' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Создание нового</text>
+      <text x='9.17847' y='13.19811' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,754.7244,1254.3307)' v:mID='23'>
+     <title>Dynamic connector.23</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='23'>
+      <title>Dynamic connector.23</title>
+      <path d='M26.12976265,-2.880000114 L31.889762878,0 L26.12976265,2.880000114 M26.12976265,-2.879999876 C27.281764984,-1.15200007 27.281764984,1.15200007 26.12976265,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(1,0,0,1,0,0)'/>
+      <path d='M0,42.519687653 L16.299211502,42.519687653 L16.299211502,42.519687653 L16.299211502,0 L16.299211502,0 L31.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M26.12976265,-2.880000114 L31.889762878,0 L26.12976265,2.880000114 M26.12976265,-2.879999876 C27.281764984,-1.15200007 27.281764984,1.15200007 26.12976265,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(1,0,0,1,0,0)'/>
+     <path d='M0,42.519687653 L16.299211502,42.519687653 L16.299211502,42.519687653 L16.299211502,0 L16.299211502,0 L31.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,659.0551,1190.5511)' v:mID='24'>
+     <title>Shape24</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='24'>
+      <title>Shape24</title>
+      <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L95.669288635,42.519687653 L95.669288635,42.519687653 L95.669288635,0 L95.669288635,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='31.16023' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Вывод</text>
+      <text x='11.864653' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>информации о</text>
+      <text x='12.111689' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>пользователях</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,706.88983,1233.0708)' v:mID='25'>
+     <title>Dynamic connector.25</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='25'>
+      <title>Dynamic connector.25</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M0,42.519687653 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M0,42.519687653 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,531.49603,1094.8818)' v:mID='26'>
+     <title>Shape26</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='26'>
+      <title>Shape26</title>
+      <path d='M0,53.149604797 L127.559051514,53.149604797 L127.559051514,53.149604797 L127.559051514,0 L127.559051514,0 L0,0 L0,0 L0,53.149604797 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,53.149604797 L127.559051514,53.149604797 L127.559051514,53.149604797 L127.559051514,0 L127.559051514,0 L0,0 L0,0 L0,53.149604797 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173203,1.4173203)'>
+      <text x='11.309215' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,28.457008)'>Вывод информации о</text>
+      <text x='16.314358' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,28.457008)'>билетах указанного</text>
+      <text x='30.43831' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,28.457008)'>пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,595.2756,1148.0315)' v:mID='27'>
+     <title>Dynamic connector.27</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='27'>
+      <title>Dynamic connector.27</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M111.968505859,42.519687653 L111.968505859,21.259843826 L111.968505859,21.259843826 L0,21.259843826 L0,21.259843826 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M111.968505859,42.519687653 L111.968505859,21.259843826 L111.968505859,21.259843826 L0,21.259843826 L0,21.259843826 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,542.126,1031.1023)' v:mID='28'>
+     <title>Shape28</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='28'>
+      <title>Shape28</title>
+      <path d='M0,42.519687653 L106.299209595,42.519687653 L106.299209595,42.519687653 L106.299209595,0 L106.299209595,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L106.299209595,42.519687653 L106.299209595,42.519687653 L106.299209595,0 L106.299209595,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173203,1.062994)'>
+      <text x='8.587099' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Удаление билетов</text>
+      <text x='25.517046' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>указанного</text>
+      <text x='19.80839' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,595.2756,1073.6221)' v:mID='29'>
+     <title>Dynamic connector.29</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='29'>
+      <title>Dynamic connector.29</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M0,21.259843826 L0,7.086614132 L0,7.086614132 L0,14.173228264 L0,14.173228264 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M0,21.259843826 L0,7.086614132 L0,7.086614132 L0,14.173228264 L0,14.173228264 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,669.68506,1105.5118)' v:mID='30'>
+     <title>Shape30</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='30'>
+      <title>Shape30</title>
+      <path d='M0,42.519687653 L116.929130554,42.519687653 L116.929130554,42.519687653 L116.929130554,0 L116.929130554,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L116.929130554,42.519687653 L116.929130554,42.519687653 L116.929130554,0 L116.929130554,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='11.541799' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Изменение данных</text>
+      <text x='30.832003' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>указанного</text>
+      <text x='25.123348' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,707.2441,1148.0315)' v:mID='31'>
+     <title>Dynamic connector.31</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='31'>
+      <title>Dynamic connector.31</title>
+      <path d='M15.49984169,-2.880000114 L21.259843826,0 L15.49984169,2.880000114 M15.49984169,-2.879999876 C16.651842117,-1.15200007 16.651842117,1.15200007 15.49984169,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,21.259844,21.259844)'/>
+      <path d='M0,42.519687653 L0,21.259843826 L0,21.259843826 L21.259843826,21.259843826 L21.259843826,21.259843826 L21.259843826,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M15.49984169,-2.880000114 L21.259843826,0 L15.49984169,2.880000114 M15.49984169,-2.879999876 C16.651842117,-1.15200007 16.651842117,1.15200007 15.49984169,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,21.259844,21.259844)'/>
+     <path d='M0,42.519687653 L0,21.259843826 L0,21.259843826 L21.259843826,21.259843826 L21.259843826,21.259843826 L21.259843826,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,797.244,1105.5118)' v:mID='32'>
+     <title>Shape32</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='32'>
+      <title>Shape32</title>
+      <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,42.519687653 L85.039375305,42.519687653 L85.039375305,42.519687653 L85.039375305,0 L85.039375305,0 L0,0 L0,0 L0,42.519687653 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='#FFFFFF'  fill-rule='evenodd'/>
+     <g transform='matrix(1,0,0,1,1.4173241,1.062994)'>
+      <text x='18.308022' y='-6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>Удаление</text>
+      <text x='14.887125' y='6.599055' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>указанного</text>
+      <text x='9.17847' y='19.797165' class='TextStyle0' fill='#000000' opacity='1' transform='matrix(1,0,0,-1,0,23.496376)'>пользователя</text>
+     </g>
+    </g>
+    <g transform='matrix(1,0,0,1,707.2441,1148.0315)' v:mID='33'>
+     <title>Dynamic connector.33</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='33'>
+      <title>Dynamic connector.33</title>
+      <path d='M116.129760742,-2.880000114 L121.889762878,0 L116.129760742,2.880000114 M116.129760742,-2.879999876 C117.281768799,-1.15200007 117.281768799,1.15200007 116.129760742,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,121.88976,121.88976)'/>
+      <path d='M0,42.519687653 L0,21.259843826 L0,21.259843826 L121.889762878,21.259843826 L121.889762878,21.259843826 L121.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M116.129760742,-2.880000114 L121.889762878,0 L116.129760742,2.880000114 M116.129760742,-2.879999876 C117.281768799,-1.15200007 117.281768799,1.15200007 116.129760742,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,121.88976,121.88976)'/>
+     <path d='M0,42.519687653 L0,21.259843826 L0,21.259843826 L121.889762878,21.259843826 L121.889762878,21.259843826 L121.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,201.9685,1201.181)' v:mID='34'>
+     <title>Dynamic connector.34</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='34'>
+      <title>Dynamic connector.34</title>
+      <path d='M26.12976265,-2.880000114 L31.889762878,0 L26.12976265,2.880000114 M26.12976265,-2.879999876 C27.281764984,-1.15200007 27.281764984,1.15200007 26.12976265,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(1,0,0,1,0,0)'/>
+      <path d='M0,74.409446716 L0,0 L0,0 L31.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M26.12976265,-2.880000114 L31.889762878,0 L26.12976265,2.880000114 M26.12976265,-2.879999876 C27.281764984,-1.15200007 27.281764984,1.15200007 26.12976265,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(1,0,0,1,0,0)'/>
+     <path d='M0,74.409446716 L0,0 L0,0 L31.889762878,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,282.0472,1222.4409)' v:mID='35'>
+     <title>Dynamic connector.35</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='35'>
+      <title>Dynamic connector.35</title>
+      <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-0,-1,1,0,-0,0)'/>
+      <path d='M42.519687653,53.149604797 L42.519687653,26.220472336 L42.519687653,26.220472336 L0,26.220472336 L0,26.220472336 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.880000114 L0,0 L-5.760000229,2.880000114 M-5.759999752,-2.879999876 C-4.608000278,-1.15200007 -4.608000278,1.15200007 -5.759999752,2.879999876 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-0,-1,1,0,-0,0)'/>
+     <path d='M42.519687653,53.149604797 L42.519687653,26.220472336 L42.519687653,26.220472336 L0,26.220472336 L0,26.220472336 L0,0 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,393.3071,1296.1417)' v:mID='36'>
+     <title>Dynamic connector.36</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='36'>
+      <title>Dynamic connector.36</title>
+      <path d='M0,0.708661437 L31.889762878,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,0.708661437 L31.889762878,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,393.3071,1264.9607)' v:mID='37'>
+     <title>Dynamic connector.37</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='37'>
+      <title>Dynamic connector.37</title>
+      <path d='M0,0 L0,31.889762878 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,0 L0,31.889762878 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,350.78738,1264.252)' v:mID='38'>
+     <title>Dynamic connector.38</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='38'>
+      <title>Dynamic connector.38</title>
+      <path d='M0,0.708661437 L42.519687653,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,0.708661437 L42.519687653,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,350.78738,1201.181)' v:mID='39'>
+     <title>Dynamic connector.39</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='39'>
+      <title>Dynamic connector.39</title>
+      <path d='M0,0 L0,63.779525757 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M0,0 L0,63.779525757 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+    <g transform='matrix(1,0,0,1,329.5276,1200.4724)' v:mID='40'>
+     <title>Dynamic connector.40</title>
+     <g transform='matrix(1,0,0,1,0,0)' v:mID='40'>
+      <title>Dynamic connector.40</title>
+      <path d='M-5.760000229,-2.171338797 L0,0.708661437 L-5.760000229,3.588661671 M-5.759999752,-2.171338797 C-4.608000278,-0.443338633 -4.608000278,1.860661507 -5.759999752,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' opacity='0' transform='matrix(-1,0,0,-1,0,1.4173229)'/>
+      <path d='M21.259843826,0.708661437 L0,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none' stroke-opacity='0'/>
+     </g>
+     <path d='M-5.760000229,-2.171338797 L0,0.708661437 L-5.760000229,3.588661671 M-5.759999752,-2.171338797 C-4.608000278,-0.443338633 -4.608000278,1.860661507 -5.759999752,3.588661671 ' stroke='#000000' stroke-width='0.75' fill='#000000'  fill-rule='evenodd' transform='matrix(-1,0,0,-1,0,1.4173229)'/>
+     <path d='M21.259843826,0.708661437 L0,0.708661437 ' stroke='#000000' stroke-width='0.75' stroke-linecap='round' fill='none'/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <style type='text/css'><![CDATA[ .TextStyle0 {font-family:Calibri;font-size:10.998425px;} ]]></style>
+</svg>

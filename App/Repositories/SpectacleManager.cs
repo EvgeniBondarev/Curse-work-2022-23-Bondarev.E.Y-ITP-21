@@ -100,7 +100,7 @@ public static  class SpectacleManager
     /// <summary>
     /// Получить название жанра по Id.
     /// </summary>
-    /// <param name="name">Id жанра</param>
+    /// <param name="id">Id жанра</param>
     /// <returns>Название искомого жанра</returns>
     private static string GetGenreNameById(int id)
     {
@@ -158,7 +158,7 @@ public static  class SpectacleManager
     /// <summary>
     /// Удаляет спектакль.
     /// </summary>
-    /// <param name="spectacle">Спектакль, который нужно удалить.</param>
+    /// <param name="item">Спектакль, который нужно удалить.</param>
     public static void Delete(SpectacleModel item)
     {
         XElement spectacleToDelete = GetElement(item);
