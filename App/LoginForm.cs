@@ -80,10 +80,5 @@ namespace App
                 }
             }
         }
-
-        private void userPasswordForm_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

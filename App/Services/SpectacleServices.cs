@@ -75,16 +75,36 @@ namespace App.Services
             }
             else throw new ArgumentException($"Спектакль на дату `{date.ToString("d")}` не найден.");
         }
-        private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date,     
-                                                      decimal vipPrise, decimal mediumPrice, decimal standartPrice)
+        private SpectacleModel CreateSpectacleElement(string title, string author, string genre, DateTime date,
+                                                        decimal vipPrice, decimal mediumPrice, decimal standardPrice)
         {
-            Dictionary<Categorias, decimal> thisCategories = new Dictionary<Categorias, decimal>()
+            if (string.IsNullOrWhiteSpace(title))
             {
-                { Categorias.VIP, vipPrise},
-                { Categorias.Medium, mediumPrice},
-                { Categorias.Standart, standartPrice}
-            };
+                throw new ArgumentException("Поле `Название` не должено быть пустым или состоять только из пробелов");
+            }
 
+
+            if (string.IsNullOrWhiteSpace(author))
+            {
+                throw new ArgumentException("Поле `Автор` не должено быть пустым или состоять только из пробелов");
+            }
+
+            if (string.IsNullOrWhiteSpace(genre))
+            {
+                throw new ArgumentException("Поле `Жанр` не должено быть пустым или состоять только из пробелов");
+            }
+
+            if (vipPrice <= 0 || mediumPrice <= 0 || standardPrice <= 0)
+            {
+                throw new ArgumentException("Цена должна быть положительной");
+            }
+
+            Dictionary<Categorias, decimal> thisCategories = new Dictionary<Categorias, decimal>()
+                                                            {
+                                                                { Categorias.VIP, vipPrice},
+                                                                { Categorias.Medium, mediumPrice},
+                                                                { Categorias.Standart, standardPrice}
+                                                            };
             return new SpectacleModel
             {
                 Title = title,
@@ -93,7 +113,6 @@ namespace App.Services
                 Date = date,
                 Categories = thisCategories,
                 FreePlace = 25
-
             };
         }
     }

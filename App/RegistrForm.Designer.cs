@@ -59,11 +59,11 @@
             // exptRegisterLable
             // 
             this.exptRegisterLable.AutoSize = true;
-            this.exptRegisterLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exptRegisterLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exptRegisterLable.ForeColor = System.Drawing.Color.Red;
-            this.exptRegisterLable.Location = new System.Drawing.Point(15, 26);
+            this.exptRegisterLable.Location = new System.Drawing.Point(12, 71);
             this.exptRegisterLable.Name = "exptRegisterLable";
-            this.exptRegisterLable.Size = new System.Drawing.Size(68, 20);
+            this.exptRegisterLable.Size = new System.Drawing.Size(56, 16);
             this.exptRegisterLable.TabIndex = 11;
             this.exptRegisterLable.Text = "ERROR";
             this.exptRegisterLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,11 +86,12 @@
             // 
             // registerButtog
             // 
-            this.registerButtog.Location = new System.Drawing.Point(92, 237);
+            this.registerButtog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registerButtog.Location = new System.Drawing.Point(92, 218);
             this.registerButtog.Name = "registerButtog";
-            this.registerButtog.Size = new System.Drawing.Size(178, 23);
+            this.registerButtog.Size = new System.Drawing.Size(178, 24);
             this.registerButtog.TabIndex = 8;
-            this.registerButtog.Text = "Зарегистрироватся";
+            this.registerButtog.Text = "Регистрация\r\n";
             this.registerButtog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.registerButtog.UseVisualStyleBackColor = true;
             this.registerButtog.Click += new System.EventHandler(this.logInButtog_Click);
@@ -99,6 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(374, 351);
             this.Controls.Add(this.userPasswordLable);
             this.Controls.Add(this.userNameLable);

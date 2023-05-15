@@ -153,4 +153,40 @@
     <Price>200</Price>
     <Timestamp>2023-05-10T21:23:34.4631900+03:00</Timestamp>
   </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Горе от ума</SpectacleName>
+    <SpectacleDate>18.04.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>310</Price>
+    <Timestamp>2023-05-14T22:39:04.7894227+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Евгений Онегин</SpectacleName>
+    <SpectacleDate>19.04.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>310</Price>
+    <Timestamp>2023-05-14T22:39:06.4012785+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Шекспировский фестиваль</SpectacleName>
+    <SpectacleDate>15.05.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>500</Price>
+    <Timestamp>2023-05-14T22:39:07.9772612+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>123</Owner>
+    <SpectacleName>Ревизор</SpectacleName>
+    <SpectacleDate>15.02.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>150</Price>
+    <Timestamp>2023-05-14T22:39:09.6411269+03:00</Timestamp>
+  </Operation>
 </Log>

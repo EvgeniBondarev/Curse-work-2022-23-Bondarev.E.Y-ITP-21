@@ -57,6 +57,8 @@
             this.userLoginBox = new System.Windows.Forms.TextBox();
             this.userGridView = new System.Windows.Forms.DataGridView();
             this.userInfoContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.permissionTabControl.SuspendLayout();
             this.AllUserTabPage.SuspendLayout();
             this.DataPanel.SuspendLayout();
@@ -82,6 +84,7 @@
             // 
             // AllUserTabPage
             // 
+            this.AllUserTabPage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AllUserTabPage.Controls.Add(this.DataPanel);
             this.AllUserTabPage.Controls.Add(this.ControlPanel);
             this.AllUserTabPage.Location = new System.Drawing.Point(4, 25);
@@ -90,7 +93,6 @@
             this.AllUserTabPage.Size = new System.Drawing.Size(813, 422);
             this.AllUserTabPage.TabIndex = 0;
             this.AllUserTabPage.Text = "Выбор Спектаклей";
-            this.AllUserTabPage.UseVisualStyleBackColor = true;
             // 
             // DataPanel
             // 
@@ -113,16 +115,17 @@
             // 
             // spectacleGridView
             // 
-            this.spectacleGridView.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.spectacleGridView.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.spectacleGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.spectacleGridView.Location = new System.Drawing.Point(3, 21);
             this.spectacleGridView.Name = "spectacleGridView";
             this.spectacleGridView.Size = new System.Drawing.Size(785, 325);
             this.spectacleGridView.TabIndex = 3;
-            this.spectacleGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.spectacleGridView_CellContentClick);
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.label5);
+            this.ControlPanel.Controls.Add(this.label4);
             this.ControlPanel.Controls.Add(this.userRolePictureBox);
             this.ControlPanel.Controls.Add(this.RegistrBut);
             this.ControlPanel.Controls.Add(this.userInfo);
@@ -167,9 +170,9 @@
             // addSpectacle
             // 
             this.addSpectacle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addSpectacle.Location = new System.Drawing.Point(280, 21);
+            this.addSpectacle.Location = new System.Drawing.Point(280, 18);
             this.addSpectacle.Name = "addSpectacle";
-            this.addSpectacle.Size = new System.Drawing.Size(136, 30);
+            this.addSpectacle.Size = new System.Drawing.Size(136, 40);
             this.addSpectacle.TabIndex = 8;
             this.addSpectacle.Text = "Добавить";
             this.addSpectacle.UseVisualStyleBackColor = true;
@@ -178,7 +181,7 @@
             // searchSpectacleByGenre
             // 
             this.searchSpectacleByGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchSpectacleByGenre.Location = new System.Drawing.Point(6, 25);
+            this.searchSpectacleByGenre.Location = new System.Drawing.Point(3, 37);
             this.searchSpectacleByGenre.Name = "searchSpectacleByGenre";
             this.searchSpectacleByGenre.Size = new System.Drawing.Size(126, 22);
             this.searchSpectacleByGenre.TabIndex = 5;
@@ -187,7 +190,7 @@
             // searchSpectacleByDate
             // 
             this.searchSpectacleByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchSpectacleByDate.Location = new System.Drawing.Point(135, 25);
+            this.searchSpectacleByDate.Location = new System.Drawing.Point(135, 35);
             this.searchSpectacleByDate.Name = "searchSpectacleByDate";
             this.searchSpectacleByDate.Size = new System.Drawing.Size(139, 22);
             this.searchSpectacleByDate.TabIndex = 7;
@@ -198,7 +201,7 @@
             this.mainExpString.AutoSize = true;
             this.mainExpString.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mainExpString.ForeColor = System.Drawing.Color.Brown;
-            this.mainExpString.Location = new System.Drawing.Point(3, 6);
+            this.mainExpString.Location = new System.Drawing.Point(3, 2);
             this.mainExpString.Name = "mainExpString";
             this.mainExpString.Size = new System.Drawing.Size(56, 16);
             this.mainExpString.TabIndex = 6;
@@ -206,6 +209,7 @@
             // 
             // AdminTabPanel
             // 
+            this.AdminTabPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.AdminTabPanel.Controls.Add(this.groupBox1);
             this.AdminTabPanel.Location = new System.Drawing.Point(4, 25);
             this.AdminTabPanel.Name = "AdminTabPanel";
@@ -214,8 +218,6 @@
             this.AdminTabPanel.Size = new System.Drawing.Size(813, 422);
             this.AdminTabPanel.TabIndex = 1;
             this.AdminTabPanel.Text = "Панел администрации";
-            this.AdminTabPanel.UseVisualStyleBackColor = true;
-            this.AdminTabPanel.Click += new System.EventHandler(this.AdminTabPanel_Click);
             // 
             // groupBox1
             // 
@@ -251,6 +253,7 @@
             // 
             // userTicketsListBox
             // 
+            this.userTicketsListBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.userTicketsListBox.Location = new System.Drawing.Point(361, 28);
             this.userTicketsListBox.Name = "userTicketsListBox";
             this.userTicketsListBox.Size = new System.Drawing.Size(234, 309);
@@ -343,6 +346,7 @@
             // 
             // userGridView
             // 
+            this.userGridView.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.userGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userGridView.Location = new System.Drawing.Point(6, 28);
             this.userGridView.Name = "userGridView";
@@ -354,6 +358,24 @@
             // 
             this.userInfoContextMenu.Name = "userInfoContextMenu";
             this.userInfoContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Поиск по жанру:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(132, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Поиск по дате:";
             // 
             // MainForm
             // 
@@ -410,6 +432,8 @@
         private System.Windows.Forms.PictureBox userRolePictureBox;
         private System.Windows.Forms.ContextMenuStrip userInfoContextMenu;
         private System.Windows.Forms.Button changeTicketsButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 

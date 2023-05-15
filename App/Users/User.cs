@@ -1,12 +1,10 @@
 ﻿using App.Services;
-using App.Users;
 using System;
 using System.Collections.Generic;
-public abstract class User : UserModel, IUser
+public abstract class User : UserModel
 {
     public readonly SpectacleServices  _spectacleService;
 
-    Role IUser.Role => Role.admin;
 
     public User(SpectacleServices spectacleService)
     {

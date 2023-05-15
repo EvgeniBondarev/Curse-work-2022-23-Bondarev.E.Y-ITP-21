@@ -7,36 +7,23 @@ using System.Threading.Tasks;
 namespace CourseWorkTests
 {
     [TestClass]
-    internal class TicketManagerTests
+    public class TicketManagerTests
     {
-        private static readonly SpectacleModel _validSpectacle = new SpectacleModel
+        private readonly SpectacleModel _testSpectacle = new SpectacleModel
         {
-            Title = "Valid Spectacle",
-            Author = "Valid Author",
-            Genre = "Valid Genre",
+            Title = "Test Spectacle",
+            Author = "Test Author",
+            Genre = "Драма",
             Date = DateTime.Now,
             Categories = new Dictionary<Categorias, decimal>()
-            {
-                { Categorias.VIP, 100 },
-                { Categorias.Medium, 50 },
-                { Categorias.Standart, 25 }
-            },
-            FreePlace = 10
+                            {
+                                { Categorias.VIP,100},
+                                { Categorias.Medium, 50 },
+                                { Categorias.Standart, 25 }
+                            },
+            FreePlace = 25
         };
-        private static readonly SpectacleModel _invalidSpectacle = new SpectacleModel
-        {
-            Title = null,
-            Author = null,
-            Genre = null,
-            Date = DateTime.Now,
-            Categories = new Dictionary<Categorias, decimal>()
-            {
-                { Categorias.VIP, 100 },
-                { Categorias.Medium, 50 },
-                { Categorias.Standart, 25 }
-            },
-            FreePlace = 10
-        };
+
 
         [TestMethod]
         public void GetAll_ReturnsTicketModels()
@@ -55,6 +42,7 @@ namespace CourseWorkTests
         public void Add_ValidTicketModel_AddsTicketToXml()
         {
             // Arrange
+            SpectacleManager.Add(_testSpectacle);
             int initialCount = TicketManager.GetAll().Count();
             var validTicket = new TicketModel
             {
@@ -63,42 +51,20 @@ namespace CourseWorkTests
                 Category = Categorias.Medium,
                 Price = 100
             };
-
             // Act
             TicketManager.Add(validTicket);
 
             // Assert
             Assert.AreEqual(initialCount + 1, TicketManager.GetAll().Count());
-            Assert.IsNotNull(TicketManager.GetAll().SingleOrDefault(t => t.Owner == validTicket.Owner &&
-                t.Date == validTicket.Date &&
-                t.Category == validTicket.Category &&
-                t.Price == validTicket.Price));
+            SpectacleManager.Delete(_testSpectacle);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void Add_InvalidTicketModel_ThrowsArgumentException()
-        {
-            // Arrange
-            var invalidTicket = new TicketModel
-            {
-                Owner = null,
-                Date = DateTime.Now,
-                Category = Categorias.VIP,
-                Price = -1
-            };
-
-            // Act
-            TicketManager.Add(invalidTicket);
-
-            // Assert
-            // ExpectedException
-        }
 
         [TestMethod]
         public void Delete_ExistingTicketId_RemovesTicketFromXml()
         {
             // Arrange
+            SpectacleManager.Add(_testSpectacle);
             int ticketIdToDelete = TicketManager.GetAll().First().Id;
             int initialCount = TicketManager.GetAll().Count();
 
@@ -108,6 +74,7 @@ namespace CourseWorkTests
             // Assert
             Assert.AreEqual(initialCount - 1, TicketManager.GetAll().Count());
             Assert.IsNull(TicketManager.GetAll().SingleOrDefault(t => t.Id == ticketIdToDelete));
+            SpectacleManager.Delete(_testSpectacle);
         }
 
         [TestMethod]

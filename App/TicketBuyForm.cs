@@ -45,7 +45,6 @@ namespace App
             AdminBuyPanel.Location = new Point(0, 0);
             RegisterBuyPanel.Location = new Point(0, 0);
         }
-        // TODO: Если другая дата, то создать новый спектакль
         public new DialogResult ShowDialog(SpectacleModel thisSpectacle, Administrator user)
         {
             ClearAdminFields();
@@ -219,7 +218,6 @@ namespace App
                 MessageBox.Show(exp.Message);
             }
         }
-        // TODO: переделать для изитнение даты
         private void newDateName_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -236,27 +234,5 @@ namespace App
                 delSpectacle.Visible = false;
             } 
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AdminBuyPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RegisterBuyPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void newSpectacleName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

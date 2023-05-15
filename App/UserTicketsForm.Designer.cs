@@ -48,6 +48,7 @@
             // 
             // userTicketsGridView
             // 
+            this.userTicketsGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.userTicketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userTicketsGridView.Location = new System.Drawing.Point(6, 21);
             this.userTicketsGridView.Name = "userTicketsGridView";
@@ -70,6 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(502, 371);
             this.Controls.Add(this.delUserTicketButton);
             this.Controls.Add(this.userTicketGroupBox);

@@ -179,7 +179,6 @@
             this.RegisterBuyPanel.Name = "RegisterBuyPanel";
             this.RegisterBuyPanel.Size = new System.Drawing.Size(311, 334);
             this.RegisterBuyPanel.TabIndex = 6;
-            this.RegisterBuyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.RegisterBuyPanel_Paint);
             // 
             // AdminBuyPanel
             // 
@@ -198,7 +197,6 @@
             this.AdminBuyPanel.Name = "AdminBuyPanel";
             this.AdminBuyPanel.Size = new System.Drawing.Size(311, 334);
             this.AdminBuyPanel.TabIndex = 6;
-            this.AdminBuyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminBuyPanel_Paint);
             // 
             // GanreBox
             // 
@@ -324,7 +322,6 @@
             this.label5.Size = new System.Drawing.Size(35, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "VIP";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -353,7 +350,6 @@
             this.newSpectacleName.Name = "newSpectacleName";
             this.newSpectacleName.Size = new System.Drawing.Size(171, 29);
             this.newSpectacleName.TabIndex = 4;
-            this.newSpectacleName.TextChanged += new System.EventHandler(this.newSpectacleName_TextChanged);
             // 
             // label2
             // 
@@ -387,6 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(642, 345);
             this.Controls.Add(this.AdminBuyPanel);
             this.Controls.Add(this.RegisterBuyPanel);

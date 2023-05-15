@@ -1,10 +1,9 @@
 ﻿using App.Services;
-using App.Users;
 using System;
 using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-public class Registered : User, IUser
+public class Registered : User
 {
     private TicketServices _ticketServices;
     private UserServices _userServices;

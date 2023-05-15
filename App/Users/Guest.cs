@@ -1,8 +1,7 @@
 ﻿using App.Services;
-using App.Users;
 using System;
 
-public class Guest : User, IUser
+public class Guest : User
 {
     public Guest(SpectacleServices spectacleService) : base(spectacleService)
     {

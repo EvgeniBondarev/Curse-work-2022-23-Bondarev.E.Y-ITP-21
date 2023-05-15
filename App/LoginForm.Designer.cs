@@ -63,19 +63,18 @@
             this.userPasswordForm.Name = "userPasswordForm";
             this.userPasswordForm.Size = new System.Drawing.Size(178, 29);
             this.userPasswordForm.TabIndex = 2;
-            this.userPasswordForm.TextChanged += new System.EventHandler(this.userPasswordForm_TextChanged);
             // 
             // exptLable
             // 
             this.exptLable.AutoSize = true;
-            this.exptLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exptLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exptLable.ForeColor = System.Drawing.Color.Red;
-            this.exptLable.Location = new System.Drawing.Point(12, 9);
+            this.exptLable.Location = new System.Drawing.Point(12, 63);
             this.exptLable.Name = "exptLable";
-            this.exptLable.Size = new System.Drawing.Size(68, 20);
+            this.exptLable.Size = new System.Drawing.Size(56, 16);
             this.exptLable.TabIndex = 3;
             this.exptLable.Text = "ERROR";
-            this.exptLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.exptLable.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // skipButton
             // 
@@ -121,7 +120,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 351);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(363, 351);
             this.Controls.Add(this.userPasswordLable);
             this.Controls.Add(this.userNameLable);
             this.Controls.Add(this.registerButton);
