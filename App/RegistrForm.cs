@@ -33,6 +33,9 @@ namespace App
 
         private void RegistrForm_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
             exptRegisterLable.Text = "";
             newUserNameForm.Text = "";
             newUserPasswordForm.PasswordChar = '*';

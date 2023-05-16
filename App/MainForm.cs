@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using App.Logs;
+using Microsoft.Office.Interop.Excel;
 
 namespace App
 {
@@ -63,6 +64,8 @@ namespace App
         {
 
             loginForm.ShowDialog();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             spectacleGridView.CellClick += dataGridView1_CellClick;
 
             spectacleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

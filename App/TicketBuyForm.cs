@@ -41,6 +41,9 @@ namespace App
 
         private void TicketBuyForm_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
             this.ClientSize = new Size(311, 334);
             AdminBuyPanel.Location = new Point(0, 0);
             RegisterBuyPanel.Location = new Point(0, 0);

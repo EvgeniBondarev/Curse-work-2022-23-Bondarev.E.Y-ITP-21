@@ -38,7 +38,8 @@ namespace App
 
         private void UserTicketsForm_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
         public new DialogResult ShowDialog(Administrator user, string userName)
         {
