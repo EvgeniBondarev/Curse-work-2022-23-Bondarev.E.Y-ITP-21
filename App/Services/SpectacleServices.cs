@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace App.Services
 {
-    public class SpectacleServices : ISpectacleServices<SpectacleModel>
+    public class SpectacleServices 
     {
         public SpectacleServices()
         {

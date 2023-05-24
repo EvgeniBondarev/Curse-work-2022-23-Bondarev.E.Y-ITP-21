@@ -189,4 +189,67 @@
     <Price>150</Price>
     <Timestamp>2023-05-14T22:39:09.6411269+03:00</Timestamp>
   </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>user</Owner>
+    <SpectacleName>Евгений Онегин</SpectacleName>
+    <SpectacleDate>19.04.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>200</Price>
+    <Timestamp>2023-05-23T20:38:24.4449917+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>user</Owner>
+    <SpectacleName>Ревизор</SpectacleName>
+    <SpectacleDate>15.02.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>100</Price>
+    <Timestamp>2023-05-23T20:38:27.0047492+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>user</Owner>
+    <SpectacleName>Шекспировский фестиваль</SpectacleName>
+    <SpectacleDate>11.05.2023</SpectacleDate>
+    <Category>VIP</Category>
+    <Price>500</Price>
+    <Timestamp>2023-05-23T20:38:29.7568873+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>user</Owner>
+    <SpectacleName>Мастер и Маргарита</SpectacleName>
+    <SpectacleDate>02.06.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>300</Price>
+    <Timestamp>2023-05-23T20:38:31.9569572+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>test_user</Owner>
+    <SpectacleName>Евгений Онегин</SpectacleName>
+    <SpectacleDate>19.04.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>200</Price>
+    <Timestamp>2023-05-23T20:39:34.1170232+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>test_user</Owner>
+    <SpectacleName>Шекспировский фестиваль</SpectacleName>
+    <SpectacleDate>11.05.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>400</Price>
+    <Timestamp>2023-05-23T20:39:36.3400335+03:00</Timestamp>
+  </Operation>
+  <Operation>
+    <Method>Покупка билета</Method>
+    <Owner>test_user</Owner>
+    <SpectacleName>Мастер и Маргарита</SpectacleName>
+    <SpectacleDate>02.06.2023</SpectacleDate>
+    <Category>Medium</Category>
+    <Price>300</Price>
+    <Timestamp>2023-05-23T20:39:38.6044503+03:00</Timestamp>
+  </Operation>
 </Log>

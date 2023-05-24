@@ -29,7 +29,7 @@ namespace App
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.FormClosing += LoginForm_FormClosing;
+           
 
             userPasswordForm.PasswordChar = '*';
             exptLable.Text = "";
@@ -51,20 +51,7 @@ namespace App
             _maiForm.CreateUser(nullUser);
             this.Close();
         }
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Когда вы закроете форму, вы будете авторизованы как гость.", "Внимание", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                UserModel nullUser = new UserModel() { Login = null, Password = null, Role = Role.guest };
-                _maiForm.CreateUser(nullUser);
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
+        
         private void LogIn()
         {
             string userName = userNameForm.Text;

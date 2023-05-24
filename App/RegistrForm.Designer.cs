@@ -40,7 +40,7 @@
             // 
             this.userPasswordLable.AutoSize = true;
             this.userPasswordLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userPasswordLable.Location = new System.Drawing.Point(88, 156);
+            this.userPasswordLable.Location = new System.Drawing.Point(109, 159);
             this.userPasswordLable.Name = "userPasswordLable";
             this.userPasswordLable.Size = new System.Drawing.Size(162, 24);
             this.userPasswordLable.TabIndex = 13;
@@ -50,7 +50,7 @@
             // 
             this.userNameLable.AutoSize = true;
             this.userNameLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userNameLable.Location = new System.Drawing.Point(88, 97);
+            this.userNameLable.Location = new System.Drawing.Point(109, 100);
             this.userNameLable.Name = "userNameLable";
             this.userNameLable.Size = new System.Drawing.Size(132, 24);
             this.userNameLable.TabIndex = 12;
@@ -61,7 +61,7 @@
             this.exptRegisterLable.AutoSize = true;
             this.exptRegisterLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exptRegisterLable.ForeColor = System.Drawing.Color.Red;
-            this.exptRegisterLable.Location = new System.Drawing.Point(12, 71);
+            this.exptRegisterLable.Location = new System.Drawing.Point(1, 71);
             this.exptRegisterLable.Name = "exptRegisterLable";
             this.exptRegisterLable.Size = new System.Drawing.Size(56, 16);
             this.exptRegisterLable.TabIndex = 11;
@@ -71,7 +71,7 @@
             // newUserPasswordForm
             // 
             this.newUserPasswordForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newUserPasswordForm.Location = new System.Drawing.Point(92, 183);
+            this.newUserPasswordForm.Location = new System.Drawing.Point(113, 186);
             this.newUserPasswordForm.Name = "newUserPasswordForm";
             this.newUserPasswordForm.Size = new System.Drawing.Size(178, 29);
             this.newUserPasswordForm.TabIndex = 10;
@@ -79,7 +79,7 @@
             // newUserNameForm
             // 
             this.newUserNameForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.newUserNameForm.Location = new System.Drawing.Point(92, 124);
+            this.newUserNameForm.Location = new System.Drawing.Point(113, 127);
             this.newUserNameForm.Name = "newUserNameForm";
             this.newUserNameForm.Size = new System.Drawing.Size(178, 29);
             this.newUserNameForm.TabIndex = 9;
@@ -87,7 +87,7 @@
             // registerButtog
             // 
             this.registerButtog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registerButtog.Location = new System.Drawing.Point(92, 218);
+            this.registerButtog.Location = new System.Drawing.Point(113, 221);
             this.registerButtog.Name = "registerButtog";
             this.registerButtog.Size = new System.Drawing.Size(178, 24);
             this.registerButtog.TabIndex = 8;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(374, 351);
+            this.ClientSize = new System.Drawing.Size(397, 351);
             this.Controls.Add(this.userPasswordLable);
             this.Controls.Add(this.userNameLable);
             this.Controls.Add(this.exptRegisterLable);

@@ -79,10 +79,7 @@
     <Compile Include="Repositories\SpectacleManager.cs" />
     <Compile Include="Repositories\TicketManager.cs" />
     <Compile Include="Repositories\UserManager.cs" />
-    <Compile Include="Services\ITicketServices.cs" />
-    <Compile Include="Services\IUserServices.cs" />
     <Compile Include="Services\SpectacleServices.cs" />
-    <Compile Include="Services\ISpectacleServices.cs" />
     <Compile Include="Services\TicketServices.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="TicketBuyForm.cs">

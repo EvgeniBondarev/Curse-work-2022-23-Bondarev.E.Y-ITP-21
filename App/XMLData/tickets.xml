@@ -1,9 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tickets>
-  <ticket id="2">
-    <owner>Valid Owner</owner>
-    <date>2023-05-16</date>
+  <ticket id="1">
+    <owner>user</owner>
+    <date>2023-02-15</date>
     <category>Medium</category>
     <price>100</price>
+  </ticket>
+  <ticket id="2">
+    <owner>user</owner>
+    <date>2023-04-19</date>
+    <category>Medium</category>
+    <price>200</price>
+  </ticket>
+  <ticket id="3">
+    <owner>user</owner>
+    <date>2023-02-15</date>
+    <category>Medium</category>
+    <price>100</price>
+  </ticket>
+  <ticket id="4">
+    <owner>user</owner>
+    <date>2023-05-11</date>
+    <category>VIP</category>
+    <price>500</price>
+  </ticket>
+  <ticket id="5">
+    <owner>user</owner>
+    <date>2023-06-02</date>
+    <category>Medium</category>
+    <price>300</price>
+  </ticket>
+  <ticket id="6">
+    <owner>test_user</owner>
+    <date>2023-04-19</date>
+    <category>Medium</category>
+    <price>200</price>
+  </ticket>
+  <ticket id="7">
+    <owner>test_user</owner>
+    <date>2023-05-11</date>
+    <category>Medium</category>
+    <price>400</price>
+  </ticket>
+  <ticket id="8">
+    <owner>test_user</owner>
+    <date>2023-06-02</date>
+    <category>Medium</category>
+    <price>300</price>
   </ticket>
 </tickets>

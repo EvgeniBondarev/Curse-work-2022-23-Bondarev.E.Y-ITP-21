@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace App.Services
 {
-    public class UserServices : IUserServices<UserModel>
+    public class UserServices
     {
         public UserServices()
         {

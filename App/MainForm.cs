@@ -67,15 +67,13 @@ namespace App
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             spectacleGridView.CellClick += dataGridView1_CellClick;
+            spectacleGridView.ColumnHeaderMouseClick += dataGridView_ColumnHeaderMouseClick;
 
             spectacleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             spectacleGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 
             userInfo.MouseDown += new MouseEventHandler(InitializeContextMenu);
             userRolePictureBox.MouseDown += new MouseEventHandler(InitializeContextMenu);
-
-
-
 
         }
         public void CreateUser(UserModel user)
@@ -259,6 +257,19 @@ namespace App
                     mainExpString.Text = e.Message;
                 }
             }
+        }
+        private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.ColumnIndex == 1) {
+                DataGridViewColumn newColumn = spectacleGridView.Columns[1];
+                DataGridViewColumn oldColumn = spectacleGridView.SortedColumn;
+                ListSortDirection direction;
+
+                direction = ListSortDirection.Descending;
+
+                spectacleGridView.Sort(newColumn, direction);
+            }
+            
         }
         private void ShowUsers()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App.Services
 {
-    public class TicketServices : ITicketServices<TicketModel>
+    public class TicketServices 
     {
         private static SpectacleServices _spectacleServices;
         public TicketServices()
